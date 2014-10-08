@@ -112,7 +112,7 @@ tools/install:
 	-chmod u+s $(DESTDIR)/usr/sbin/hawk_invoke
 
 	install -D -m 0755 tools/hawk_monitor $(DESTDIR)/usr/sbin/hawk_monitor
-	ln -s /usr/sbin/hawk_monitor $(DESTDIR)$(WWW_BASE)/hawk/public/monitor
+	ln -sf /usr/sbin/hawk_monitor $(DESTDIR)$(WWW_BASE)/hawk/public/monitor
 
 # TODO(should): Verify this is really clean (it won't get rid of .mo files,
 # for example
