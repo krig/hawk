@@ -1,0 +1,13 @@
+site "https://supermarket.getchef.com/api/v1"
+
+cookbook "zypper",
+  github: "tboerger/chef-zypper"
+
+cookbook "build",
+  github: "tboerger/chef-build"
+
+cookbook "git",
+  github: "tboerger/chef-git"
+
+cookbook "locales",
+  github: "tboerger/chef-locales"

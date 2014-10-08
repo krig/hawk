@@ -1,0 +1,35 @@
+GIT
+  remote: https://github.com/tboerger/chef-build
+  ref: master
+  sha: 259bda48c253f6a5531ac95a21d344a86535f55b
+  specs:
+    build (0.0.1)
+
+GIT
+  remote: https://github.com/tboerger/chef-git
+  ref: master
+  sha: 96cab5ef18f5a4bdb953255cda8e9f4acfa886b1
+  specs:
+    git (0.0.1)
+      zypper (>= 0.0.0)
+
+GIT
+  remote: https://github.com/tboerger/chef-locales
+  ref: master
+  sha: 38f3f317b5f8e68336ea28d413969a31bf46a1ad
+  specs:
+    locales (0.0.1)
+
+GIT
+  remote: https://github.com/tboerger/chef-zypper
+  ref: master
+  sha: 7e04cc2a05cb5b5824f0b4b4c1e6db346196e66a
+  specs:
+    zypper (0.0.1)
+
+DEPENDENCIES
+  build (>= 0)
+  git (>= 0)
+  locales (>= 0)
+  zypper (>= 0)
+

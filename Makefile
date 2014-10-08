@@ -102,6 +102,18 @@ tools/hawk_monitor: tools/hawk_monitor.c
 tools/hawk_invoke: tools/hawk_invoke.c tools/common.h
 	gcc -fpie -pie $(CFLAGS) -o $@ $<
 
+tools/install:
+	install -D -m 4750 tools/hawk_chkpwd $(DESTDIR)/usr/sbin/hawk_chkpwd
+	-chown root.haclient $(DESTDIR)/usr/sbin/hawk_chkpwd
+	-chmod u+s $(DESTDIR)/usr/sbin/hawk_chkpwd
+
+	install -D -m 4750 tools/hawk_invoke $(DESTDIR)/usr/sbin/hawk_invoke
+	-chown root.haclient $(DESTDIR)/usr/sbin/hawk_invoke
+	-chmod u+s $(DESTDIR)/usr/sbin/hawk_invoke
+
+	install -D -m 0755 tools/hawk_monitor $(DESTDIR)/usr/sbin/hawk_monitor
+	ln -s /usr/sbin/hawk_monitor $(DESTDIR)$(WWW_BASE)/hawk/public/monitor
+
 # TODO(should): Verify this is really clean (it won't get rid of .mo files,
 # for example
 clean:
@@ -119,7 +131,7 @@ clean:
 # (the spec sets file ownership/perms for RPMs).
 # TODO(should): Make an option to install either the init script or the
 # systemd service file (presently this installs the systemd service file)
-install:
+install: tools/install
 	mkdir -p $(DESTDIR)$(WWW_BASE)/hawk/log
 	mkdir -p $(DESTDIR)$(WWW_BASE)/hawk/tmp
 	mkdir -p $(DESTDIR)$(WWW_BASE)/hawk/locale
@@ -141,14 +153,6 @@ install:
 	-chmod g+w $(DESTDIR)$(WWW_BASE)/hawk/tmp/home
 	-chmod g+w $(DESTDIR)$(WWW_BASE)/hawk/tmp/explorer
 	install -D -m 0644 scripts/hawk.service $(DESTDIR)/usr/lib/systemd/system/hawk.service
-	install -D -m 4750 tools/hawk_chkpwd $(DESTDIR)/usr/sbin/hawk_chkpwd
-	-chown root.haclient $(DESTDIR)/usr/sbin/hawk_chkpwd
-	-chmod u+s $(DESTDIR)/usr/sbin/hawk_chkpwd
-	install -D -m 4750 tools/hawk_invoke $(DESTDIR)/usr/sbin/hawk_invoke
-	-chown root.haclient $(DESTDIR)/usr/sbin/hawk_invoke
-	-chmod u+s $(DESTDIR)/usr/sbin/hawk_invoke
-	install -D -m 0755 tools/hawk_monitor $(DESTDIR)/usr/sbin/hawk_monitor
-	ln -s /usr/sbin/hawk_monitor $(DESTDIR)$(WWW_BASE)/hawk/public/monitor
 
 # Make a tar.bz2 named for the most recent human-readable tag
 archive:
