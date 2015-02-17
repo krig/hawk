@@ -26,6 +26,24 @@ node["hawk"]["webui"]["packages"].each do |name|
   end
 end
 
+cookbook_file "rails-gem-require.patch" do
+  path "/tmp/rails-gem-require.patch"
+  action :create_if_missing
+end
+
+bash "hawk_patch_rails_gem_require" do
+  user "root"
+  cwd "/srv/www/hawk"
+
+  code <<-EOH
+    patch -p1 < /tmp/rails-gem-require.patch && touch /tmp/rails-gem-require.patch.applied
+  EOH
+
+  not_if do
+    ::File.exists? "/tmp/rails-gem-require.patch.applied"
+  end
+end
+
 node["hawk"]["webui"]["targets"].each do |name|
   bash "hawk_make_#{name.gsub("/", "_")}" do
     user "root"
