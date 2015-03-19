@@ -31,4 +31,5 @@
 
 ActiveSupport::Inflector.inflections do |inflect|
   inflect.uncountable 'crm_config'
+  inflect.acronym "DC"
 end
