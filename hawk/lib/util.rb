@@ -312,6 +312,15 @@ module Util
         %x[/usr/sbin/cibadmin -Ql -A /cib/configuration/tags >/dev/null 2>&1]
         $?.exitstatus == 0
       }
+    when :acl_enabled
+      PerRequestCache.fetch(:has_acl_enabled) {
+        safe_x(
+          '/usr/sbin/cibadmin',
+          '-Ql',
+          '--xpath',
+          '//configuration//crm_config//nvpair[@name=\'enable-acl\' and @value=\'true\']'.shellescape
+        ).chomp.present?
+      }
     else
       false
     end
