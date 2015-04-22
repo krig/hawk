@@ -14,6 +14,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "Remove"
+msgstr "إزالة"
+
+msgid "Yes"
+msgstr "نعم"
+
+msgid "No"
+msgstr "لا"
+
 msgid "Any changes will be lost - do you wish to proceed?"
 msgstr "سيتم فقد أية تغييرات - هل تريد المتابعة؟"
 
@@ -36,12 +45,6 @@ msgstr ""
 
 msgid "Maintenance"
 msgstr "الصيانة"
-
-msgid "Yes"
-msgstr "نعم"
-
-msgid "No"
-msgstr "لا"
 
 msgid "Standby"
 msgstr "استعداد"
@@ -73,30 +76,33 @@ msgstr "معرف المستخدم"
 msgid "Unable to create shadow CIB"
 msgstr "تعذر إنشاء ظل احتياطي لـ CIB"
 
-msgid "1 node configured"
-msgid_plural "%{num} nodes configured"
-msgstr[0] "تم تكوين عقدة واحدة"
-msgstr[1] "تم تكوين %{num} عقدة (عقد)"
-
-msgid "1 resource configured"
-msgid_plural "%{num} resources configured"
-msgstr[0] "تم تكوين مورد واحد"
-msgstr[1] "تم تكوين %{num} مورد (موارد)"
-
-msgid "Edit Clone"
-msgstr "تحرير الاستنساخ"
-
 msgid "Create Clone"
 msgstr "إنشاء استنساخ"
 
 msgid "Clone created successfully"
 msgstr "تم إنشاء الاستنساخ بنجاح"
 
+msgid "Edit Clone"
+msgstr "تحرير الاستنساخ"
+
 msgid "Clone updated successfully"
 msgstr "تم تحديث الاستنساخ بنجاح"
 
-msgid "Edit Colocation Constraint"
-msgstr "تحرير قيد الموقع المشترك"
+#, fuzzy
+msgid "Clone deleted successfully"
+msgstr "تم إنشاء الدور بنجاح"
+
+#, fuzzy
+msgid "Error deleting %s"
+msgstr "حدث خطأ أثناء حذف المورد"
+
+#, fuzzy
+msgid "Clones"
+msgstr "استنساخ"
+
+#, fuzzy
+msgid "The clone does not exist"
+msgstr "معرف الدور \"%{id}\" غير موجود"
 
 msgid "Create Colocation Constraint"
 msgstr "إنشاء قيد الموقع المشترك"
@@ -104,28 +110,32 @@ msgstr "إنشاء قيد الموقع المشترك"
 msgid "Constraint created successfully"
 msgstr "تم إنشاء القيد بنجاح"
 
+msgid "Edit Colocation Constraint"
+msgstr "تحرير قيد الموقع المشترك"
+
 msgid "Constraint updated successfully"
 msgstr "تم تحديث القيد بنجاح"
+
+#, fuzzy
+msgid "Colocation deleted successfully"
+msgstr "تم إنشاء الدور بنجاح"
+
+#, fuzzy
+msgid "Colocation Constraints"
+msgstr "تحرير قيد الموقع المشترك"
+
+msgid "The colocation constraint does not exist"
+msgstr ""
 
 msgid "Constraints"
 msgstr "القيود"
 
+#, fuzzy
+msgid "Configuration updated successfully"
+msgstr "تم تحديث القيد بنجاح"
+
 msgid "Cluster Configuration"
 msgstr "تكوين المجموعة المتماثلة"
-
-msgid "Your changes have been saved"
-msgstr "تم حفظ التغييرات التي قمت بإجرائها"
-
-msgid "Unable to apply changes: %{msg}"
-msgstr "تعذر تطبيق التغييرات: %{msg}"
-
-msgid ""
-"Can't set property %{p}, because the value contains both single and double quo"
-"tes"
-msgstr "يتعذر تعيين الخاصية %{p}، نظرًا لاحتواء القيمة على علامات اقتباس مفردة ومزدوجة"
-
-msgid "Cluster Dashboard"
-msgstr "لوحة معلومات المجموعة المتماثلة"
 
 msgid "Dashboard"
 msgstr "لوحة المعلومات"
@@ -151,23 +161,46 @@ msgstr "خطأ:"
 msgid "Required parameters \"left\" and \"right\" not specified"
 msgstr "المعلمتان المطلوبتان \"left\" و\"right\" غير محددتين"
 
-msgid "Edit Group"
-msgstr "تحرير مجموعة"
-
 msgid "Create Group"
 msgstr "مجموعة الإنشاء"
 
 msgid "Group created successfully"
 msgstr "تم إنشاء المجموعة بنجاح"
 
+msgid "Edit Group"
+msgstr "تحرير مجموعة"
+
 msgid "Group updated successfully"
 msgstr "تم تحديث المجموعة بنجاح"
+
+#, fuzzy
+msgid "Group deleted successfully"
+msgstr "تم إنشاء المجموعة بنجاح"
+
+#, fuzzy
+msgid "Groups"
+msgstr "المجموعة"
+
+#, fuzzy
+msgid "The group does not exist"
+msgstr "معرف الدور \"%{id}\" غير موجود"
+
+msgid "Create Location Constraint"
+msgstr "إنشاء قيد الموقع"
 
 msgid "Edit Location Constraint"
 msgstr "تحرير قيد الموقع"
 
-msgid "Create Location Constraint"
-msgstr "إنشاء قيد الموقع"
+#, fuzzy
+msgid "Location deleted successfully"
+msgstr "تم إنشاء الدور بنجاح"
+
+#, fuzzy
+msgid "Location Constraints"
+msgstr "تحرير قيد الموقع"
+
+msgid "The location constraint does not exist"
+msgstr ""
 
 msgid "%{cmd} failed (status: %{status})"
 msgstr "فشل %{cmd} (الحالة:%{status})"
@@ -196,27 +229,48 @@ msgstr "المعلمة المطلوبة \"ticket\" غير محددة"
 msgid "Error invoking %{cmd}: %{msg}"
 msgstr "حدث خطأ أثناء استدعاء %{cmd}: %{msg}"
 
-msgid "Edit Master/Slave"
-msgstr "تحرير الرئيس/التابع"
-
 msgid "Create Master/Slave"
 msgstr "إنشاء الرئيس/التابع"
 
 msgid "Master/Slave created successfully"
 msgstr "تم إنشاء الرئيس/التابع بنجاح"
 
+msgid "Edit Master/Slave"
+msgstr "تحرير الرئيس/التابع"
+
 msgid "Master/Slave updated successfully"
 msgstr "تم تحديث الرئيس/التابع بنجاح"
+
+#, fuzzy
+msgid "Master/Slave deleted successfully"
+msgstr "تم إنشاء الرئيس/التابع بنجاح"
+
+msgid "Master/Slave"
+msgstr "الرئيسي/التابع"
+
+msgid "The master/slave does not exist"
+msgstr ""
 
 #, fuzzy
 msgid "Nodes"
 msgstr "عقدة"
 
+msgid "Create Order Constraint"
+msgstr "إنشاء قيد الترتيب"
+
 msgid "Edit Order Constraint"
 msgstr "تحرير قيد الترتيب"
 
-msgid "Create Order Constraint"
-msgstr "إنشاء قيد الترتيب"
+#, fuzzy
+msgid "Order deleted successfully"
+msgstr "تم إنشاء المستخدم بنجاح"
+
+#, fuzzy
+msgid "Order Constraints"
+msgstr "تحرير قيد الترتيب"
+
+msgid "The order constraint does not exist"
+msgstr ""
 
 msgid "Welcome"
 msgstr ""
@@ -224,18 +278,40 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-msgid "Create Resource"
-msgstr "إنشاء مورد"
+#, fuzzy
+msgid "Create Primitive"
+msgstr "المجموعات الأساسية المتوفرة"
 
-msgid "Resource created successfully"
-msgstr "تم إنشاء المورد بنجاح"
+#, fuzzy
+msgid "Primitive created successfully"
+msgstr "تم إنشاء القالب بنجاح"
 
-msgid "Resource updated successfully"
-msgstr "تم تحديث المورد بنجاح"
+#, fuzzy
+msgid "Edit Primitive"
+msgstr "مجموعة أساسية"
+
+#, fuzzy
+msgid "Primitive updated successfully"
+msgstr "تم تحديث القالب بنجاح"
+
+#, fuzzy
+msgid "Primitive deleted successfully"
+msgstr "تم إنشاء الدور بنجاح"
 
 #, fuzzy
 msgid "Primitives"
 msgstr "مجموعة أساسية"
+
+#, fuzzy
+msgid "The primitive does not exist"
+msgstr "معرف الدور \"%{id}\" غير موجود"
+
+#, fuzzy
+msgid "Preferences updated successfully"
+msgstr "تم تحديث المورد بنجاح"
+
+msgid "Preferences"
+msgstr "تفضيلات"
 
 msgid "Resources"
 msgstr "الموارد"
@@ -256,10 +332,6 @@ msgstr "تم تحديث الدور بنجاح"
 msgid "Role deleted successfully"
 msgstr "تم إنشاء الدور بنجاح"
 
-#, fuzzy
-msgid "Error deleting %s"
-msgstr "حدث خطأ أثناء حذف المورد"
-
 msgid "Roles"
 msgstr "الدور"
 
@@ -278,30 +350,46 @@ msgstr "تم تسجيل خروجك."
 msgid "Log In"
 msgstr "دخول"
 
-#, fuzzy
-msgid "Preferences updated successfully"
-msgstr "تم تحديث المورد بنجاح"
-
-msgid "Preferences"
-msgstr "تفضيلات"
-
-msgid "Edit Template"
-msgstr "تحرير القالب"
-
 msgid "Create Template"
 msgstr "إنشاء قالب"
 
 msgid "Template created successfully"
 msgstr "تم إنشاء القالب بنجاح"
 
+msgid "Edit Template"
+msgstr "تحرير القالب"
+
 msgid "Template updated successfully"
 msgstr "تم تحديث القالب بنجاح"
+
+#, fuzzy
+msgid "Template deleted successfully"
+msgstr "تم إنشاء القالب بنجاح"
+
+#, fuzzy
+msgid "Templates"
+msgstr "القالب"
+
+#, fuzzy
+msgid "The template does not exist"
+msgstr "معرف الدور \"%{id}\" غير موجود"
+
+msgid "Create Ticket Constraint"
+msgstr "إنشاء قيد للبطاقة"
 
 msgid "Edit Ticket Constraint"
 msgstr "تحرير قيد البطاقة"
 
-msgid "Create Ticket Constraint"
-msgstr "إنشاء قيد للبطاقة"
+#, fuzzy
+msgid "Tciket deleted successfully"
+msgstr "تم إنشاء الدور بنجاح"
+
+#, fuzzy
+msgid "Ticket Constraints"
+msgstr "تحرير قيد البطاقة"
+
+msgid "The ticket constraint does not exist"
+msgstr ""
 
 msgid "Create User"
 msgstr "إنشاء مستخدم"
@@ -326,55 +414,8 @@ msgstr "المستخدم"
 msgid "The user does not exist"
 msgstr ""
 
-msgid "Cluster Setup Wizard"
-msgstr "معالج إعداد المجموعة"
-
-msgid "Invalid password"
-msgstr "كلمة السر غير صالحة"
-
-msgid "Root Password"
-msgstr "كلمة السر الجذر"
-
-msgid ""
-"The root password is required in order for this wizard template to make config"
-"uration changes."
-msgstr "يستلزم إدخال كلمة السر الجذر لقالب المعالج هذا كي يتم إجراء تغييرات التكوين."
-
-msgid "The root password for this system"
-msgstr "كلمة السر الجذر لهذا النظام"
-
-msgid "\"Error: #{result}\""
-msgstr "\"الخطأ: #{result}\""
-
-msgid "Parameters"
-msgstr "المعلمات"
-
-msgid "Confirm"
-msgstr "تأكيد"
-
-msgid "Done"
-msgstr "تم"
-
-msgid "Required parameter \"%{param}\" not specified"
-msgstr "المعلمة المطلوبة \"%{param}\" غير محددة"
-
-msgid "Permission denied - you do not have write access to the CIB."
-msgstr "تم رفض الإذن - ليس لديك حق الوصول للكتابة إلى CIB."
-
-msgid "Wizard templates and/or workflows are missing"
-msgstr "قوالب المعالج و/أو التدفقات مفقودة"
-
-msgid "Workflow \"%s\" not found"
-msgstr "لم يتم العثور على التدفق \"%s\""
-
-msgid "Error parsing template \"%s\""
-msgstr "حدث خطأ أثناء تحليل القالب \"%s\""
-
-msgid "Error parsing workflow \"%s\""
-msgstr "حدث خطأ أثناء تحليل التدفق \"%s\""
-
-msgid "Data collection in progress (%{from_time} to %{to_time})..."
-msgstr "جارٍ تجميع البيانات (%{from_time} to %{to_time})..."
+msgid "Use a wizard"
+msgstr ""
 
 #, fuzzy
 msgid "Revert"
@@ -382,6 +423,9 @@ msgstr "إعادة تعيين"
 
 msgid "Apply"
 msgstr ""
+
+msgid "Data collection in progress (%{from_time} to %{to_time})..."
+msgstr "جارٍ تجميع البيانات (%{from_time} to %{to_time})..."
 
 #, fuzzy
 msgid "Create"
@@ -517,6 +561,9 @@ msgstr "تعذر إنشاء المورد: %{msg}"
 msgid "Resource ID \"%{id}\" does not exist"
 msgstr "معرف المورد \"%{id}\" غير موجود"
 
+msgid "is required"
+msgstr ""
+
 #, fuzzy
 msgid "Unable to create: %{msg}"
 msgstr "تعذر إنشاء الدور: %{msg}"
@@ -555,9 +602,6 @@ msgstr "لم يتم تثبيت %s"
 msgid "Invalid username or password"
 msgstr "اسم المستخدم غير صالح أو كلمة السر غير صالحة"
 
-msgid "Language is required"
-msgstr ""
-
 msgid "Invalid Ticket ID"
 msgstr "معرِّف البطاقة غير صحيح"
 
@@ -571,14 +615,14 @@ msgstr ""
 msgid "Invalid User ID"
 msgstr "معرِّف البطاقة غير صحيح"
 
+msgid "Back"
+msgstr "الخلف"
+
 msgid "Meta Attributes"
 msgstr "سمات تعريف"
 
 msgid "Add"
 msgstr "إضافة"
-
-msgid "Remove"
-msgstr "إزالة"
 
 msgid "You must enter a value"
 msgstr "يجب عليك إدخال قيمة"
@@ -589,14 +633,12 @@ msgstr "معرف الاستنساخ"
 msgid "Child Resource"
 msgstr "مورد فرعي"
 
-msgid "Revert Changes"
-msgstr "إرجاع التغييرات"
+msgid "Are you sure you wish to delete %s?"
+msgstr "هل تريد بالتأكيد حذف %s؟"
 
-msgid "Back"
-msgstr "الخلف"
-
-msgid "Apply Changes"
-msgstr "تطبيق التغييرات"
+#, fuzzy
+msgid "Delete clone"
+msgstr "حذف مورد"
 
 msgid "Link set"
 msgstr "مجموعة الارتباطات"
@@ -616,20 +658,13 @@ msgstr "معرف القيد"
 msgid "Score"
 msgstr "النتيجة"
 
-msgid "Create Constraint"
-msgstr "إنشاء قيد"
-
-msgid "Edit Constraint"
-msgstr "تحرير قيد"
-
-msgid "Delete Constraint"
+#, fuzzy
+msgid "Delete colocation"
 msgstr "حذف قيد"
 
-msgid "Are you sure you wish to delete %s?"
-msgstr "هل تريد بالتأكيد حذف %s؟"
-
-msgid "New Constraint"
-msgstr "قيد جديد"
+#, fuzzy
+msgid "Add a constraint"
+msgstr "تحرير قيد"
 
 msgid "Location"
 msgstr "الموقع"
@@ -643,35 +678,11 @@ msgstr "الترتيب"
 msgid "Ticket"
 msgstr "البطاقة"
 
-msgid "(No location constraints defined)"
-msgstr "(لم يتم تحديد أي قيود للمواقع)"
-
-msgid "[Constraint is too complex to display]"
-msgstr "[القيد معقد للغاية لدرجة تصعب عرضه]"
-
-msgid "(No colocation constraints defined)"
-msgstr "(لم يتم تحديد أية قيود للموقع المشترك)"
-
-msgid "(No order constraints defined)"
-msgstr "(لم يتم تحديد أي قيود للترتيب)"
-
-msgid "(No ticket constraints defined)"
-msgstr "(لم يتم تحديد أي قيود للبطاقة)"
-
-msgid "CRM Configuration"
-msgstr "تكوين CRM"
-
 msgid "Resource Defaults"
 msgstr "الإعدادات الافتراضية للمورد"
 
 msgid "Operation Defaults"
 msgstr "الإعدادات الافتراضية للعملية"
-
-msgid "No cluster properties set in %{group}"
-msgstr "لم يتم تعيين أية خصائص للمجموعة في %{group}"
-
-msgid "Edit"
-msgstr "تحرير"
 
 msgid "Username:"
 msgstr "اسم المستخدم:"
@@ -755,6 +766,10 @@ msgstr "ثبات المورد"
 msgid "Status"
 msgstr "الحالة"
 
+#, fuzzy
+msgid "Errors"
+msgstr "خطأ:"
+
 msgid "No transitions found for the specified time period."
 msgstr "لم يتم العثور على عمليات انتقال للفترة الزمنية المحددة."
 
@@ -809,6 +824,10 @@ msgstr "فروع المجموعة"
 msgid "Available Primitives"
 msgstr "المجموعات الأساسية المتوفرة"
 
+#, fuzzy
+msgid "Delete group"
+msgstr "حذف مورد"
+
 msgid "Start Time not specified"
 msgstr "وقت البدء غير محدد"
 
@@ -820,6 +839,9 @@ msgstr "جارٍ إنشاء hb_report..."
 
 msgid "Download hb_report"
 msgstr "تحميل hb_report"
+
+msgid "Heartbeat"
+msgstr ""
 
 #, fuzzy
 msgid "Please ensure Javascript is enabled"
@@ -851,6 +873,13 @@ msgstr "إظهار محرر القواعد"
 
 msgid "Resource"
 msgstr "مورد"
+
+#, fuzzy
+msgid "Delete location"
+msgstr "حذف قيد"
+
+msgid "History"
+msgstr ""
 
 msgid "Fence Node"
 msgstr "عقدة السياج"
@@ -891,6 +920,10 @@ msgstr "إبطال"
 msgid "Master/Slave ID"
 msgstr "معرف الرئيس/التابع"
 
+#, fuzzy
+msgid "Delete master/slave"
+msgstr "إنشاء الرئيس/التابع"
+
 msgid "Getting recent events (last hour)..."
 msgstr "جارٍ الحصول على الأحداث الحديثة (آخر ساعة)..."
 
@@ -915,6 +948,10 @@ msgstr "لم يتم تحديد أية سمات"
 msgid "Symmetrical"
 msgstr "متماثل"
 
+#, fuzzy
+msgid "Delete order"
+msgstr "حذف مورد"
+
 msgid "Close"
 msgstr "إغلاق"
 
@@ -923,6 +960,12 @@ msgstr ""
 
 msgid "PDF"
 msgstr ""
+
+msgid "Parameters"
+msgstr "المعلمات"
+
+msgid "Edit"
+msgstr "تحرير"
 
 msgid "There is already a monitor op with this interval."
 msgstr "يوجد بالفعل op لجهاز العرض بهذا الفاصل الزمني."
@@ -945,62 +988,32 @@ msgstr "النوع"
 msgid "Use Template"
 msgstr "استخدام القالب"
 
-msgid "Edit Resource"
-msgstr "تحرير مورد"
-
-msgid "Delete Resource"
+#, fuzzy
+msgid "Delete primitive"
 msgstr "حذف مورد"
 
-msgid "New Resource"
-msgstr "مورد جديد"
+#, fuzzy
+msgid "Add a resource"
+msgstr "تحرير مورد"
 
-msgid "Primitive"
-msgstr "مجموعة أساسية"
+#, fuzzy
+msgid "Add a primitive"
+msgstr "المجموعات الأساسية المتوفرة"
 
-msgid "New Template"
-msgstr "قالب جديد"
+#, fuzzy
+msgid "Add a group"
+msgstr "تحرير مجموعة"
 
-msgid "Template"
-msgstr "القالب"
+#, fuzzy
+msgid "Clone a resource"
+msgstr "إنشاء مورد"
 
-msgid "New Group"
-msgstr "مجموعة جديدة"
-
-msgid "Group"
-msgstr "المجموعة"
-
-msgid "New Clone"
-msgstr "استنساخ جديد"
-
-msgid "Clone"
-msgstr "استنساخ"
-
-msgid "New Master/Slave"
+#, fuzzy
+msgid "Set master/slave"
 msgstr "رئيس/تابع جديد"
 
-msgid "Master/Slave"
-msgstr "الرئيسي/التابع"
-
-msgid "(No primitive resources defined)"
-msgstr "(لم يتم تحديد أي موارد أساسية)"
-
-msgid "(No templates defined)"
-msgstr "(لم يتم تحديد أي قوالب)"
-
-msgid "(No groups defined)"
-msgstr "(لم يتم تحديد أي مجموعات)"
-
-msgid "(No clones defined)"
-msgstr "(لم يتم تحديد أي استنساخ)"
-
-msgid "(No master/slave resources defined)"
-msgstr "(لم يتم تحديد أي موارد رئيسية/تابعة)"
-
-msgid "Fail Count"
-msgstr "عدد مرات الفشل"
-
-msgid "Last Failure"
-msgstr "آخر محاولة فاشلة"
+msgid "Choose a wizard"
+msgstr ""
 
 #, fuzzy
 msgid "Rule"
@@ -1018,6 +1031,9 @@ msgid "Move rule up"
 msgstr "نقل المورد %s"
 
 msgid "Move rule down"
+msgstr ""
+
+msgid "Please select"
 msgstr ""
 
 msgid "Right"
@@ -1060,8 +1076,70 @@ msgstr "كلمة السر:"
 msgid "Login"
 msgstr "دخول"
 
-msgid "Loss Policy"
-msgstr "سياسة الفقد"
+msgid "Version:"
+msgstr ""
+
+msgid "Stack:"
+msgstr ""
+
+msgid "DC:"
+msgstr ""
+
+msgid "UI:"
+msgstr ""
+
+#, fuzzy
+msgid "Report"
+msgstr "إعادة تعيين"
+
+#, fuzzy
+msgid "Add resource"
+msgstr "تحرير مورد"
+
+#, fuzzy
+msgid "Add constraint"
+msgstr "تحرير قيد"
+
+#, fuzzy
+msgid "Add template"
+msgstr "تحرير القالب"
+
+msgid "Manage"
+msgstr ""
+
+#, fuzzy
+msgid "Configuration"
+msgstr "تكوين CRM"
+
+msgid "Enable the simulation mode"
+msgstr ""
+
+msgid "Simulator"
+msgstr ""
+
+msgid "Disable the simulation mode"
+msgstr ""
+
+msgid "Production"
+msgstr ""
+
+#, fuzzy
+msgid "Profile"
+msgstr "الموفر"
+
+msgid "Logout"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+#, fuzzy
+msgid "Delete template"
+msgstr "إنشاء قالب"
+
+#, fuzzy
+msgid "Delete ticket"
+msgstr "حذف مورد"
 
 #, fuzzy
 msgid "Delete user"
@@ -1076,6 +1154,9 @@ msgstr "%{workflow}: %{step}"
 
 msgid "The configuration has been applied."
 msgstr "تم تطبيق التكوين."
+
+msgid "Done"
+msgstr "تم"
 
 msgid "The following configuration will be applied to the cluster:"
 msgstr "سيتم تطبيق التكوين التالي على المجموعة:"

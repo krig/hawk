@@ -14,6 +14,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "Remove"
+msgstr "Ta bort"
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nej"
+
 msgid "Any changes will be lost - do you wish to proceed?"
 msgstr "Alla ändringar går förlorade. Vill du fortsätta?"
 
@@ -38,12 +47,6 @@ msgstr ""
 
 msgid "Maintenance"
 msgstr "Underhåll"
-
-msgid "Yes"
-msgstr "Ja"
-
-msgid "No"
-msgstr "Nej"
 
 msgid "Standby"
 msgstr "Vänteläge"
@@ -75,30 +78,33 @@ msgstr "Användar-ID"
 msgid "Unable to create shadow CIB"
 msgstr "Det går inte att skapa skugg-CIB"
 
-msgid "1 node configured"
-msgid_plural "%{num} nodes configured"
-msgstr[0] "1 nod har konfigurerats"
-msgstr[1] "%{num} noder har konfigurerats"
-
-msgid "1 resource configured"
-msgid_plural "%{num} resources configured"
-msgstr[0] "1 resurs har konfigurerats"
-msgstr[1] "%{num} resurser har konfigurerats"
-
-msgid "Edit Clone"
-msgstr "Redigera klon"
-
 msgid "Create Clone"
 msgstr "Skapa klon"
 
 msgid "Clone created successfully"
 msgstr "Klonen har skapats"
 
+msgid "Edit Clone"
+msgstr "Redigera klon"
+
 msgid "Clone updated successfully"
 msgstr "Klonen har uppdaterats"
 
-msgid "Edit Colocation Constraint"
-msgstr "Redigera colocationbegränsning"
+#, fuzzy
+msgid "Clone deleted successfully"
+msgstr "Rollen har skapats"
+
+#, fuzzy
+msgid "Error deleting %s"
+msgstr "Fel vid borttagning av resurs"
+
+#, fuzzy
+msgid "Clones"
+msgstr "Klon"
+
+#, fuzzy
+msgid "The clone does not exist"
+msgstr "Roll-ID \"%{id}\" finns inte"
 
 msgid "Create Colocation Constraint"
 msgstr "Skapa colocationbegränsning"
@@ -106,30 +112,32 @@ msgstr "Skapa colocationbegränsning"
 msgid "Constraint created successfully"
 msgstr "Begränsningen har skapats"
 
+msgid "Edit Colocation Constraint"
+msgstr "Redigera colocationbegränsning"
+
 msgid "Constraint updated successfully"
 msgstr "Begränsningen uppdaterades"
+
+#, fuzzy
+msgid "Colocation deleted successfully"
+msgstr "Rollen har skapats"
+
+#, fuzzy
+msgid "Colocation Constraints"
+msgstr "Redigera colocationbegränsning"
+
+msgid "The colocation constraint does not exist"
+msgstr ""
 
 msgid "Constraints"
 msgstr "Begränsningar"
 
+#, fuzzy
+msgid "Configuration updated successfully"
+msgstr "Begränsningen uppdaterades"
+
 msgid "Cluster Configuration"
 msgstr "Klusterinställningar"
-
-msgid "Your changes have been saved"
-msgstr "Ändringarna har sparats"
-
-msgid "Unable to apply changes: %{msg}"
-msgstr "Det går inte att verkställa ändringarna: %{msg}"
-
-msgid ""
-"Can't set property %{p}, because the value contains both single and double quo"
-"tes"
-msgstr ""
-"Det går inte att ställa in egenskapen %{p} eftersom värdet innehåller både enk"
-"la och dubbla citattecken"
-
-msgid "Cluster Dashboard"
-msgstr "Klusterinstrumentpanel"
 
 msgid "Dashboard"
 msgstr "Instrumentpanel"
@@ -155,23 +163,46 @@ msgstr "Fel:"
 msgid "Required parameters \"left\" and \"right\" not specified"
 msgstr "De begärda parametrarna \"left\" och \"right\" har inte angetts"
 
-msgid "Edit Group"
-msgstr "Redigera grupp"
-
 msgid "Create Group"
 msgstr "Skapa grupp"
 
 msgid "Group created successfully"
 msgstr "Gruppen har skapats"
 
+msgid "Edit Group"
+msgstr "Redigera grupp"
+
 msgid "Group updated successfully"
 msgstr "Gruppen har uppdaterats"
+
+#, fuzzy
+msgid "Group deleted successfully"
+msgstr "Gruppen har skapats"
+
+#, fuzzy
+msgid "Groups"
+msgstr "Grupp"
+
+#, fuzzy
+msgid "The group does not exist"
+msgstr "Roll-ID \"%{id}\" finns inte"
+
+msgid "Create Location Constraint"
+msgstr "Skapa platsbegränsning"
 
 msgid "Edit Location Constraint"
 msgstr "Redigera platsbegränsning"
 
-msgid "Create Location Constraint"
-msgstr "Skapa platsbegränsning"
+#, fuzzy
+msgid "Location deleted successfully"
+msgstr "Rollen har skapats"
+
+#, fuzzy
+msgid "Location Constraints"
+msgstr "Redigera platsbegränsning"
+
+msgid "The location constraint does not exist"
+msgstr ""
 
 msgid "%{cmd} failed (status: %{status})"
 msgstr "%{cmd} misslyckades (status: %{status})"
@@ -200,27 +231,48 @@ msgstr "Den begärda parametern \"ticket\" har inte angetts"
 msgid "Error invoking %{cmd}: %{msg}"
 msgstr "Fel vid anrop av %{cmd}: %{msg}"
 
-msgid "Edit Master/Slave"
-msgstr "Redigera master/slav"
-
 msgid "Create Master/Slave"
 msgstr "Skapa master/slav"
 
 msgid "Master/Slave created successfully"
 msgstr "Master/slav skapades"
 
+msgid "Edit Master/Slave"
+msgstr "Redigera master/slav"
+
 msgid "Master/Slave updated successfully"
 msgstr "Master/slav uppdaterades"
+
+#, fuzzy
+msgid "Master/Slave deleted successfully"
+msgstr "Master/slav skapades"
+
+msgid "Master/Slave"
+msgstr "Master/slav"
+
+msgid "The master/slave does not exist"
+msgstr ""
 
 #, fuzzy
 msgid "Nodes"
 msgstr "Nod"
 
+msgid "Create Order Constraint"
+msgstr "Skapa ordningsbegränsning"
+
 msgid "Edit Order Constraint"
 msgstr "Redigera ordningsbegränsning"
 
-msgid "Create Order Constraint"
-msgstr "Skapa ordningsbegränsning"
+#, fuzzy
+msgid "Order deleted successfully"
+msgstr "Användaren har skapats"
+
+#, fuzzy
+msgid "Order Constraints"
+msgstr "Redigera ordningsbegränsning"
+
+msgid "The order constraint does not exist"
+msgstr ""
 
 msgid "Welcome"
 msgstr ""
@@ -228,18 +280,40 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-msgid "Create Resource"
-msgstr "Skapa resurs"
+#, fuzzy
+msgid "Create Primitive"
+msgstr "Tillgängliga primitiver"
 
-msgid "Resource created successfully"
-msgstr "Resursen har skapats"
+#, fuzzy
+msgid "Primitive created successfully"
+msgstr "Mallen har skapats"
 
-msgid "Resource updated successfully"
-msgstr "Resursen uppdaterades"
+#, fuzzy
+msgid "Edit Primitive"
+msgstr "Primitiv"
+
+#, fuzzy
+msgid "Primitive updated successfully"
+msgstr "Mallen har uppdaterats"
+
+#, fuzzy
+msgid "Primitive deleted successfully"
+msgstr "Rollen har skapats"
 
 #, fuzzy
 msgid "Primitives"
 msgstr "Primitiv"
+
+#, fuzzy
+msgid "The primitive does not exist"
+msgstr "Roll-ID \"%{id}\" finns inte"
+
+#, fuzzy
+msgid "Preferences updated successfully"
+msgstr "Resursen uppdaterades"
+
+msgid "Preferences"
+msgstr "Inställningar"
 
 msgid "Resources"
 msgstr "Resurser"
@@ -260,10 +334,6 @@ msgstr "Rollen har uppdaterats"
 msgid "Role deleted successfully"
 msgstr "Rollen har skapats"
 
-#, fuzzy
-msgid "Error deleting %s"
-msgstr "Fel vid borttagning av resurs"
-
 msgid "Roles"
 msgstr "Roller"
 
@@ -282,30 +352,46 @@ msgstr "Du är utloggad"
 msgid "Log In"
 msgstr "Logga in"
 
-#, fuzzy
-msgid "Preferences updated successfully"
-msgstr "Resursen uppdaterades"
-
-msgid "Preferences"
-msgstr "Inställningar"
-
-msgid "Edit Template"
-msgstr "Redigera mall"
-
 msgid "Create Template"
 msgstr "Skapa mall"
 
 msgid "Template created successfully"
 msgstr "Mallen har skapats"
 
+msgid "Edit Template"
+msgstr "Redigera mall"
+
 msgid "Template updated successfully"
 msgstr "Mallen har uppdaterats"
+
+#, fuzzy
+msgid "Template deleted successfully"
+msgstr "Mallen har skapats"
+
+#, fuzzy
+msgid "Templates"
+msgstr "Mall"
+
+#, fuzzy
+msgid "The template does not exist"
+msgstr "Roll-ID \"%{id}\" finns inte"
+
+msgid "Create Ticket Constraint"
+msgstr "Skapa biljettbegränsning"
 
 msgid "Edit Ticket Constraint"
 msgstr "Redigera biljettbegränsning"
 
-msgid "Create Ticket Constraint"
-msgstr "Skapa biljettbegränsning"
+#, fuzzy
+msgid "Tciket deleted successfully"
+msgstr "Rollen har skapats"
+
+#, fuzzy
+msgid "Ticket Constraints"
+msgstr "Redigera biljettbegränsning"
+
+msgid "The ticket constraint does not exist"
+msgstr ""
 
 msgid "Create User"
 msgstr "Skapa användare"
@@ -330,57 +416,8 @@ msgstr "Användare"
 msgid "The user does not exist"
 msgstr ""
 
-msgid "Cluster Setup Wizard"
-msgstr "Klusterinställningsguide"
-
-msgid "Invalid password"
-msgstr "Ogiltigt lösenord"
-
-msgid "Root Password"
-msgstr "Root-lösenord"
-
-msgid ""
-"The root password is required in order for this wizard template to make config"
-"uration changes."
+msgid "Use a wizard"
 msgstr ""
-"Rotlösenordet måste anges för att det ska gå att göra konfigurationsändringar "
-"med den här guidemallen."
-
-msgid "The root password for this system"
-msgstr "Rotlösenordet för det här systemet."
-
-msgid "\"Error: #{result}\""
-msgstr "\"Fel: #{result}\""
-
-msgid "Parameters"
-msgstr "Parametrar"
-
-msgid "Confirm"
-msgstr "Bekräfta"
-
-msgid "Done"
-msgstr "Klar"
-
-msgid "Required parameter \"%{param}\" not specified"
-msgstr "Den begärda parametern \"%{param}\" har inte angetts"
-
-msgid "Permission denied - you do not have write access to the CIB."
-msgstr "Åtkomst nekad - du har inte skrivbehörighet för CIB:n."
-
-msgid "Wizard templates and/or workflows are missing"
-msgstr "Mallar och/eller arbetsflöden för guiden saknas"
-
-msgid "Workflow \"%s\" not found"
-msgstr "Arbetsflödet \"%s\" hittades inte"
-
-msgid "Error parsing template \"%s\""
-msgstr "Fel vid tolkning av mallen \"%s\""
-
-msgid "Error parsing workflow \"%s\""
-msgstr "Fel vid tolkning av arbetsflödet \"%s\""
-
-msgid "Data collection in progress (%{from_time} to %{to_time})..."
-msgstr "Datainsamling pågår (%{from_time} till %{to_time})..."
 
 #, fuzzy
 msgid "Revert"
@@ -388,6 +425,9 @@ msgstr "Återställ"
 
 msgid "Apply"
 msgstr ""
+
+msgid "Data collection in progress (%{from_time} to %{to_time})..."
+msgstr "Datainsamling pågår (%{from_time} till %{to_time})..."
 
 #, fuzzy
 msgid "Create"
@@ -525,6 +565,9 @@ msgstr "Det går inte att skapa resurs: %{msg}"
 msgid "Resource ID \"%{id}\" does not exist"
 msgstr "Resurs-ID:t \"%{id}\" finns inte"
 
+msgid "is required"
+msgstr ""
+
 #, fuzzy
 msgid "Unable to create: %{msg}"
 msgstr "Det går inte att skapa roll: %{msg}"
@@ -563,9 +606,6 @@ msgstr "%s har inte installerats"
 msgid "Invalid username or password"
 msgstr "Fel användarnamn eller lösenord"
 
-msgid "Language is required"
-msgstr ""
-
 msgid "Invalid Ticket ID"
 msgstr "Ogiltigt biljett-ID"
 
@@ -579,14 +619,14 @@ msgstr ""
 msgid "Invalid User ID"
 msgstr "Ogiltigt biljett-ID"
 
+msgid "Back"
+msgstr "Tillbaka"
+
 msgid "Meta Attributes"
 msgstr "Metaattribut"
 
 msgid "Add"
 msgstr "Lägg till"
-
-msgid "Remove"
-msgstr "Ta bort"
 
 msgid "You must enter a value"
 msgstr "Du måste ange ett värde"
@@ -597,14 +637,12 @@ msgstr "Klon-ID"
 msgid "Child Resource"
 msgstr "Underordnad resurs"
 
-msgid "Revert Changes"
-msgstr "Återställ ändringar"
+msgid "Are you sure you wish to delete %s?"
+msgstr "Är du säker på att du vill ta bort %s?"
 
-msgid "Back"
-msgstr "Tillbaka"
-
-msgid "Apply Changes"
-msgstr "Verkställ ändringar"
+#, fuzzy
+msgid "Delete clone"
+msgstr "Ta bort resurs"
 
 msgid "Link set"
 msgstr "Länkuppsättning"
@@ -624,20 +662,13 @@ msgstr "Begränsnings-ID"
 msgid "Score"
 msgstr "Poäng"
 
-msgid "Create Constraint"
-msgstr "Skapa begränsning"
-
-msgid "Edit Constraint"
-msgstr "Redigera begränsning"
-
-msgid "Delete Constraint"
+#, fuzzy
+msgid "Delete colocation"
 msgstr "Ta bort begränsning"
 
-msgid "Are you sure you wish to delete %s?"
-msgstr "Är du säker på att du vill ta bort %s?"
-
-msgid "New Constraint"
-msgstr "Ny begränsning"
+#, fuzzy
+msgid "Add a constraint"
+msgstr "Redigera begränsning"
 
 msgid "Location"
 msgstr "Plats"
@@ -651,35 +682,11 @@ msgstr "Ordning"
 msgid "Ticket"
 msgstr "Biljett"
 
-msgid "(No location constraints defined)"
-msgstr "(Inga platsbegränsningar definierade)"
-
-msgid "[Constraint is too complex to display]"
-msgstr "[Begränsningen är för komplex att visa]"
-
-msgid "(No colocation constraints defined)"
-msgstr "(Inga colocationbegränsningar definierade)"
-
-msgid "(No order constraints defined)"
-msgstr "(Inga ordningsbegränsningar definierade)"
-
-msgid "(No ticket constraints defined)"
-msgstr "(Inga biljettbegränsningar definierade)"
-
-msgid "CRM Configuration"
-msgstr "CRM-konfigurering"
-
 msgid "Resource Defaults"
 msgstr "Resursstandard"
 
 msgid "Operation Defaults"
 msgstr "Åtgärdsstandard"
-
-msgid "No cluster properties set in %{group}"
-msgstr "Inga klusteregenskaper angivna i %{group}"
-
-msgid "Edit"
-msgstr "Redigera"
 
 msgid "Username:"
 msgstr "Användarnamn:"
@@ -761,6 +768,10 @@ msgstr "Resursens varaktighet"
 msgid "Status"
 msgstr "Status"
 
+#, fuzzy
+msgid "Errors"
+msgstr "Fel:"
+
 msgid "No transitions found for the specified time period."
 msgstr "Inga överföringar hittades för den angivna tidsperioden."
 
@@ -815,6 +826,10 @@ msgstr "Gruppera underordnade"
 msgid "Available Primitives"
 msgstr "Tillgängliga primitiver"
 
+#, fuzzy
+msgid "Delete group"
+msgstr "Ta bort resurs"
+
 msgid "Start Time not specified"
 msgstr "Starttid har inte angetts"
 
@@ -826,6 +841,9 @@ msgstr "hb_report genereras..."
 
 msgid "Download hb_report"
 msgstr "Ladda ner hb_report"
+
+msgid "Heartbeat"
+msgstr ""
 
 #, fuzzy
 msgid "Please ensure Javascript is enabled"
@@ -857,6 +875,13 @@ msgstr "Visa regelredigerare"
 
 msgid "Resource"
 msgstr "Resurs"
+
+#, fuzzy
+msgid "Delete location"
+msgstr "Ta bort begränsning"
+
+msgid "History"
+msgstr ""
 
 msgid "Fence Node"
 msgstr "Staketnod"
@@ -897,6 +922,10 @@ msgstr "Återkalla"
 msgid "Master/Slave ID"
 msgstr "Master/slav-ID"
 
+#, fuzzy
+msgid "Delete master/slave"
+msgstr "Skapa master/slav"
+
 msgid "Getting recent events (last hour)..."
 msgstr "Hämtar senaste händelser (senaste timmen)..."
 
@@ -921,6 +950,10 @@ msgstr "Inga attribut definierade"
 msgid "Symmetrical"
 msgstr "Symmetrisk"
 
+#, fuzzy
+msgid "Delete order"
+msgstr "Ta bort resurs"
+
 msgid "Close"
 msgstr "Stäng"
 
@@ -929,6 +962,12 @@ msgstr ""
 
 msgid "PDF"
 msgstr ""
+
+msgid "Parameters"
+msgstr "Parametrar"
+
+msgid "Edit"
+msgstr "Redigera"
 
 msgid "There is already a monitor op with this interval."
 msgstr "Det finns redan en övervakningsop med det här intervallet."
@@ -951,62 +990,32 @@ msgstr "Typ"
 msgid "Use Template"
 msgstr "Använd mall"
 
-msgid "Edit Resource"
-msgstr "Redigera resurs"
-
-msgid "Delete Resource"
+#, fuzzy
+msgid "Delete primitive"
 msgstr "Ta bort resurs"
 
-msgid "New Resource"
-msgstr "Ny resurs"
+#, fuzzy
+msgid "Add a resource"
+msgstr "Redigera resurs"
 
-msgid "Primitive"
-msgstr "Primitiv"
+#, fuzzy
+msgid "Add a primitive"
+msgstr "Tillgängliga primitiver"
 
-msgid "New Template"
-msgstr "Ny mall"
+#, fuzzy
+msgid "Add a group"
+msgstr "Redigera grupp"
 
-msgid "Template"
-msgstr "Mall"
+#, fuzzy
+msgid "Clone a resource"
+msgstr "Skapa resurs"
 
-msgid "New Group"
-msgstr "Ny grupp"
-
-msgid "Group"
-msgstr "Grupp"
-
-msgid "New Clone"
-msgstr "Ny klon"
-
-msgid "Clone"
-msgstr "Klon"
-
-msgid "New Master/Slave"
+#, fuzzy
+msgid "Set master/slave"
 msgstr "Ny master/slav"
 
-msgid "Master/Slave"
-msgstr "Master/slav"
-
-msgid "(No primitive resources defined)"
-msgstr "(Inga primitivresurser definierade)"
-
-msgid "(No templates defined)"
-msgstr "(Inga mallar definierade)"
-
-msgid "(No groups defined)"
-msgstr "(Inga grupper definierade)"
-
-msgid "(No clones defined)"
-msgstr "(Inga kloner har angetts)"
-
-msgid "(No master/slave resources defined)"
-msgstr "(Inga master-/slavresurser definierade)"
-
-msgid "Fail Count"
-msgstr "Felräkning"
-
-msgid "Last Failure"
-msgstr "Senaste fel"
+msgid "Choose a wizard"
+msgstr ""
 
 #, fuzzy
 msgid "Rule"
@@ -1024,6 +1033,9 @@ msgid "Move rule up"
 msgstr "Flytta resursen %s"
 
 msgid "Move rule down"
+msgstr ""
+
+msgid "Please select"
 msgstr ""
 
 msgid "Right"
@@ -1066,8 +1078,70 @@ msgstr "Lösenord:"
 msgid "Login"
 msgstr "Logga in"
 
-msgid "Loss Policy"
-msgstr "Förlustprincip"
+msgid "Version:"
+msgstr ""
+
+msgid "Stack:"
+msgstr ""
+
+msgid "DC:"
+msgstr ""
+
+msgid "UI:"
+msgstr ""
+
+#, fuzzy
+msgid "Report"
+msgstr "Återställ"
+
+#, fuzzy
+msgid "Add resource"
+msgstr "Redigera resurs"
+
+#, fuzzy
+msgid "Add constraint"
+msgstr "Redigera begränsning"
+
+#, fuzzy
+msgid "Add template"
+msgstr "Redigera mall"
+
+msgid "Manage"
+msgstr ""
+
+#, fuzzy
+msgid "Configuration"
+msgstr "CRM-konfigurering"
+
+msgid "Enable the simulation mode"
+msgstr ""
+
+msgid "Simulator"
+msgstr ""
+
+msgid "Disable the simulation mode"
+msgstr ""
+
+msgid "Production"
+msgstr ""
+
+#, fuzzy
+msgid "Profile"
+msgstr "Leverantör"
+
+msgid "Logout"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+#, fuzzy
+msgid "Delete template"
+msgstr "Skapa mall"
+
+#, fuzzy
+msgid "Delete ticket"
+msgstr "Ta bort resurs"
 
 #, fuzzy
 msgid "Delete user"
@@ -1082,6 +1156,9 @@ msgstr "%{workflow}: %{step}"
 
 msgid "The configuration has been applied."
 msgstr "Konfigurationen har verkställts."
+
+msgid "Done"
+msgstr "Klar"
 
 msgid "The following configuration will be applied to the cluster:"
 msgstr "Följande konfiguration används för klustret:"

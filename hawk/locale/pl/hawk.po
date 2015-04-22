@@ -15,6 +15,15 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 ||"
 " n%100>=20) ? 1 : 2;\n"
 
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Yes"
+msgstr "Tak"
+
+msgid "No"
+msgstr "Nie"
+
 msgid "Any changes will be lost - do you wish to proceed?"
 msgstr "Wszystkie zmiany zostaną utracone - czy kontynuować?"
 
@@ -43,12 +52,6 @@ msgstr ""
 
 msgid "Maintenance"
 msgstr "Utrzymanie"
-
-msgid "Yes"
-msgstr "Tak"
-
-msgid "No"
-msgstr "Nie"
 
 msgid "Standby"
 msgstr "Stan gotowości"
@@ -80,32 +83,33 @@ msgstr "Identyfikator użytkownika (UID)"
 msgid "Unable to create shadow CIB"
 msgstr "Nie można utworzyć lustrzanego CIB"
 
-msgid "1 node configured"
-msgid_plural "%{num} nodes configured"
-msgstr[0] "1 węzeł skonfigurowany"
-msgstr[1] "%{num} węzły skonfigurowane"
-msgstr[2] "%{num} węzłów skonfigurowanych"
-
-msgid "1 resource configured"
-msgid_plural "%{num} resources configured"
-msgstr[0] "1 zasób skonfigurowany"
-msgstr[1] "%{num} zasoby skonfigurowane"
-msgstr[2] "%{num} zasobów skonfigurowanych"
-
-msgid "Edit Clone"
-msgstr "Edytuj klon"
-
 msgid "Create Clone"
 msgstr "Klonuj"
 
 msgid "Clone created successfully"
 msgstr "Klon został utworzony"
 
+msgid "Edit Clone"
+msgstr "Edytuj klon"
+
 msgid "Clone updated successfully"
 msgstr "Klon został zaktualizowany"
 
-msgid "Edit Colocation Constraint"
-msgstr "Edycja ograniczenia kolokacji"
+#, fuzzy
+msgid "Clone deleted successfully"
+msgstr "Rola została utworzona"
+
+#, fuzzy
+msgid "Error deleting %s"
+msgstr "Błąd podczas usuwania zasobu"
+
+#, fuzzy
+msgid "Clones"
+msgstr "Klonuj"
+
+#, fuzzy
+msgid "The clone does not exist"
+msgstr "Rola o identyfikatorze \"%{id}\" nie istnieje"
 
 msgid "Create Colocation Constraint"
 msgstr "Tworzenie ograniczenia kolokacji"
@@ -113,30 +117,32 @@ msgstr "Tworzenie ograniczenia kolokacji"
 msgid "Constraint created successfully"
 msgstr "Ograniczenie zostało utworzone"
 
+msgid "Edit Colocation Constraint"
+msgstr "Edycja ograniczenia kolokacji"
+
 msgid "Constraint updated successfully"
 msgstr "Ograniczenie zostało zaktualizowane"
+
+#, fuzzy
+msgid "Colocation deleted successfully"
+msgstr "Rola została utworzona"
+
+#, fuzzy
+msgid "Colocation Constraints"
+msgstr "Edycja ograniczenia kolokacji"
+
+msgid "The colocation constraint does not exist"
+msgstr ""
 
 msgid "Constraints"
 msgstr "Ograniczenia"
 
+#, fuzzy
+msgid "Configuration updated successfully"
+msgstr "Ograniczenie zostało zaktualizowane"
+
 msgid "Cluster Configuration"
 msgstr "Konfiguracja klastra"
-
-msgid "Your changes have been saved"
-msgstr "Zmiany zostały zapisane"
-
-msgid "Unable to apply changes: %{msg}"
-msgstr "Nie można zastosować zmian: %{msg}"
-
-msgid ""
-"Can't set property %{p}, because the value contains both single and double quo"
-"tes"
-msgstr ""
-"Nie można ustawić właściwości %{p}, ponieważ wartość zawiera cudzysłowy zarówn"
-"o pojedyncze, jak i podwójne"
-
-msgid "Cluster Dashboard"
-msgstr "Pulpit nawigacyjny klastra"
 
 msgid "Dashboard"
 msgstr "Pulpit nawigacyjny"
@@ -162,23 +168,46 @@ msgstr "Błąd:"
 msgid "Required parameters \"left\" and \"right\" not specified"
 msgstr "Nie podano wymaganych parametrów \"left\" i \"right\""
 
-msgid "Edit Group"
-msgstr "Edytuj grupę"
-
 msgid "Create Group"
 msgstr "Utwórz grupę"
 
 msgid "Group created successfully"
 msgstr "Grupa została utworzona"
 
+msgid "Edit Group"
+msgstr "Edytuj grupę"
+
 msgid "Group updated successfully"
 msgstr "Grupa została zaktualizowana"
+
+#, fuzzy
+msgid "Group deleted successfully"
+msgstr "Grupa została utworzona"
+
+#, fuzzy
+msgid "Groups"
+msgstr "Grupa"
+
+#, fuzzy
+msgid "The group does not exist"
+msgstr "Rola o identyfikatorze \"%{id}\" nie istnieje"
+
+msgid "Create Location Constraint"
+msgstr "Tworzenie ograniczenia położenia"
 
 msgid "Edit Location Constraint"
 msgstr "Edytuj ograniczenia położenia"
 
-msgid "Create Location Constraint"
-msgstr "Tworzenie ograniczenia położenia"
+#, fuzzy
+msgid "Location deleted successfully"
+msgstr "Rola została utworzona"
+
+#, fuzzy
+msgid "Location Constraints"
+msgstr "Edytuj ograniczenia położenia"
+
+msgid "The location constraint does not exist"
+msgstr ""
 
 msgid "%{cmd} failed (status: %{status})"
 msgstr "Polecenie %{cmd} się nie powiodło (stan: %{status})"
@@ -207,27 +236,48 @@ msgstr "Nie podano wymaganego parametru \"ticket\" (żeton)"
 msgid "Error invoking %{cmd}: %{msg}"
 msgstr "Błąd wywołania %{cmd}: %{msg}"
 
-msgid "Edit Master/Slave"
-msgstr "Edytuj nośnik nadrzędny/podrzędny"
-
 msgid "Create Master/Slave"
 msgstr "Utwórz nośnik nadrzędny/podrzędny"
 
 msgid "Master/Slave created successfully"
 msgstr "Nośnik nadrzędny/podrzędny został utworzony"
 
+msgid "Edit Master/Slave"
+msgstr "Edytuj nośnik nadrzędny/podrzędny"
+
 msgid "Master/Slave updated successfully"
 msgstr "Nośnik nadrzędny/podrzędny został zaktualizowany"
+
+#, fuzzy
+msgid "Master/Slave deleted successfully"
+msgstr "Nośnik nadrzędny/podrzędny został utworzony"
+
+msgid "Master/Slave"
+msgstr "Główny/podległy"
+
+msgid "The master/slave does not exist"
+msgstr ""
 
 #, fuzzy
 msgid "Nodes"
 msgstr "Węzeł"
 
+msgid "Create Order Constraint"
+msgstr "Tworzenie ograniczenia porządku"
+
 msgid "Edit Order Constraint"
 msgstr "Edycja ograniczenia porządku"
 
-msgid "Create Order Constraint"
-msgstr "Tworzenie ograniczenia porządku"
+#, fuzzy
+msgid "Order deleted successfully"
+msgstr "Użytkownik został utworzony"
+
+#, fuzzy
+msgid "Order Constraints"
+msgstr "Edycja ograniczenia porządku"
+
+msgid "The order constraint does not exist"
+msgstr ""
 
 msgid "Welcome"
 msgstr ""
@@ -235,18 +285,40 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-msgid "Create Resource"
-msgstr "Utwórz zasób"
+#, fuzzy
+msgid "Create Primitive"
+msgstr "Dostępne elementy podstawowe"
 
-msgid "Resource created successfully"
-msgstr "Zasób został utworzony"
+#, fuzzy
+msgid "Primitive created successfully"
+msgstr "Szablon został utworzony pomyślnie"
 
-msgid "Resource updated successfully"
-msgstr "Zasób został uaktualniony"
+#, fuzzy
+msgid "Edit Primitive"
+msgstr "Element podstawowy"
+
+#, fuzzy
+msgid "Primitive updated successfully"
+msgstr "Szablon został zaktualizowany pomyślnie"
+
+#, fuzzy
+msgid "Primitive deleted successfully"
+msgstr "Rola została utworzona"
 
 #, fuzzy
 msgid "Primitives"
 msgstr "Element podstawowy"
+
+#, fuzzy
+msgid "The primitive does not exist"
+msgstr "Rola o identyfikatorze \"%{id}\" nie istnieje"
+
+#, fuzzy
+msgid "Preferences updated successfully"
+msgstr "Zasób został uaktualniony"
+
+msgid "Preferences"
+msgstr "Preferencje"
 
 msgid "Resources"
 msgstr "Zasoby"
@@ -267,10 +339,6 @@ msgstr "Rola została zaktualizowana"
 msgid "Role deleted successfully"
 msgstr "Rola została utworzona"
 
-#, fuzzy
-msgid "Error deleting %s"
-msgstr "Błąd podczas usuwania zasobu"
-
 msgid "Roles"
 msgstr "Role"
 
@@ -289,30 +357,46 @@ msgstr "Wylogowano cię."
 msgid "Log In"
 msgstr "Zaloguj"
 
-#, fuzzy
-msgid "Preferences updated successfully"
-msgstr "Zasób został uaktualniony"
-
-msgid "Preferences"
-msgstr "Preferencje"
-
-msgid "Edit Template"
-msgstr "Edycja szablonu"
-
 msgid "Create Template"
 msgstr "Utwórz szablon"
 
 msgid "Template created successfully"
 msgstr "Szablon został utworzony pomyślnie"
 
+msgid "Edit Template"
+msgstr "Edycja szablonu"
+
 msgid "Template updated successfully"
 msgstr "Szablon został zaktualizowany pomyślnie"
+
+#, fuzzy
+msgid "Template deleted successfully"
+msgstr "Szablon został utworzony pomyślnie"
+
+#, fuzzy
+msgid "Templates"
+msgstr "Szablon"
+
+#, fuzzy
+msgid "The template does not exist"
+msgstr "Rola o identyfikatorze \"%{id}\" nie istnieje"
+
+msgid "Create Ticket Constraint"
+msgstr "Utwórz ograniczenie żetonu"
 
 msgid "Edit Ticket Constraint"
 msgstr "Edycja ograniczenia żetonu"
 
-msgid "Create Ticket Constraint"
-msgstr "Utwórz ograniczenie żetonu"
+#, fuzzy
+msgid "Tciket deleted successfully"
+msgstr "Rola została utworzona"
+
+#, fuzzy
+msgid "Ticket Constraints"
+msgstr "Edycja ograniczenia żetonu"
+
+msgid "The ticket constraint does not exist"
+msgstr ""
 
 msgid "Create User"
 msgstr "Tworzenie użytkownika"
@@ -337,57 +421,8 @@ msgstr "Użytkownik"
 msgid "The user does not exist"
 msgstr ""
 
-msgid "Cluster Setup Wizard"
-msgstr "Kreator konfiguracji klastra"
-
-msgid "Invalid password"
-msgstr "Nieprawidłowe hasło"
-
-msgid "Root Password"
-msgstr "Hasło administratora"
-
-msgid ""
-"The root password is required in order for this wizard template to make config"
-"uration changes."
+msgid "Use a wizard"
 msgstr ""
-"Hasło użytkownika root jest wymagane przez szablon kreatora w celu dokonania z"
-"mian konfiguracji."
-
-msgid "The root password for this system"
-msgstr "Hasło użytkownika root dla tego systemu"
-
-msgid "\"Error: #{result}\""
-msgstr "\"Błąd: #{result}\""
-
-msgid "Parameters"
-msgstr "Parametry"
-
-msgid "Confirm"
-msgstr "Potwierdzenie"
-
-msgid "Done"
-msgstr "Zakończono"
-
-msgid "Required parameter \"%{param}\" not specified"
-msgstr "Nie podano wymaganego parametru \"%{param}\""
-
-msgid "Permission denied - you do not have write access to the CIB."
-msgstr "Odmowa uprawnień — nie masz dostępu z prawem zapisu do bazy danych CIB."
-
-msgid "Wizard templates and/or workflows are missing"
-msgstr "Brak szablonów i/lub przepływów pracy kreatora"
-
-msgid "Workflow \"%s\" not found"
-msgstr "Nie znaleziono przepływu \"%s\""
-
-msgid "Error parsing template \"%s\""
-msgstr "Błąd przetwarzania szablonu \"%s\""
-
-msgid "Error parsing workflow \"%s\""
-msgstr "Błąd przetwarzania przepływu \"%s\""
-
-msgid "Data collection in progress (%{from_time} to %{to_time})..."
-msgstr "Trwa zbieranie danych (%{from_time} do %{to_time})..."
 
 #, fuzzy
 msgid "Revert"
@@ -395,6 +430,9 @@ msgstr "Przywróć"
 
 msgid "Apply"
 msgstr ""
+
+msgid "Data collection in progress (%{from_time} to %{to_time})..."
+msgstr "Trwa zbieranie danych (%{from_time} do %{to_time})..."
 
 #, fuzzy
 msgid "Create"
@@ -534,6 +572,9 @@ msgstr "Nie można utworzyć zasobu: %{msg}"
 msgid "Resource ID \"%{id}\" does not exist"
 msgstr "Zasób o identyfikatorze \"%{id}\" nie istnieje"
 
+msgid "is required"
+msgstr ""
+
 #, fuzzy
 msgid "Unable to create: %{msg}"
 msgstr "Nie można utworzyć roli: %{msg}"
@@ -572,9 +613,6 @@ msgstr "%s nie jest zainstalowany"
 msgid "Invalid username or password"
 msgstr "Nieprawidłowa nazwa użytkownika lub hasło"
 
-msgid "Language is required"
-msgstr ""
-
 msgid "Invalid Ticket ID"
 msgstr "Nieprawidłowy identyfikator żetonu"
 
@@ -588,14 +626,14 @@ msgstr ""
 msgid "Invalid User ID"
 msgstr "Nieprawidłowy identyfikator żetonu"
 
+msgid "Back"
+msgstr "Wstecz"
+
 msgid "Meta Attributes"
 msgstr "Atrybuty meta"
 
 msgid "Add"
 msgstr "Dodaj"
-
-msgid "Remove"
-msgstr "Usuń"
 
 msgid "You must enter a value"
 msgstr "Należy wprowadzić wartość"
@@ -606,14 +644,12 @@ msgstr "Identyfikator klona"
 msgid "Child Resource"
 msgstr "Zasób potomny"
 
-msgid "Revert Changes"
-msgstr "Cofnij zmiany"
+msgid "Are you sure you wish to delete %s?"
+msgstr "Czy na pewno usunąć %s?"
 
-msgid "Back"
-msgstr "Wstecz"
-
-msgid "Apply Changes"
-msgstr "Zastosuj zmiany"
+#, fuzzy
+msgid "Delete clone"
+msgstr "Usuń zasób"
 
 msgid "Link set"
 msgstr "Ustawione połączenie"
@@ -633,20 +669,13 @@ msgstr "Identyfikator ograniczenia"
 msgid "Score"
 msgstr "Punkty"
 
-msgid "Create Constraint"
-msgstr "Utwórz ograniczenie"
-
-msgid "Edit Constraint"
-msgstr "Edycja ograniczenia"
-
-msgid "Delete Constraint"
+#, fuzzy
+msgid "Delete colocation"
 msgstr "Usuń ograniczenie"
 
-msgid "Are you sure you wish to delete %s?"
-msgstr "Czy na pewno usunąć %s?"
-
-msgid "New Constraint"
-msgstr "Dowolne proporcje"
+#, fuzzy
+msgid "Add a constraint"
+msgstr "Edycja ograniczenia"
 
 msgid "Location"
 msgstr "Położenie"
@@ -660,35 +689,11 @@ msgstr "Kolejność"
 msgid "Ticket"
 msgstr "Żeton"
 
-msgid "(No location constraints defined)"
-msgstr "(Nie zdefiniowano ograniczeń położenia)"
-
-msgid "[Constraint is too complex to display]"
-msgstr "[Ograniczenie jest zbyt złożone, aby je wyświetlić]"
-
-msgid "(No colocation constraints defined)"
-msgstr "(Brak zdefiniowanych ograniczeń kolokacji)"
-
-msgid "(No order constraints defined)"
-msgstr "(Brak zdefiniowanych ograniczeń porządku)"
-
-msgid "(No ticket constraints defined)"
-msgstr "(Nie zdefiniowano ograniczeń żetonu)"
-
-msgid "CRM Configuration"
-msgstr "Konfiguracja CRM"
-
 msgid "Resource Defaults"
 msgstr "Wartości domyślne zasobu"
 
 msgid "Operation Defaults"
 msgstr "Wartości domyślne operacji"
-
-msgid "No cluster properties set in %{group}"
-msgstr "Nie ustawiono właściwości klastra w %{group}"
-
-msgid "Edit"
-msgstr "Edycja"
 
 msgid "Username:"
 msgstr "Nazwa użytkownika:"
@@ -774,6 +779,10 @@ msgstr "Trwałość zasobów"
 msgid "Status"
 msgstr "Status"
 
+#, fuzzy
+msgid "Errors"
+msgstr "Błąd:"
+
 msgid "No transitions found for the specified time period."
 msgstr "Nie znaleziono przejść dla określonego okresu."
 
@@ -828,6 +837,10 @@ msgstr "Elementy podrzędne grupy"
 msgid "Available Primitives"
 msgstr "Dostępne elementy podstawowe"
 
+#, fuzzy
+msgid "Delete group"
+msgstr "Usuń zasób"
+
 msgid "Start Time not specified"
 msgstr "Nie podano czasu rozpoczęcia"
 
@@ -839,6 +852,9 @@ msgstr "Trwa generowanie hb_report..."
 
 msgid "Download hb_report"
 msgstr "Pobierz hb_report"
+
+msgid "Heartbeat"
+msgstr ""
 
 #, fuzzy
 msgid "Please ensure Javascript is enabled"
@@ -870,6 +886,13 @@ msgstr "Wyświetl edytor reguł"
 
 msgid "Resource"
 msgstr "Zasoby"
+
+#, fuzzy
+msgid "Delete location"
+msgstr "Usuń ograniczenie"
+
+msgid "History"
+msgstr ""
 
 msgid "Fence Node"
 msgstr "Węzeł odgradzający"
@@ -910,6 +933,10 @@ msgstr "Unieważnij"
 msgid "Master/Slave ID"
 msgstr "Identyfikator elementu nadrzędnego/podrzędnego"
 
+#, fuzzy
+msgid "Delete master/slave"
+msgstr "Utwórz nośnik nadrzędny/podrzędny"
+
 msgid "Getting recent events (last hour)..."
 msgstr "Pobieranie ostatnich zdarzeń (ostatnia godzina)..."
 
@@ -934,6 +961,10 @@ msgstr "Nie zdefiniowano atrybutów"
 msgid "Symmetrical"
 msgstr "Symetrycznie"
 
+#, fuzzy
+msgid "Delete order"
+msgstr "Usuń zasób"
+
 msgid "Close"
 msgstr "Zamknij"
 
@@ -942,6 +973,12 @@ msgstr ""
 
 msgid "PDF"
 msgstr ""
+
+msgid "Parameters"
+msgstr "Parametry"
+
+msgid "Edit"
+msgstr "Edycja"
 
 msgid "There is already a monitor op with this interval."
 msgstr "Istnieje już operacja monitorowania o tym interwale"
@@ -964,62 +1001,32 @@ msgstr "Typ"
 msgid "Use Template"
 msgstr "Użyj szablonu"
 
-msgid "Edit Resource"
-msgstr "Edytuj zasób"
-
-msgid "Delete Resource"
+#, fuzzy
+msgid "Delete primitive"
 msgstr "Usuń zasób"
 
-msgid "New Resource"
-msgstr "Nowy zasób"
+#, fuzzy
+msgid "Add a resource"
+msgstr "Edytuj zasób"
 
-msgid "Primitive"
-msgstr "Element podstawowy"
+#, fuzzy
+msgid "Add a primitive"
+msgstr "Dostępne elementy podstawowe"
 
-msgid "New Template"
-msgstr "Nowy szablon"
+#, fuzzy
+msgid "Add a group"
+msgstr "Edytuj grupę"
 
-msgid "Template"
-msgstr "Szablon"
+#, fuzzy
+msgid "Clone a resource"
+msgstr "Utwórz zasób"
 
-msgid "New Group"
-msgstr "Nowa grupa"
-
-msgid "Group"
-msgstr "Grupa"
-
-msgid "New Clone"
-msgstr "Nowy klon"
-
-msgid "Clone"
-msgstr "Klonuj"
-
-msgid "New Master/Slave"
+#, fuzzy
+msgid "Set master/slave"
 msgstr "Nowy element nadrzędny/podrzędny"
 
-msgid "Master/Slave"
-msgstr "Główny/podległy"
-
-msgid "(No primitive resources defined)"
-msgstr "(Nie zdefiniowano zasobów podstawowych)"
-
-msgid "(No templates defined)"
-msgstr "(Nie zdefiniowano szablonów)"
-
-msgid "(No groups defined)"
-msgstr "(Nie zdefiniowano grup)"
-
-msgid "(No clones defined)"
-msgstr "(Nie zdefiniowano klonów)"
-
-msgid "(No master/slave resources defined)"
-msgstr "(Nie zdefiniowano zasobów głównych/podległych)"
-
-msgid "Fail Count"
-msgstr "Liczba niepowodzeń"
-
-msgid "Last Failure"
-msgstr "Ostatnie niepowodzenie"
+msgid "Choose a wizard"
+msgstr ""
 
 #, fuzzy
 msgid "Rule"
@@ -1037,6 +1044,9 @@ msgid "Move rule up"
 msgstr "Przenieś zasób %s"
 
 msgid "Move rule down"
+msgstr ""
+
+msgid "Please select"
 msgstr ""
 
 msgid "Right"
@@ -1079,8 +1089,70 @@ msgstr "Hasło:"
 msgid "Login"
 msgstr "Zaloguj"
 
-msgid "Loss Policy"
-msgstr "Zasady dotyczące utraty"
+msgid "Version:"
+msgstr ""
+
+msgid "Stack:"
+msgstr ""
+
+msgid "DC:"
+msgstr ""
+
+msgid "UI:"
+msgstr ""
+
+#, fuzzy
+msgid "Report"
+msgstr "Przywróć"
+
+#, fuzzy
+msgid "Add resource"
+msgstr "Edytuj zasób"
+
+#, fuzzy
+msgid "Add constraint"
+msgstr "Edycja ograniczenia"
+
+#, fuzzy
+msgid "Add template"
+msgstr "Edycja szablonu"
+
+msgid "Manage"
+msgstr ""
+
+#, fuzzy
+msgid "Configuration"
+msgstr "Konfiguracja CRM"
+
+msgid "Enable the simulation mode"
+msgstr ""
+
+msgid "Simulator"
+msgstr ""
+
+msgid "Disable the simulation mode"
+msgstr ""
+
+msgid "Production"
+msgstr ""
+
+#, fuzzy
+msgid "Profile"
+msgstr "Dostawca"
+
+msgid "Logout"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+#, fuzzy
+msgid "Delete template"
+msgstr "Utwórz szablon"
+
+#, fuzzy
+msgid "Delete ticket"
+msgstr "Usuń zasób"
 
 #, fuzzy
 msgid "Delete user"
@@ -1095,6 +1167,9 @@ msgstr "%{workflow}: %{step}"
 
 msgid "The configuration has been applied."
 msgstr "Konfiguracja została zastosowana."
+
+msgid "Done"
+msgstr "Zakończono"
 
 msgid "The following configuration will be applied to the cluster:"
 msgstr "Następująca konfiguracja zostanie zastosowana dla tego klastra:"

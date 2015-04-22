@@ -14,6 +14,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+msgid "Remove"
+msgstr "削除"
+
+msgid "Yes"
+msgstr "はい"
+
+msgid "No"
+msgstr "いいえ"
+
 msgid "Any changes will be lost - do you wish to proceed?"
 msgstr "変更内容は失われます。続行しますか?"
 
@@ -36,12 +45,6 @@ msgstr ""
 
 msgid "Maintenance"
 msgstr "メンテナンス"
-
-msgid "Yes"
-msgstr "はい"
-
-msgid "No"
-msgstr "いいえ"
 
 msgid "Standby"
 msgstr "スタンバイ"
@@ -73,28 +76,33 @@ msgstr "ユーザID"
 msgid "Unable to create shadow CIB"
 msgstr "シャドウCIBを生成できません"
 
-msgid "1 node configured"
-msgid_plural "%{num} nodes configured"
-msgstr[0] "1 ノードが設定されました"
-
-msgid "1 resource configured"
-msgid_plural "%{num} resources configured"
-msgstr[0] "1 リソースが設定されました"
-
-msgid "Edit Clone"
-msgstr "クローンの編集"
-
 msgid "Create Clone"
 msgstr "クローンの作成"
 
 msgid "Clone created successfully"
 msgstr "クローンが正常に作成されました"
 
+msgid "Edit Clone"
+msgstr "クローンの編集"
+
 msgid "Clone updated successfully"
 msgstr "クローンが正常に更新されました"
 
-msgid "Edit Colocation Constraint"
-msgstr "コロケーション制約の編集"
+#, fuzzy
+msgid "Clone deleted successfully"
+msgstr "役割が正常に作成されました"
+
+#, fuzzy
+msgid "Error deleting %s"
+msgstr "リソースの削除中にエラーが発生しました"
+
+#, fuzzy
+msgid "Clones"
+msgstr "クローン"
+
+#, fuzzy
+msgid "The clone does not exist"
+msgstr "役割ID「%{id}」は存在しません"
 
 msgid "Create Colocation Constraint"
 msgstr "コロケーション制約の作成"
@@ -102,28 +110,32 @@ msgstr "コロケーション制約の作成"
 msgid "Constraint created successfully"
 msgstr "制約が正常に作成されました"
 
+msgid "Edit Colocation Constraint"
+msgstr "コロケーション制約の編集"
+
 msgid "Constraint updated successfully"
 msgstr "制約が正常に更新されました"
+
+#, fuzzy
+msgid "Colocation deleted successfully"
+msgstr "役割が正常に作成されました"
+
+#, fuzzy
+msgid "Colocation Constraints"
+msgstr "コロケーション制約の編集"
+
+msgid "The colocation constraint does not exist"
+msgstr ""
 
 msgid "Constraints"
 msgstr "制約"
 
+#, fuzzy
+msgid "Configuration updated successfully"
+msgstr "制約が正常に更新されました"
+
 msgid "Cluster Configuration"
 msgstr "クラスタ設定"
-
-msgid "Your changes have been saved"
-msgstr "変更が保存されました"
-
-msgid "Unable to apply changes: %{msg}"
-msgstr "変更を適用できません: %{msg}"
-
-msgid ""
-"Can't set property %{p}, because the value contains both single and double quo"
-"tes"
-msgstr "プロパティ%{p}を設定できません。値に一重引用符と二重引用符の両方が含まれているためです"
-
-msgid "Cluster Dashboard"
-msgstr "クラスタダッシュボード"
 
 msgid "Dashboard"
 msgstr "ダッシュボード"
@@ -149,23 +161,46 @@ msgstr "エラー:"
 msgid "Required parameters \"left\" and \"right\" not specified"
 msgstr "必要なパラメータ「left」と「right」が指定されていません"
 
-msgid "Edit Group"
-msgstr "グループの編集"
-
 msgid "Create Group"
 msgstr "グループの作成"
 
 msgid "Group created successfully"
 msgstr "グループが正常に作成されました"
 
+msgid "Edit Group"
+msgstr "グループの編集"
+
 msgid "Group updated successfully"
 msgstr "グループが正常に更新されました"
+
+#, fuzzy
+msgid "Group deleted successfully"
+msgstr "グループが正常に作成されました"
+
+#, fuzzy
+msgid "Groups"
+msgstr "グループ"
+
+#, fuzzy
+msgid "The group does not exist"
+msgstr "役割ID「%{id}」は存在しません"
+
+msgid "Create Location Constraint"
+msgstr "場所制約の作成"
 
 msgid "Edit Location Constraint"
 msgstr "場所制約の編集"
 
-msgid "Create Location Constraint"
-msgstr "場所制約の作成"
+#, fuzzy
+msgid "Location deleted successfully"
+msgstr "役割が正常に作成されました"
+
+#, fuzzy
+msgid "Location Constraints"
+msgstr "場所制約の編集"
+
+msgid "The location constraint does not exist"
+msgstr ""
 
 msgid "%{cmd} failed (status: %{status})"
 msgstr "%{cmd} 失敗(ステータス: %{status})"
@@ -194,27 +229,48 @@ msgstr "必須パラメータ「ticket」が指定されていません"
 msgid "Error invoking %{cmd}: %{msg}"
 msgstr "%{cmd} の呼び出し中にエラーが発生しました: %{msg}"
 
-msgid "Edit Master/Slave"
-msgstr "マスタ/スレーブの編集"
-
 msgid "Create Master/Slave"
 msgstr "マスタ/スレーブの作成"
 
 msgid "Master/Slave created successfully"
 msgstr "マスタ/スレーブが正常に作成されました"
 
+msgid "Edit Master/Slave"
+msgstr "マスタ/スレーブの編集"
+
 msgid "Master/Slave updated successfully"
 msgstr "マスタ/スレーブが正常に更新されました"
+
+#, fuzzy
+msgid "Master/Slave deleted successfully"
+msgstr "マスタ/スレーブが正常に作成されました"
+
+msgid "Master/Slave"
+msgstr "マスタ/スレーブ"
+
+msgid "The master/slave does not exist"
+msgstr ""
 
 #, fuzzy
 msgid "Nodes"
 msgstr "ノード"
 
+msgid "Create Order Constraint"
+msgstr "順序制約の作成"
+
 msgid "Edit Order Constraint"
 msgstr "順序制約の編集"
 
-msgid "Create Order Constraint"
-msgstr "順序制約の作成"
+#, fuzzy
+msgid "Order deleted successfully"
+msgstr "ユーザが正常に作成されました"
+
+#, fuzzy
+msgid "Order Constraints"
+msgstr "順序制約の編集"
+
+msgid "The order constraint does not exist"
+msgstr ""
 
 msgid "Welcome"
 msgstr ""
@@ -222,18 +278,40 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-msgid "Create Resource"
-msgstr "リソースの作成"
+#, fuzzy
+msgid "Create Primitive"
+msgstr "使用可能なプリミティブ"
 
-msgid "Resource created successfully"
-msgstr "リソースが正常に作成されました"
+#, fuzzy
+msgid "Primitive created successfully"
+msgstr "テンプレートが正常に作成されました"
 
-msgid "Resource updated successfully"
-msgstr "リソースが正常に更新されました"
+#, fuzzy
+msgid "Edit Primitive"
+msgstr "プリミティブ"
+
+#, fuzzy
+msgid "Primitive updated successfully"
+msgstr "テンプレートが正常に更新されました"
+
+#, fuzzy
+msgid "Primitive deleted successfully"
+msgstr "役割が正常に作成されました"
 
 #, fuzzy
 msgid "Primitives"
 msgstr "プリミティブ"
+
+#, fuzzy
+msgid "The primitive does not exist"
+msgstr "役割ID「%{id}」は存在しません"
+
+#, fuzzy
+msgid "Preferences updated successfully"
+msgstr "リソースが正常に更新されました"
+
+msgid "Preferences"
+msgstr "設定"
 
 msgid "Resources"
 msgstr "リソース"
@@ -254,10 +332,6 @@ msgstr "役割が正常に更新されました"
 msgid "Role deleted successfully"
 msgstr "役割が正常に作成されました"
 
-#, fuzzy
-msgid "Error deleting %s"
-msgstr "リソースの削除中にエラーが発生しました"
-
 msgid "Roles"
 msgstr "役割"
 
@@ -276,30 +350,46 @@ msgstr "ログアウトしました"
 msgid "Log In"
 msgstr "ログイン"
 
-#, fuzzy
-msgid "Preferences updated successfully"
-msgstr "リソースが正常に更新されました"
-
-msgid "Preferences"
-msgstr "設定"
-
-msgid "Edit Template"
-msgstr "テンプレートの編集"
-
 msgid "Create Template"
 msgstr "テンプレートの作成"
 
 msgid "Template created successfully"
 msgstr "テンプレートが正常に作成されました"
 
+msgid "Edit Template"
+msgstr "テンプレートの編集"
+
 msgid "Template updated successfully"
 msgstr "テンプレートが正常に更新されました"
+
+#, fuzzy
+msgid "Template deleted successfully"
+msgstr "テンプレートが正常に作成されました"
+
+#, fuzzy
+msgid "Templates"
+msgstr "テンプレート"
+
+#, fuzzy
+msgid "The template does not exist"
+msgstr "役割ID「%{id}」は存在しません"
+
+msgid "Create Ticket Constraint"
+msgstr "チケット制約の作成"
 
 msgid "Edit Ticket Constraint"
 msgstr "チケット制約の編集"
 
-msgid "Create Ticket Constraint"
-msgstr "チケット制約の作成"
+#, fuzzy
+msgid "Tciket deleted successfully"
+msgstr "役割が正常に作成されました"
+
+#, fuzzy
+msgid "Ticket Constraints"
+msgstr "チケット制約の編集"
+
+msgid "The ticket constraint does not exist"
+msgstr ""
 
 msgid "Create User"
 msgstr "ユーザの作成"
@@ -324,55 +414,8 @@ msgstr "ユーザ"
 msgid "The user does not exist"
 msgstr ""
 
-msgid "Cluster Setup Wizard"
-msgstr "クラスタセットアップウィザード"
-
-msgid "Invalid password"
-msgstr "無効なパスワード"
-
-msgid "Root Password"
-msgstr "ルートパスワード"
-
-msgid ""
-"The root password is required in order for this wizard template to make config"
-"uration changes."
-msgstr "このウィザードテンプレートで設定を変更するには、ルートパスワードが必要です。"
-
-msgid "The root password for this system"
-msgstr "このシステムのルートパスワード"
-
-msgid "\"Error: #{result}\""
-msgstr "「エラー: #{result}」"
-
-msgid "Parameters"
-msgstr "引数"
-
-msgid "Confirm"
-msgstr "確認"
-
-msgid "Done"
-msgstr "完了"
-
-msgid "Required parameter \"%{param}\" not specified"
-msgstr "必要なパラメータ「%{param}」が指定されていません"
-
-msgid "Permission denied - you do not have write access to the CIB."
-msgstr "許可が拒否されました - CIBに対する書き込みアクセスがありません。"
-
-msgid "Wizard templates and/or workflows are missing"
-msgstr "ウィザードのテンプレートおよびワークフローがありません"
-
-msgid "Workflow \"%s\" not found"
-msgstr "ワークフロー「%s」が見つかりませんでした"
-
-msgid "Error parsing template \"%s\""
-msgstr "テンプレート「%s」の解析中にエラーが発生しました"
-
-msgid "Error parsing workflow \"%s\""
-msgstr "ワークフロー「%s」の解析中にエラーが発生しました"
-
-msgid "Data collection in progress (%{from_time} to %{to_time})..."
-msgstr "データを収集中です(%{from_time} ～ %{to_time})..."
+msgid "Use a wizard"
+msgstr ""
 
 #, fuzzy
 msgid "Revert"
@@ -380,6 +423,9 @@ msgstr "リセット"
 
 msgid "Apply"
 msgstr ""
+
+msgid "Data collection in progress (%{from_time} to %{to_time})..."
+msgstr "データを収集中です(%{from_time} ～ %{to_time})..."
 
 #, fuzzy
 msgid "Create"
@@ -511,6 +557,9 @@ msgstr "リソースを作成できません: %{msg}"
 msgid "Resource ID \"%{id}\" does not exist"
 msgstr "リソースID「%{id}」が存在しません"
 
+msgid "is required"
+msgstr ""
+
 #, fuzzy
 msgid "Unable to create: %{msg}"
 msgstr "役割を作成できません: %{msg}"
@@ -549,9 +598,6 @@ msgstr "%s はインストールされていません。"
 msgid "Invalid username or password"
 msgstr "ユーザ名またはパスワードが無効です"
 
-msgid "Language is required"
-msgstr ""
-
 msgid "Invalid Ticket ID"
 msgstr "無効なチケットID"
 
@@ -565,14 +611,14 @@ msgstr ""
 msgid "Invalid User ID"
 msgstr "無効なチケットID"
 
+msgid "Back"
+msgstr "戻る"
+
 msgid "Meta Attributes"
 msgstr "メタ属性"
 
 msgid "Add"
 msgstr "追加"
-
-msgid "Remove"
-msgstr "削除"
 
 msgid "You must enter a value"
 msgstr "値を入力してください"
@@ -583,14 +629,12 @@ msgstr "クローンID"
 msgid "Child Resource"
 msgstr "子リソース"
 
-msgid "Revert Changes"
-msgstr "変更を元に戻す"
+msgid "Are you sure you wish to delete %s?"
+msgstr "%s を削除してもよろしいですか?"
 
-msgid "Back"
-msgstr "戻る"
-
-msgid "Apply Changes"
-msgstr "変更の適用"
+#, fuzzy
+msgid "Delete clone"
+msgstr "リソースの削除"
 
 msgid "Link set"
 msgstr "リンクセット"
@@ -610,20 +654,13 @@ msgstr "制約ID"
 msgid "Score"
 msgstr "スコア"
 
-msgid "Create Constraint"
-msgstr "制約の作成"
-
-msgid "Edit Constraint"
-msgstr "制約の編集"
-
-msgid "Delete Constraint"
+#, fuzzy
+msgid "Delete colocation"
 msgstr "制約の削除"
 
-msgid "Are you sure you wish to delete %s?"
-msgstr "%s を削除してもよろしいですか?"
-
-msgid "New Constraint"
-msgstr "新規制約"
+#, fuzzy
+msgid "Add a constraint"
+msgstr "制約の編集"
 
 msgid "Location"
 msgstr "場所"
@@ -637,35 +674,11 @@ msgstr "順序"
 msgid "Ticket"
 msgstr "チケット"
 
-msgid "(No location constraints defined)"
-msgstr "(場所の制約が定義されていません)"
-
-msgid "[Constraint is too complex to display]"
-msgstr "[制約が複雑すぎて表示できません]"
-
-msgid "(No colocation constraints defined)"
-msgstr "(コロケーションの制約が定義されていません)"
-
-msgid "(No order constraints defined)"
-msgstr "(順序の制約が定義されていません)"
-
-msgid "(No ticket constraints defined)"
-msgstr "(チケット制約が未定義です)"
-
-msgid "CRM Configuration"
-msgstr "CRMの環境設定"
-
 msgid "Resource Defaults"
 msgstr "リソースのデフォルト"
 
 msgid "Operation Defaults"
 msgstr "操作のデフォルト"
-
-msgid "No cluster properties set in %{group}"
-msgstr "クラスタプロパティが %{group} で設定されていません"
-
-msgid "Edit"
-msgstr "編集"
 
 msgid "Username:"
 msgstr "ユーザ名:"
@@ -745,6 +758,10 @@ msgstr "リソースの固着性"
 msgid "Status"
 msgstr "状態"
 
+#, fuzzy
+msgid "Errors"
+msgstr "エラー:"
+
 msgid "No transitions found for the specified time period."
 msgstr "指定された期間内で遷移がありません。"
 
@@ -799,6 +816,10 @@ msgstr "グループの子"
 msgid "Available Primitives"
 msgstr "使用可能なプリミティブ"
 
+#, fuzzy
+msgid "Delete group"
+msgstr "リソースの削除"
+
 msgid "Start Time not specified"
 msgstr "開始時刻が指定されていません"
 
@@ -810,6 +831,9 @@ msgstr "hb_reportを生成しています..."
 
 msgid "Download hb_report"
 msgstr "hb_reportのダウンロード"
+
+msgid "Heartbeat"
+msgstr ""
 
 #, fuzzy
 msgid "Please ensure Javascript is enabled"
@@ -841,6 +865,13 @@ msgstr "ルールエディタの表示"
 
 msgid "Resource"
 msgstr "リソース"
+
+#, fuzzy
+msgid "Delete location"
+msgstr "制約の削除"
+
+msgid "History"
+msgstr ""
 
 msgid "Fence Node"
 msgstr "フェンスノード"
@@ -881,6 +912,10 @@ msgstr "取り消し"
 msgid "Master/Slave ID"
 msgstr "マスタ/スレーブID"
 
+#, fuzzy
+msgid "Delete master/slave"
+msgstr "マスタ/スレーブの作成"
+
 msgid "Getting recent events (last hour)..."
 msgstr "最近のイベントを取得しています(最終時間)..."
 
@@ -905,6 +940,10 @@ msgstr "属性が定義されていません"
 msgid "Symmetrical"
 msgstr "対称的"
 
+#, fuzzy
+msgid "Delete order"
+msgstr "リソースの削除"
+
 msgid "Close"
 msgstr "閉じる"
 
@@ -913,6 +952,12 @@ msgstr ""
 
 msgid "PDF"
 msgstr ""
+
+msgid "Parameters"
+msgstr "引数"
+
+msgid "Edit"
+msgstr "編集"
 
 msgid "There is already a monitor op with this interval."
 msgstr "この間隔ですでにモニタ処理があります。"
@@ -935,62 +980,32 @@ msgstr "種類"
 msgid "Use Template"
 msgstr "テンプレートの使用"
 
-msgid "Edit Resource"
-msgstr "リソースの編集"
-
-msgid "Delete Resource"
+#, fuzzy
+msgid "Delete primitive"
 msgstr "リソースの削除"
 
-msgid "New Resource"
-msgstr "新規リソース"
+#, fuzzy
+msgid "Add a resource"
+msgstr "リソースの編集"
 
-msgid "Primitive"
-msgstr "プリミティブ"
+#, fuzzy
+msgid "Add a primitive"
+msgstr "使用可能なプリミティブ"
 
-msgid "New Template"
-msgstr "新規テンプレート"
+#, fuzzy
+msgid "Add a group"
+msgstr "グループの編集"
 
-msgid "Template"
-msgstr "テンプレート"
+#, fuzzy
+msgid "Clone a resource"
+msgstr "リソースの作成"
 
-msgid "New Group"
-msgstr "新しいグループ"
-
-msgid "Group"
-msgstr "グループ"
-
-msgid "New Clone"
-msgstr "新規クローン"
-
-msgid "Clone"
-msgstr "クローン"
-
-msgid "New Master/Slave"
+#, fuzzy
+msgid "Set master/slave"
 msgstr "新規マスタ/スレーブ"
 
-msgid "Master/Slave"
-msgstr "マスタ/スレーブ"
-
-msgid "(No primitive resources defined)"
-msgstr "(プリミティブリソースが未定義です)"
-
-msgid "(No templates defined)"
-msgstr "(テンプレートが未定義です)"
-
-msgid "(No groups defined)"
-msgstr "(グループが未定義です)"
-
-msgid "(No clones defined)"
-msgstr "(クローンが未定義です)"
-
-msgid "(No master/slave resources defined)"
-msgstr "(マスタ/スレーブリソースが未定義です)"
-
-msgid "Fail Count"
-msgstr "失敗数"
-
-msgid "Last Failure"
-msgstr "最後のエラー"
+msgid "Choose a wizard"
+msgstr ""
 
 #, fuzzy
 msgid "Rule"
@@ -1008,6 +1023,9 @@ msgid "Move rule up"
 msgstr "リソース %s の移動"
 
 msgid "Move rule down"
+msgstr ""
+
+msgid "Please select"
 msgstr ""
 
 msgid "Right"
@@ -1050,8 +1068,70 @@ msgstr "パスワード:"
 msgid "Login"
 msgstr "ログイン"
 
-msgid "Loss Policy"
-msgstr "損失ポリシー"
+msgid "Version:"
+msgstr ""
+
+msgid "Stack:"
+msgstr ""
+
+msgid "DC:"
+msgstr ""
+
+msgid "UI:"
+msgstr ""
+
+#, fuzzy
+msgid "Report"
+msgstr "リセット"
+
+#, fuzzy
+msgid "Add resource"
+msgstr "リソースの編集"
+
+#, fuzzy
+msgid "Add constraint"
+msgstr "制約の編集"
+
+#, fuzzy
+msgid "Add template"
+msgstr "テンプレートの編集"
+
+msgid "Manage"
+msgstr ""
+
+#, fuzzy
+msgid "Configuration"
+msgstr "CRMの環境設定"
+
+msgid "Enable the simulation mode"
+msgstr ""
+
+msgid "Simulator"
+msgstr ""
+
+msgid "Disable the simulation mode"
+msgstr ""
+
+msgid "Production"
+msgstr ""
+
+#, fuzzy
+msgid "Profile"
+msgstr "プロバイダ"
+
+msgid "Logout"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+#, fuzzy
+msgid "Delete template"
+msgstr "テンプレートの作成"
+
+#, fuzzy
+msgid "Delete ticket"
+msgstr "リソースの削除"
 
 #, fuzzy
 msgid "Delete user"
@@ -1066,6 +1146,9 @@ msgstr "%{workflow}: %{step}"
 
 msgid "The configuration has been applied."
 msgstr "環境設定が適用されました。"
+
+msgid "Done"
+msgstr "完了"
 
 msgid "The following configuration will be applied to the cluster:"
 msgstr "以下の環境設定がクラスタに適用されます:"

@@ -14,6 +14,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
+msgid "Remove"
+msgstr "Odebrat"
+
+msgid "Yes"
+msgstr "Ano"
+
+msgid "No"
+msgstr "Ne"
+
 msgid "Any changes will be lost - do you wish to proceed?"
 msgstr "Všechny změny budou ztraceny – chcete pokračovat?"
 
@@ -36,12 +45,6 @@ msgstr ""
 
 msgid "Maintenance"
 msgstr "Údržba"
-
-msgid "Yes"
-msgstr "Ano"
-
-msgid "No"
-msgstr "Ne"
 
 msgid "Standby"
 msgstr "Pohotovost"
@@ -73,32 +76,33 @@ msgstr "Uživatelské ID"
 msgid "Unable to create shadow CIB"
 msgstr "Nepodařilo se vytvořit stínové CIB"
 
-msgid "1 node configured"
-msgid_plural "%{num} nodes configured"
-msgstr[0] "Nakonfigurované uzly: 1"
-msgstr[1] "Nakonfigurované uzly: %{num}"
-msgstr[2] "Nakonfigurované uzly: %{num}"
-
-msgid "1 resource configured"
-msgid_plural "%{num} resources configured"
-msgstr[0] "Nakonfigurované zdroje: 1"
-msgstr[1] "Nakonfigurované zdroje: %{num}"
-msgstr[2] "Nakonfigurované zdroje: %{num}"
-
-msgid "Edit Clone"
-msgstr "Upravit klon"
-
 msgid "Create Clone"
 msgstr "Vytvořit klon"
 
 msgid "Clone created successfully"
 msgstr "Klon byl úspěšně vytvořen"
 
+msgid "Edit Clone"
+msgstr "Upravit klon"
+
 msgid "Clone updated successfully"
 msgstr "Klon byl úspěšně aktualizován"
 
-msgid "Edit Colocation Constraint"
-msgstr "Upravit omezení kolokace"
+#, fuzzy
+msgid "Clone deleted successfully"
+msgstr "Role byla úspěšně vytvořena"
+
+#, fuzzy
+msgid "Error deleting %s"
+msgstr "Při odstraňování prostředku došlo k chybě"
+
+#, fuzzy
+msgid "Clones"
+msgstr "Klon"
+
+#, fuzzy
+msgid "The clone does not exist"
+msgstr "ID role %{id} neexistuje"
 
 msgid "Create Colocation Constraint"
 msgstr "Vytvořit omezení kolokace"
@@ -106,30 +110,32 @@ msgstr "Vytvořit omezení kolokace"
 msgid "Constraint created successfully"
 msgstr "Omezení bylo úspěšně vytvořeno"
 
+msgid "Edit Colocation Constraint"
+msgstr "Upravit omezení kolokace"
+
 msgid "Constraint updated successfully"
 msgstr "Omezení bylo úspěšně aktualizováno"
+
+#, fuzzy
+msgid "Colocation deleted successfully"
+msgstr "Role byla úspěšně vytvořena"
+
+#, fuzzy
+msgid "Colocation Constraints"
+msgstr "Upravit omezení kolokace"
+
+msgid "The colocation constraint does not exist"
+msgstr ""
 
 msgid "Constraints"
 msgstr "Omezení"
 
+#, fuzzy
+msgid "Configuration updated successfully"
+msgstr "Omezení bylo úspěšně aktualizováno"
+
 msgid "Cluster Configuration"
 msgstr "Konfigurace clusteru"
-
-msgid "Your changes have been saved"
-msgstr "Vaše změny byly uloženy"
-
-msgid "Unable to apply changes: %{msg}"
-msgstr "Nepodařilo se použít změny: %{msg}"
-
-msgid ""
-"Can't set property %{p}, because the value contains both single and double quo"
-"tes"
-msgstr ""
-"Nelze nastavit vlastnost %{p}, protože hodnota obsahuje jednoduché i dvojité u"
-"vozovky"
-
-msgid "Cluster Dashboard"
-msgstr "Řídicí panel clusteru"
 
 msgid "Dashboard"
 msgstr "Řídicí panel"
@@ -155,23 +161,46 @@ msgstr "Chyba:"
 msgid "Required parameters \"left\" and \"right\" not specified"
 msgstr "Nebyly zadány požadované parametry „left“ a „right“"
 
-msgid "Edit Group"
-msgstr "Upravit skupinu"
-
 msgid "Create Group"
 msgstr "Vytvořit skupinu"
 
 msgid "Group created successfully"
 msgstr "Skupina byla úspěšně vytvořena"
 
+msgid "Edit Group"
+msgstr "Upravit skupinu"
+
 msgid "Group updated successfully"
 msgstr "Skupina byla úspěšně aktualizována"
+
+#, fuzzy
+msgid "Group deleted successfully"
+msgstr "Skupina byla úspěšně vytvořena"
+
+#, fuzzy
+msgid "Groups"
+msgstr "Skupina"
+
+#, fuzzy
+msgid "The group does not exist"
+msgstr "ID role %{id} neexistuje"
+
+msgid "Create Location Constraint"
+msgstr "Vytvořit omezení umístění"
 
 msgid "Edit Location Constraint"
 msgstr "Upravit omezení umístění"
 
-msgid "Create Location Constraint"
-msgstr "Vytvořit omezení umístění"
+#, fuzzy
+msgid "Location deleted successfully"
+msgstr "Role byla úspěšně vytvořena"
+
+#, fuzzy
+msgid "Location Constraints"
+msgstr "Upravit omezení umístění"
+
+msgid "The location constraint does not exist"
+msgstr ""
 
 msgid "%{cmd} failed (status: %{status})"
 msgstr "Příkaz %{cmd} se nezdařil (stav: %{status})."
@@ -200,27 +229,48 @@ msgstr "Požadovaný parametr ticket nebyl zadán"
 msgid "Error invoking %{cmd}: %{msg}"
 msgstr "Chyba vyvolávání %{cmd}: %{msg}"
 
-msgid "Edit Master/Slave"
-msgstr "Upravit hlavní/podřízený prvek"
-
 msgid "Create Master/Slave"
 msgstr "Vytvořit hlavní/podřízený prvek"
 
 msgid "Master/Slave created successfully"
 msgstr "Hlavní/podřízený prvek byl úspěšně vytvořen"
 
+msgid "Edit Master/Slave"
+msgstr "Upravit hlavní/podřízený prvek"
+
 msgid "Master/Slave updated successfully"
 msgstr "Hlavní/podřízený prvek byl úspěšně aktualizován"
+
+#, fuzzy
+msgid "Master/Slave deleted successfully"
+msgstr "Hlavní/podřízený prvek byl úspěšně vytvořen"
+
+msgid "Master/Slave"
+msgstr "Hlavní/podřízený"
+
+msgid "The master/slave does not exist"
+msgstr ""
 
 #, fuzzy
 msgid "Nodes"
 msgstr "Uzel"
 
+msgid "Create Order Constraint"
+msgstr "Vytvořit omezení pořadí"
+
 msgid "Edit Order Constraint"
 msgstr "Upravit omezení pořadí"
 
-msgid "Create Order Constraint"
-msgstr "Vytvořit omezení pořadí"
+#, fuzzy
+msgid "Order deleted successfully"
+msgstr "Uživatel byl úspěšně vytvořen"
+
+#, fuzzy
+msgid "Order Constraints"
+msgstr "Upravit omezení pořadí"
+
+msgid "The order constraint does not exist"
+msgstr ""
 
 msgid "Welcome"
 msgstr ""
@@ -228,18 +278,40 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-msgid "Create Resource"
-msgstr "Vytvořit prostředek"
+#, fuzzy
+msgid "Create Primitive"
+msgstr "Dostupné základní prvky"
 
-msgid "Resource created successfully"
-msgstr "Prostředek byl úspěšně vytvořen"
+#, fuzzy
+msgid "Primitive created successfully"
+msgstr "Šablona byla úspěšně vytvořena."
 
-msgid "Resource updated successfully"
-msgstr "Prostředek byl úspěšně aktualizován"
+#, fuzzy
+msgid "Edit Primitive"
+msgstr "Základní prvek"
+
+#, fuzzy
+msgid "Primitive updated successfully"
+msgstr "Šablona byla úspěšně aktualizována."
+
+#, fuzzy
+msgid "Primitive deleted successfully"
+msgstr "Role byla úspěšně vytvořena"
 
 #, fuzzy
 msgid "Primitives"
 msgstr "Základní prvek"
+
+#, fuzzy
+msgid "The primitive does not exist"
+msgstr "ID role %{id} neexistuje"
+
+#, fuzzy
+msgid "Preferences updated successfully"
+msgstr "Prostředek byl úspěšně aktualizován"
+
+msgid "Preferences"
+msgstr "Předvolby"
 
 msgid "Resources"
 msgstr "Zdroje"
@@ -259,10 +331,6 @@ msgstr "Role byla úspěšně aktualizována"
 #, fuzzy
 msgid "Role deleted successfully"
 msgstr "Role byla úspěšně vytvořena"
-
-#, fuzzy
-msgid "Error deleting %s"
-msgstr "Při odstraňování prostředku došlo k chybě"
 
 msgid "Roles"
 msgstr "Role"
@@ -284,30 +352,46 @@ msgstr "Byli jste odhlášeni."
 msgid "Log In"
 msgstr "Přihlásit"
 
-#, fuzzy
-msgid "Preferences updated successfully"
-msgstr "Prostředek byl úspěšně aktualizován"
-
-msgid "Preferences"
-msgstr "Předvolby"
-
-msgid "Edit Template"
-msgstr "Upravit šablonu"
-
 msgid "Create Template"
 msgstr "Vytvořit šablonu"
 
 msgid "Template created successfully"
 msgstr "Šablona byla úspěšně vytvořena."
 
+msgid "Edit Template"
+msgstr "Upravit šablonu"
+
 msgid "Template updated successfully"
 msgstr "Šablona byla úspěšně aktualizována."
+
+#, fuzzy
+msgid "Template deleted successfully"
+msgstr "Šablona byla úspěšně vytvořena."
+
+#, fuzzy
+msgid "Templates"
+msgstr "Šablona"
+
+#, fuzzy
+msgid "The template does not exist"
+msgstr "ID role %{id} neexistuje"
+
+msgid "Create Ticket Constraint"
+msgstr "Vytvořit omezení lístku"
 
 msgid "Edit Ticket Constraint"
 msgstr "Upravit omezení lístku"
 
-msgid "Create Ticket Constraint"
-msgstr "Vytvořit omezení lístku"
+#, fuzzy
+msgid "Tciket deleted successfully"
+msgstr "Role byla úspěšně vytvořena"
+
+#, fuzzy
+msgid "Ticket Constraints"
+msgstr "Upravit omezení lístku"
+
+msgid "The ticket constraint does not exist"
+msgstr ""
 
 msgid "Create User"
 msgstr "Vytvořit uživatele"
@@ -332,57 +416,8 @@ msgstr "Uživatel"
 msgid "The user does not exist"
 msgstr ""
 
-msgid "Cluster Setup Wizard"
-msgstr "Průvodce nastavením clusteru"
-
-msgid "Invalid password"
-msgstr "Neplatné heslo"
-
-msgid "Root Password"
-msgstr "Heslo superuživatele"
-
-msgid ""
-"The root password is required in order for this wizard template to make config"
-"uration changes."
+msgid "Use a wizard"
 msgstr ""
-"Aby mohla tato šablona průvodce provést změny konfigurace, je požadováno heslo"
-" uživatele root."
-
-msgid "The root password for this system"
-msgstr "Heslo uživatele root tohoto systému"
-
-msgid "\"Error: #{result}\""
-msgstr "Chyba: #{result}"
-
-msgid "Parameters"
-msgstr "Parametry"
-
-msgid "Confirm"
-msgstr "Potvrdit"
-
-msgid "Done"
-msgstr "Hotovo"
-
-msgid "Required parameter \"%{param}\" not specified"
-msgstr "Požadovaný parametr „%{param}“ nebyl zadán."
-
-msgid "Permission denied - you do not have write access to the CIB."
-msgstr "Přístup byl odepřen, protože nemáte přístup k zápisu do souboru CIB."
-
-msgid "Wizard templates and/or workflows are missing"
-msgstr "Chybí šablony anebo pracovní postupy prohlížeče."
-
-msgid "Workflow \"%s\" not found"
-msgstr "Pracovní postup „%s“ nebyl nalezen"
-
-msgid "Error parsing template \"%s\""
-msgstr "Chyba analýzy šablony „%s“"
-
-msgid "Error parsing workflow \"%s\""
-msgstr "Chyba analýzy pracovního postupu „%s“"
-
-msgid "Data collection in progress (%{from_time} to %{to_time})..."
-msgstr "Probíhá shromažďování dat (%{from_time} do %{to_time})..."
 
 #, fuzzy
 msgid "Revert"
@@ -390,6 +425,9 @@ msgstr "Obnovit výchozí"
 
 msgid "Apply"
 msgstr ""
+
+msgid "Data collection in progress (%{from_time} to %{to_time})..."
+msgstr "Probíhá shromažďování dat (%{from_time} do %{to_time})..."
 
 #, fuzzy
 msgid "Create"
@@ -529,6 +567,9 @@ msgstr "Nelze vytvořit prostředek: %{msg}"
 msgid "Resource ID \"%{id}\" does not exist"
 msgstr "ID prostředku „%{id}“ neexistuje"
 
+msgid "is required"
+msgstr ""
+
 #, fuzzy
 msgid "Unable to create: %{msg}"
 msgstr "Roli nelze vytvořit: %{msg}"
@@ -567,9 +608,6 @@ msgstr "Položka %s není nainstalována"
 msgid "Invalid username or password"
 msgstr "Neplatné uživatelské jméno nebo heslo"
 
-msgid "Language is required"
-msgstr ""
-
 msgid "Invalid Ticket ID"
 msgstr "Neplatné ID lístku"
 
@@ -583,14 +621,14 @@ msgstr ""
 msgid "Invalid User ID"
 msgstr "Neplatné ID lístku"
 
+msgid "Back"
+msgstr "Zpět"
+
 msgid "Meta Attributes"
 msgstr "Metaatributy"
 
 msgid "Add"
 msgstr "Přidat"
-
-msgid "Remove"
-msgstr "Odebrat"
 
 msgid "You must enter a value"
 msgstr "Je nutné zadat hodnotu"
@@ -601,14 +639,12 @@ msgstr "ID klonu"
 msgid "Child Resource"
 msgstr "Podřízený prostředek"
 
-msgid "Revert Changes"
-msgstr "Vrátit změny"
+msgid "Are you sure you wish to delete %s?"
+msgstr "Opravdu chcete odstranit položku %s?"
 
-msgid "Back"
-msgstr "Zpět"
-
-msgid "Apply Changes"
-msgstr "Použít změny"
+#, fuzzy
+msgid "Delete clone"
+msgstr "Odstranit prostředek"
 
 msgid "Link set"
 msgstr "Propojit sadu"
@@ -628,20 +664,13 @@ msgstr "ID omezení"
 msgid "Score"
 msgstr "Skóre"
 
-msgid "Create Constraint"
-msgstr "Vytvořit omezení"
-
-msgid "Edit Constraint"
-msgstr "Upravit omezení"
-
-msgid "Delete Constraint"
+#, fuzzy
+msgid "Delete colocation"
 msgstr "Odstranit omezení"
 
-msgid "Are you sure you wish to delete %s?"
-msgstr "Opravdu chcete odstranit položku %s?"
-
-msgid "New Constraint"
-msgstr "Nové omezení"
+#, fuzzy
+msgid "Add a constraint"
+msgstr "Upravit omezení"
 
 msgid "Location"
 msgstr "Umístění"
@@ -655,35 +684,11 @@ msgstr "Pořadí"
 msgid "Ticket"
 msgstr "Lístek"
 
-msgid "(No location constraints defined)"
-msgstr "(Nebyla definována žádná omezení umístění)"
-
-msgid "[Constraint is too complex to display]"
-msgstr "[Omezení je příliš složité pro zobrazení]"
-
-msgid "(No colocation constraints defined)"
-msgstr "(Nebyla definována žádná omezení kolokace)"
-
-msgid "(No order constraints defined)"
-msgstr "(Nebyla definována žádná omezení pořadí)"
-
-msgid "(No ticket constraints defined)"
-msgstr "(Nejsou definovány žádná omezení lístku.)"
-
-msgid "CRM Configuration"
-msgstr "Konfigurace CRM"
-
 msgid "Resource Defaults"
 msgstr "Výchozí hodnoty prostředku"
 
 msgid "Operation Defaults"
 msgstr "Výchozí hodnoty pro operaci"
-
-msgid "No cluster properties set in %{group}"
-msgstr "Ve skupině %{group} nebyly definovány žádné vlastnosti clusteru"
-
-msgid "Edit"
-msgstr "Upravit"
 
 msgid "Username:"
 msgstr "Uživatelské jméno:"
@@ -769,6 +774,10 @@ msgstr "Dlouhodobost prostředku"
 msgid "Status"
 msgstr "Stav"
 
+#, fuzzy
+msgid "Errors"
+msgstr "Chyba:"
+
 msgid "No transitions found for the specified time period."
 msgstr "Pro zadané období nebyly nalezeny žádné transakce."
 
@@ -823,6 +832,10 @@ msgstr "Seskupit podřízené prvky"
 msgid "Available Primitives"
 msgstr "Dostupné základní prvky"
 
+#, fuzzy
+msgid "Delete group"
+msgstr "Odstranit prostředek"
+
 msgid "Start Time not specified"
 msgstr "Nebyl zadán čas zahájení"
 
@@ -834,6 +847,9 @@ msgstr "Vytváří se balíček hb_report..."
 
 msgid "Download hb_report"
 msgstr "Stáhnout balíček hb_report"
+
+msgid "Heartbeat"
+msgstr ""
 
 #, fuzzy
 msgid "Please ensure Javascript is enabled"
@@ -865,6 +881,13 @@ msgstr "Zobrazit editor pravidel"
 
 msgid "Resource"
 msgstr "Zdroj"
+
+#, fuzzy
+msgid "Delete location"
+msgstr "Odstranit omezení"
+
+msgid "History"
+msgstr ""
 
 msgid "Fence Node"
 msgstr "Vytlačit uzel"
@@ -905,6 +928,10 @@ msgstr "Odvolat"
 msgid "Master/Slave ID"
 msgstr "ID hlavního/podřízeného prvku"
 
+#, fuzzy
+msgid "Delete master/slave"
+msgstr "Vytvořit hlavní/podřízený prvek"
+
 msgid "Getting recent events (last hour)..."
 msgstr "Získávání nejnovějších událostí (za poslední hodinu)..."
 
@@ -929,6 +956,10 @@ msgstr "Nebyly definovány žádné atributy"
 msgid "Symmetrical"
 msgstr "Symetrické"
 
+#, fuzzy
+msgid "Delete order"
+msgstr "Odstranit prostředek"
+
 msgid "Close"
 msgstr "Zavřít"
 
@@ -937,6 +968,12 @@ msgstr ""
 
 msgid "PDF"
 msgstr ""
+
+msgid "Parameters"
+msgstr "Parametry"
+
+msgid "Edit"
+msgstr "Upravit"
 
 msgid "There is already a monitor op with this interval."
 msgstr "Na tomto intervalu již probíhá operace monitorování."
@@ -959,62 +996,32 @@ msgstr "Typ"
 msgid "Use Template"
 msgstr "Použít šablonu"
 
-msgid "Edit Resource"
-msgstr "Upravit prostředek"
-
-msgid "Delete Resource"
+#, fuzzy
+msgid "Delete primitive"
 msgstr "Odstranit prostředek"
 
-msgid "New Resource"
-msgstr "Nový prostředek"
+#, fuzzy
+msgid "Add a resource"
+msgstr "Upravit prostředek"
 
-msgid "Primitive"
-msgstr "Základní prvek"
+#, fuzzy
+msgid "Add a primitive"
+msgstr "Dostupné základní prvky"
 
-msgid "New Template"
-msgstr "Nová šablona"
+#, fuzzy
+msgid "Add a group"
+msgstr "Upravit skupinu"
 
-msgid "Template"
-msgstr "Šablona"
+#, fuzzy
+msgid "Clone a resource"
+msgstr "Vytvořit prostředek"
 
-msgid "New Group"
-msgstr "Nová skupina"
-
-msgid "Group"
-msgstr "Skupina"
-
-msgid "New Clone"
-msgstr "Nový klon"
-
-msgid "Clone"
-msgstr "Klon"
-
-msgid "New Master/Slave"
+#, fuzzy
+msgid "Set master/slave"
 msgstr "Nový hlavní/podřízený prvek"
 
-msgid "Master/Slave"
-msgstr "Hlavní/podřízený"
-
-msgid "(No primitive resources defined)"
-msgstr "(Nejsou definovány žádné základní prostředky.)"
-
-msgid "(No templates defined)"
-msgstr "(Nejsou definovány žádné šablony.)"
-
-msgid "(No groups defined)"
-msgstr "(Nejsou definovány žádné skupiny.)"
-
-msgid "(No clones defined)"
-msgstr "(Nejsou definovány žádné klony.)"
-
-msgid "(No master/slave resources defined)"
-msgstr "(Nejsou definovány žádné hlavní/podřízené prostředky.)"
-
-msgid "Fail Count"
-msgstr "Počet neúspěšných pokusů"
-
-msgid "Last Failure"
-msgstr "Poslední neúspěšný pokus"
+msgid "Choose a wizard"
+msgstr ""
 
 #, fuzzy
 msgid "Rule"
@@ -1032,6 +1039,9 @@ msgid "Move rule up"
 msgstr "Přesunout prostředek %s:"
 
 msgid "Move rule down"
+msgstr ""
+
+msgid "Please select"
 msgstr ""
 
 msgid "Right"
@@ -1074,8 +1084,70 @@ msgstr "Heslo:"
 msgid "Login"
 msgstr "Přihlásit"
 
-msgid "Loss Policy"
-msgstr "Zásady ztrát"
+msgid "Version:"
+msgstr ""
+
+msgid "Stack:"
+msgstr ""
+
+msgid "DC:"
+msgstr ""
+
+msgid "UI:"
+msgstr ""
+
+#, fuzzy
+msgid "Report"
+msgstr "Obnovit výchozí"
+
+#, fuzzy
+msgid "Add resource"
+msgstr "Upravit prostředek"
+
+#, fuzzy
+msgid "Add constraint"
+msgstr "Upravit omezení"
+
+#, fuzzy
+msgid "Add template"
+msgstr "Upravit šablonu"
+
+msgid "Manage"
+msgstr ""
+
+#, fuzzy
+msgid "Configuration"
+msgstr "Konfigurace CRM"
+
+msgid "Enable the simulation mode"
+msgstr ""
+
+msgid "Simulator"
+msgstr ""
+
+msgid "Disable the simulation mode"
+msgstr ""
+
+msgid "Production"
+msgstr ""
+
+#, fuzzy
+msgid "Profile"
+msgstr "Poskytovatel"
+
+msgid "Logout"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+#, fuzzy
+msgid "Delete template"
+msgstr "Vytvořit šablonu"
+
+#, fuzzy
+msgid "Delete ticket"
+msgstr "Odstranit prostředek"
 
 #, fuzzy
 msgid "Delete user"
@@ -1090,6 +1162,9 @@ msgstr "%{workflow}: %{step}"
 
 msgid "The configuration has been applied."
 msgstr "Konfigurační soubor byl použit."
+
+msgid "Done"
+msgstr "Hotovo"
 
 msgid "The following configuration will be applied to the cluster:"
 msgstr "Na cluster se použije následující konfigurace:"

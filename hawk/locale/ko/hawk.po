@@ -14,6 +14,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+msgid "Remove"
+msgstr "제거"
+
+msgid "Yes"
+msgstr "예"
+
+msgid "No"
+msgstr "아니오"
+
 msgid "Any changes will be lost - do you wish to proceed?"
 msgstr "변경 사항이 유실됩니다. 계속하시겠습니까?"
 
@@ -36,12 +45,6 @@ msgstr ""
 
 msgid "Maintenance"
 msgstr "유지보수"
-
-msgid "Yes"
-msgstr "예"
-
-msgid "No"
-msgstr "아니오"
 
 msgid "Standby"
 msgstr "대기"
@@ -73,28 +76,33 @@ msgstr "사용자 ID"
 msgid "Unable to create shadow CIB"
 msgstr "섀도 CIB를 생성할 수 없습니다."
 
-msgid "1 node configured"
-msgid_plural "%{num} nodes configured"
-msgstr[0] "1개 노드가 구성되었습니다."
-
-msgid "1 resource configured"
-msgid_plural "%{num} resources configured"
-msgstr[0] "1개 리소스가 구성되었습니다."
-
-msgid "Edit Clone"
-msgstr "복제 편집"
-
 msgid "Create Clone"
 msgstr "복제 생성"
 
 msgid "Clone created successfully"
 msgstr "복제가 성공적으로 생성되었습니다."
 
+msgid "Edit Clone"
+msgstr "복제 편집"
+
 msgid "Clone updated successfully"
 msgstr "복제를 성공적으로 업데이트했습니다."
 
-msgid "Edit Colocation Constraint"
-msgstr "코로케이션 제약 조건 편집"
+#, fuzzy
+msgid "Clone deleted successfully"
+msgstr "역할이 성공적으로 생성되었습니다."
+
+#, fuzzy
+msgid "Error deleting %s"
+msgstr "리소스를 삭제하는 중 오류가 발생했습니다."
+
+#, fuzzy
+msgid "Clones"
+msgstr "복제"
+
+#, fuzzy
+msgid "The clone does not exist"
+msgstr "역할 ID \"%{id}\"이(가) 없습니다."
 
 msgid "Create Colocation Constraint"
 msgstr "코로케이션 제약 조건 생성"
@@ -102,28 +110,32 @@ msgstr "코로케이션 제약 조건 생성"
 msgid "Constraint created successfully"
 msgstr "제약 조건이 성공적으로 생성되었습니다."
 
+msgid "Edit Colocation Constraint"
+msgstr "코로케이션 제약 조건 편집"
+
 msgid "Constraint updated successfully"
 msgstr "제약 조건이 성공적으로 업데이트되었습니다."
+
+#, fuzzy
+msgid "Colocation deleted successfully"
+msgstr "역할이 성공적으로 생성되었습니다."
+
+#, fuzzy
+msgid "Colocation Constraints"
+msgstr "코로케이션 제약 조건 편집"
+
+msgid "The colocation constraint does not exist"
+msgstr ""
 
 msgid "Constraints"
 msgstr "제약 조건"
 
+#, fuzzy
+msgid "Configuration updated successfully"
+msgstr "제약 조건이 성공적으로 업데이트되었습니다."
+
 msgid "Cluster Configuration"
 msgstr "클러스터 구성"
-
-msgid "Your changes have been saved"
-msgstr "변경 사항이 저장되었습니다."
-
-msgid "Unable to apply changes: %{msg}"
-msgstr "변경 사항을 적용할 수 없음: %{msg}"
-
-msgid ""
-"Can't set property %{p}, because the value contains both single and double quo"
-"tes"
-msgstr "값이 작은따옴표와 큰따옴표를 모두 포함하므로, %{p} 속성을 설정할 수 없습니다."
-
-msgid "Cluster Dashboard"
-msgstr "클러스터 대시보드"
 
 msgid "Dashboard"
 msgstr "대시보드"
@@ -149,23 +161,46 @@ msgstr "에러:"
 msgid "Required parameters \"left\" and \"right\" not specified"
 msgstr "필요한 파라미터 \"left\" 및 \"right\"가 지정되지 않았습니다."
 
-msgid "Edit Group"
-msgstr "그룹 편집"
-
 msgid "Create Group"
 msgstr "그룹 생성"
 
 msgid "Group created successfully"
 msgstr "그룹이 성공적으로 생성되었습니다."
 
+msgid "Edit Group"
+msgstr "그룹 편집"
+
 msgid "Group updated successfully"
 msgstr "그룹이 성공적으로 업데이트되었습니다."
+
+#, fuzzy
+msgid "Group deleted successfully"
+msgstr "그룹이 성공적으로 생성되었습니다."
+
+#, fuzzy
+msgid "Groups"
+msgstr "그룹"
+
+#, fuzzy
+msgid "The group does not exist"
+msgstr "역할 ID \"%{id}\"이(가) 없습니다."
+
+msgid "Create Location Constraint"
+msgstr "위치 제약 조건 생성"
 
 msgid "Edit Location Constraint"
 msgstr "위치 제약 조건 편집"
 
-msgid "Create Location Constraint"
-msgstr "위치 제약 조건 생성"
+#, fuzzy
+msgid "Location deleted successfully"
+msgstr "역할이 성공적으로 생성되었습니다."
+
+#, fuzzy
+msgid "Location Constraints"
+msgstr "위치 제약 조건 편집"
+
+msgid "The location constraint does not exist"
+msgstr ""
 
 msgid "%{cmd} failed (status: %{status})"
 msgstr "%{cmd} 실패됨(상태: %{status})"
@@ -194,27 +229,48 @@ msgstr "필요한 파라미터 \"ticket\"이 지정되지 않았습니다."
 msgid "Error invoking %{cmd}: %{msg}"
 msgstr "%{cmd} 호출 중 오류 발생: %{msg}"
 
-msgid "Edit Master/Slave"
-msgstr "마스터/슬레이브 편집"
-
 msgid "Create Master/Slave"
 msgstr "마스터/슬레이브 생성"
 
 msgid "Master/Slave created successfully"
 msgstr "마스터/슬레이브가 성공적으로 생성되었습니다."
 
+msgid "Edit Master/Slave"
+msgstr "마스터/슬레이브 편집"
+
 msgid "Master/Slave updated successfully"
 msgstr "마스터/슬레이브가 성공적으로 업데이트되었습니다."
+
+#, fuzzy
+msgid "Master/Slave deleted successfully"
+msgstr "마스터/슬레이브가 성공적으로 생성되었습니다."
+
+msgid "Master/Slave"
+msgstr "마스터/슬레이브"
+
+msgid "The master/slave does not exist"
+msgstr ""
 
 #, fuzzy
 msgid "Nodes"
 msgstr "노드"
 
+msgid "Create Order Constraint"
+msgstr "순서 제약 조건 생성"
+
 msgid "Edit Order Constraint"
 msgstr "순서 제약 조건 편집"
 
-msgid "Create Order Constraint"
-msgstr "순서 제약 조건 생성"
+#, fuzzy
+msgid "Order deleted successfully"
+msgstr "사용자가 성공적으로 생성되었습니다."
+
+#, fuzzy
+msgid "Order Constraints"
+msgstr "순서 제약 조건 편집"
+
+msgid "The order constraint does not exist"
+msgstr ""
 
 msgid "Welcome"
 msgstr ""
@@ -222,18 +278,40 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-msgid "Create Resource"
-msgstr "리소스 생성"
+#, fuzzy
+msgid "Create Primitive"
+msgstr "사용 가능한 원본"
 
-msgid "Resource created successfully"
-msgstr "리소스가 성공적으로 생성되었습니다."
+#, fuzzy
+msgid "Primitive created successfully"
+msgstr "템플릿이 생성되었습니다."
 
-msgid "Resource updated successfully"
-msgstr "리소스가 성공적으로 업데이트되었습니다."
+#, fuzzy
+msgid "Edit Primitive"
+msgstr "기본"
+
+#, fuzzy
+msgid "Primitive updated successfully"
+msgstr "템플릿이 업데이트되었습니다."
+
+#, fuzzy
+msgid "Primitive deleted successfully"
+msgstr "역할이 성공적으로 생성되었습니다."
 
 #, fuzzy
 msgid "Primitives"
 msgstr "기본"
+
+#, fuzzy
+msgid "The primitive does not exist"
+msgstr "역할 ID \"%{id}\"이(가) 없습니다."
+
+#, fuzzy
+msgid "Preferences updated successfully"
+msgstr "리소스가 성공적으로 업데이트되었습니다."
+
+msgid "Preferences"
+msgstr "기본 설정"
 
 msgid "Resources"
 msgstr "리소스"
@@ -254,10 +332,6 @@ msgstr "역할을 성공적으로 업데이트했습니다."
 msgid "Role deleted successfully"
 msgstr "역할이 성공적으로 생성되었습니다."
 
-#, fuzzy
-msgid "Error deleting %s"
-msgstr "리소스를 삭제하는 중 오류가 발생했습니다."
-
 msgid "Roles"
 msgstr "역할"
 
@@ -276,30 +350,46 @@ msgstr "로그아웃되었습니다."
 msgid "Log In"
 msgstr "로그인"
 
-#, fuzzy
-msgid "Preferences updated successfully"
-msgstr "리소스가 성공적으로 업데이트되었습니다."
-
-msgid "Preferences"
-msgstr "기본 설정"
-
-msgid "Edit Template"
-msgstr "템플릿 편집"
-
 msgid "Create Template"
 msgstr "템플릿 생성"
 
 msgid "Template created successfully"
 msgstr "템플릿이 생성되었습니다."
 
+msgid "Edit Template"
+msgstr "템플릿 편집"
+
 msgid "Template updated successfully"
 msgstr "템플릿이 업데이트되었습니다."
+
+#, fuzzy
+msgid "Template deleted successfully"
+msgstr "템플릿이 생성되었습니다."
+
+#, fuzzy
+msgid "Templates"
+msgstr "템플릿"
+
+#, fuzzy
+msgid "The template does not exist"
+msgstr "역할 ID \"%{id}\"이(가) 없습니다."
+
+msgid "Create Ticket Constraint"
+msgstr "티켓 제약 조건 생성"
 
 msgid "Edit Ticket Constraint"
 msgstr "티켓 제약 조건 편집"
 
-msgid "Create Ticket Constraint"
-msgstr "티켓 제약 조건 생성"
+#, fuzzy
+msgid "Tciket deleted successfully"
+msgstr "역할이 성공적으로 생성되었습니다."
+
+#, fuzzy
+msgid "Ticket Constraints"
+msgstr "티켓 제약 조건 편집"
+
+msgid "The ticket constraint does not exist"
+msgstr ""
 
 msgid "Create User"
 msgstr "사용자 생성"
@@ -324,55 +414,8 @@ msgstr "사용자"
 msgid "The user does not exist"
 msgstr ""
 
-msgid "Cluster Setup Wizard"
-msgstr "마스터 설치 마법사"
-
-msgid "Invalid password"
-msgstr "잘못된 비밀번호"
-
-msgid "Root Password"
-msgstr "루트 비밀번호"
-
-msgid ""
-"The root password is required in order for this wizard template to make config"
-"uration changes."
-msgstr "이 마법사 템플릿에서 구성을 변경할 수 있으려면 루트 비밀번호가 필요합니다."
-
-msgid "The root password for this system"
-msgstr "이 시스템의 루트 비밀번호"
-
-msgid "\"Error: #{result}\""
-msgstr "\"오류: #{result}\""
-
-msgid "Parameters"
-msgstr "매개변수"
-
-msgid "Confirm"
-msgstr "확인"
-
-msgid "Done"
-msgstr "완료"
-
-msgid "Required parameter \"%{param}\" not specified"
-msgstr "필수 파라미터 \"%{param}\"이(가) 지정되지 않았습니다."
-
-msgid "Permission denied - you do not have write access to the CIB."
-msgstr "사용 권한 거부 - CIB에 대한 쓰기 권한이 없습니다."
-
-msgid "Wizard templates and/or workflows are missing"
-msgstr "마법사 템플릿 및/또는 워크플로가 누락되었습니다."
-
-msgid "Workflow \"%s\" not found"
-msgstr "\"%s\" 워크플로를 찾을 수 없습니다."
-
-msgid "Error parsing template \"%s\""
-msgstr "\"%s\" 템플릿을 구문 분석하는 중 오류가 발생했습니다."
-
-msgid "Error parsing workflow \"%s\""
-msgstr "\"%s\" 워크플로를 구문 분석하는 중 오류가 발생했습니다."
-
-msgid "Data collection in progress (%{from_time} to %{to_time})..."
-msgstr "데이터 모음 진행 중(%{from_time} - %{to_time})..."
+msgid "Use a wizard"
+msgstr ""
 
 #, fuzzy
 msgid "Revert"
@@ -380,6 +423,9 @@ msgstr "재설정"
 
 msgid "Apply"
 msgstr ""
+
+msgid "Data collection in progress (%{from_time} to %{to_time})..."
+msgstr "데이터 모음 진행 중(%{from_time} - %{to_time})..."
 
 #, fuzzy
 msgid "Create"
@@ -511,6 +557,9 @@ msgstr "리소스를 생성할 수 없음: %{msg}"
 msgid "Resource ID \"%{id}\" does not exist"
 msgstr "리소스 ID \"%{id}\"이(가) 없습니다."
 
+msgid "is required"
+msgstr ""
+
 #, fuzzy
 msgid "Unable to create: %{msg}"
 msgstr "역할을 생성할 수 없음: %{msg}"
@@ -549,9 +598,6 @@ msgstr "%s이(가) 설치되지 않았습니다."
 msgid "Invalid username or password"
 msgstr "사용자 이름 또는 비밀번호가 잘못되었습니다."
 
-msgid "Language is required"
-msgstr ""
-
 msgid "Invalid Ticket ID"
 msgstr "잘못된 티켓 ID"
 
@@ -565,14 +611,14 @@ msgstr ""
 msgid "Invalid User ID"
 msgstr "잘못된 티켓 ID"
 
+msgid "Back"
+msgstr "뒤로"
+
 msgid "Meta Attributes"
 msgstr "메타 특성"
 
 msgid "Add"
 msgstr "추가"
-
-msgid "Remove"
-msgstr "제거"
 
 msgid "You must enter a value"
 msgstr "값을 입력해야 합니다."
@@ -583,14 +629,12 @@ msgstr "복제 ID"
 msgid "Child Resource"
 msgstr "하위 리소스"
 
-msgid "Revert Changes"
-msgstr "변경 사항 되돌리기"
+msgid "Are you sure you wish to delete %s?"
+msgstr "%s을(를) 삭제하시겠습니까?"
 
-msgid "Back"
-msgstr "뒤로"
-
-msgid "Apply Changes"
-msgstr "변경 사항 적용"
+#, fuzzy
+msgid "Delete clone"
+msgstr "리소스 삭제"
 
 msgid "Link set"
 msgstr "링크 설정"
@@ -610,20 +654,13 @@ msgstr "제약 조건 ID"
 msgid "Score"
 msgstr "점수"
 
-msgid "Create Constraint"
-msgstr "제약 조건 생성"
-
-msgid "Edit Constraint"
-msgstr "제약 조건 편집"
-
-msgid "Delete Constraint"
+#, fuzzy
+msgid "Delete colocation"
 msgstr "제약 조건 삭제"
 
-msgid "Are you sure you wish to delete %s?"
-msgstr "%s을(를) 삭제하시겠습니까?"
-
-msgid "New Constraint"
-msgstr "새 제약 조건"
+#, fuzzy
+msgid "Add a constraint"
+msgstr "제약 조건 편집"
 
 msgid "Location"
 msgstr "위치"
@@ -637,35 +674,11 @@ msgstr "순서"
 msgid "Ticket"
 msgstr "티켓"
 
-msgid "(No location constraints defined)"
-msgstr "(정의된 위치 제약 조건이 없습니다.)"
-
-msgid "[Constraint is too complex to display]"
-msgstr "[제약 조건이 너무 복잡해서 표시할 수 없습니다.]"
-
-msgid "(No colocation constraints defined)"
-msgstr "(정의된 코로케이션 제약 조건이 없습니다.)"
-
-msgid "(No order constraints defined)"
-msgstr "(정의된 순서 제약 조건이 없습니다.)"
-
-msgid "(No ticket constraints defined)"
-msgstr "(티켓 제약 조건이 정의되지 않음)"
-
-msgid "CRM Configuration"
-msgstr "CRM 구성"
-
 msgid "Resource Defaults"
 msgstr "리소스 기본값"
 
 msgid "Operation Defaults"
 msgstr "작업 기본값"
-
-msgid "No cluster properties set in %{group}"
-msgstr "%{group}에 클러스터 특성 집합이 없습니다."
-
-msgid "Edit"
-msgstr "편집"
 
 msgid "Username:"
 msgstr "사용자 이름:"
@@ -745,6 +758,10 @@ msgstr "리소스 고착성"
 msgid "Status"
 msgstr "상태"
 
+#, fuzzy
+msgid "Errors"
+msgstr "에러:"
+
 msgid "No transitions found for the specified time period."
 msgstr "지정된 기간 중에 전환을 찾을 수 없습니다."
 
@@ -799,6 +816,10 @@ msgstr "그룹 하위"
 msgid "Available Primitives"
 msgstr "사용 가능한 원본"
 
+#, fuzzy
+msgid "Delete group"
+msgstr "리소스 삭제"
+
 msgid "Start Time not specified"
 msgstr "시작 시간이 지정되지 않았습니다."
 
@@ -810,6 +831,9 @@ msgstr "hb_report 생성이 진행 중..."
 
 msgid "Download hb_report"
 msgstr "hb_report 다운로드"
+
+msgid "Heartbeat"
+msgstr ""
 
 #, fuzzy
 msgid "Please ensure Javascript is enabled"
@@ -841,6 +865,13 @@ msgstr "규칙 편집기 표시"
 
 msgid "Resource"
 msgstr "자원"
+
+#, fuzzy
+msgid "Delete location"
+msgstr "제약 조건 삭제"
+
+msgid "History"
+msgstr ""
 
 msgid "Fence Node"
 msgstr "펜스 노드"
@@ -881,6 +912,10 @@ msgstr "해지"
 msgid "Master/Slave ID"
 msgstr "마스터/슬레이브 ID"
 
+#, fuzzy
+msgid "Delete master/slave"
+msgstr "마스터/슬레이브 생성"
+
 msgid "Getting recent events (last hour)..."
 msgstr "최근 이벤트(마지막 시간)를 가져오는 중..."
 
@@ -905,6 +940,10 @@ msgstr "정의된 특성이 없습니다."
 msgid "Symmetrical"
 msgstr "대칭적"
 
+#, fuzzy
+msgid "Delete order"
+msgstr "리소스 삭제"
+
 msgid "Close"
 msgstr "닫기"
 
@@ -913,6 +952,12 @@ msgstr ""
 
 msgid "PDF"
 msgstr ""
+
+msgid "Parameters"
+msgstr "매개변수"
+
+msgid "Edit"
+msgstr "편집"
 
 msgid "There is already a monitor op with this interval."
 msgstr "이 간격을 사용하는 모니터 작업이 이미 있습니다."
@@ -935,62 +980,32 @@ msgstr "유형"
 msgid "Use Template"
 msgstr "템플릿 사용"
 
-msgid "Edit Resource"
-msgstr "리소스 편집"
-
-msgid "Delete Resource"
+#, fuzzy
+msgid "Delete primitive"
 msgstr "리소스 삭제"
 
-msgid "New Resource"
-msgstr "새 리소스"
+#, fuzzy
+msgid "Add a resource"
+msgstr "리소스 편집"
 
-msgid "Primitive"
-msgstr "기본"
+#, fuzzy
+msgid "Add a primitive"
+msgstr "사용 가능한 원본"
 
-msgid "New Template"
-msgstr "새 템플릿"
+#, fuzzy
+msgid "Add a group"
+msgstr "그룹 편집"
 
-msgid "Template"
-msgstr "템플릿"
+#, fuzzy
+msgid "Clone a resource"
+msgstr "리소스 생성"
 
-msgid "New Group"
-msgstr "새 그룹"
-
-msgid "Group"
-msgstr "그룹"
-
-msgid "New Clone"
-msgstr "새 복제"
-
-msgid "Clone"
-msgstr "복제"
-
-msgid "New Master/Slave"
+#, fuzzy
+msgid "Set master/slave"
 msgstr "새 마스터/슬레이브"
 
-msgid "Master/Slave"
-msgstr "마스터/슬레이브"
-
-msgid "(No primitive resources defined)"
-msgstr "(기본 리소스가 정의되지 않음)"
-
-msgid "(No templates defined)"
-msgstr "(템플릿이 정의되지 않음)"
-
-msgid "(No groups defined)"
-msgstr "(그룹이 정의되지 않음)"
-
-msgid "(No clones defined)"
-msgstr "(복제가 정의되지 않음)"
-
-msgid "(No master/slave resources defined)"
-msgstr "(마스터/슬레이브 리소스가 정의되지 않음)"
-
-msgid "Fail Count"
-msgstr "실패 횟수"
-
-msgid "Last Failure"
-msgstr "마지막 실패"
+msgid "Choose a wizard"
+msgstr ""
 
 #, fuzzy
 msgid "Rule"
@@ -1008,6 +1023,9 @@ msgid "Move rule up"
 msgstr "리소스 %s 이동"
 
 msgid "Move rule down"
+msgstr ""
+
+msgid "Please select"
 msgstr ""
 
 msgid "Right"
@@ -1050,8 +1068,70 @@ msgstr "비밀번호:"
 msgid "Login"
 msgstr "로그인"
 
-msgid "Loss Policy"
-msgstr "손실 정책"
+msgid "Version:"
+msgstr ""
+
+msgid "Stack:"
+msgstr ""
+
+msgid "DC:"
+msgstr ""
+
+msgid "UI:"
+msgstr ""
+
+#, fuzzy
+msgid "Report"
+msgstr "재설정"
+
+#, fuzzy
+msgid "Add resource"
+msgstr "리소스 편집"
+
+#, fuzzy
+msgid "Add constraint"
+msgstr "제약 조건 편집"
+
+#, fuzzy
+msgid "Add template"
+msgstr "템플릿 편집"
+
+msgid "Manage"
+msgstr ""
+
+#, fuzzy
+msgid "Configuration"
+msgstr "CRM 구성"
+
+msgid "Enable the simulation mode"
+msgstr ""
+
+msgid "Simulator"
+msgstr ""
+
+msgid "Disable the simulation mode"
+msgstr ""
+
+msgid "Production"
+msgstr ""
+
+#, fuzzy
+msgid "Profile"
+msgstr "공급자"
+
+msgid "Logout"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+#, fuzzy
+msgid "Delete template"
+msgstr "템플릿 생성"
+
+#, fuzzy
+msgid "Delete ticket"
+msgstr "리소스 삭제"
 
 #, fuzzy
 msgid "Delete user"
@@ -1066,6 +1146,9 @@ msgstr "%{workflow}: %{step}"
 
 msgid "The configuration has been applied."
 msgstr "구성이 적용되었습니다."
+
+msgid "Done"
+msgstr "완료"
 
 msgid "The following configuration will be applied to the cluster:"
 msgstr "다음 구성이 클러스터에 적용됩니다."

@@ -15,6 +15,15 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
 "4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
+msgid "Remove"
+msgstr "Удалить"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "No"
+msgstr "Нет"
+
 msgid "Any changes will be lost - do you wish to proceed?"
 msgstr "Все изменения будут утеряны. Продолжить?"
 
@@ -37,12 +46,6 @@ msgstr ""
 
 msgid "Maintenance"
 msgstr "Обслуживание"
-
-msgid "Yes"
-msgstr "Да"
-
-msgid "No"
-msgstr "Нет"
 
 msgid "Standby"
 msgstr "Режим ожидания"
@@ -74,32 +77,33 @@ msgstr "ID пользователя"
 msgid "Unable to create shadow CIB"
 msgstr "Не удалось создать теневую базу сведений о кластере (CIB)"
 
-msgid "1 node configured"
-msgid_plural "%{num} nodes configured"
-msgstr[0] "1 узел сконфигурирован"
-msgstr[1] "Сконфигурировано узлов: %{num}"
-msgstr[2] "Сконфигурировано узлов: %{num}"
-
-msgid "1 resource configured"
-msgid_plural "%{num} resources configured"
-msgstr[0] "1 ресурс сконфигурирован"
-msgstr[1] "Сконфигурировано ресурсов: %{num}"
-msgstr[2] "Сконфигурировано ресурсов: %{num}"
-
-msgid "Edit Clone"
-msgstr "Редактировать клон"
-
 msgid "Create Clone"
 msgstr "Создать клон"
 
 msgid "Clone created successfully"
 msgstr "Клон успешно создан"
 
+msgid "Edit Clone"
+msgstr "Редактировать клон"
+
 msgid "Clone updated successfully"
 msgstr "Клон успешно изменен"
 
-msgid "Edit Colocation Constraint"
-msgstr "Изменить ограничение совместного расположения"
+#, fuzzy
+msgid "Clone deleted successfully"
+msgstr "Роль успешно создана"
+
+#, fuzzy
+msgid "Error deleting %s"
+msgstr "Ошибка при удалении ресурса"
+
+#, fuzzy
+msgid "Clones"
+msgstr "Клонировать"
+
+#, fuzzy
+msgid "The clone does not exist"
+msgstr "Роль с ИД %{id} не существует"
 
 msgid "Create Colocation Constraint"
 msgstr "Создать ограничение совместного расположения"
@@ -107,30 +111,32 @@ msgstr "Создать ограничение совместного распо�
 msgid "Constraint created successfully"
 msgstr "Ограничение успешно создано"
 
+msgid "Edit Colocation Constraint"
+msgstr "Изменить ограничение совместного расположения"
+
 msgid "Constraint updated successfully"
 msgstr "Ограничение успешно обновлено"
+
+#, fuzzy
+msgid "Colocation deleted successfully"
+msgstr "Роль успешно создана"
+
+#, fuzzy
+msgid "Colocation Constraints"
+msgstr "Изменить ограничение совместного расположения"
+
+msgid "The colocation constraint does not exist"
+msgstr ""
 
 msgid "Constraints"
 msgstr "Ограничения"
 
+#, fuzzy
+msgid "Configuration updated successfully"
+msgstr "Ограничение успешно обновлено"
+
 msgid "Cluster Configuration"
 msgstr "Конфигурация кластера"
-
-msgid "Your changes have been saved"
-msgstr "Изменения сохранены"
-
-msgid "Unable to apply changes: %{msg}"
-msgstr "Не удалось применить изменения: %{msg}"
-
-msgid ""
-"Can't set property %{p}, because the value contains both single and double quo"
-"tes"
-msgstr ""
-"Невозможно задать свойство %{p}, поскольку значение содержит и одиночные, и дв"
-"ойные кавычки"
-
-msgid "Cluster Dashboard"
-msgstr "Панель управления кластером"
 
 msgid "Dashboard"
 msgstr "Панель управления"
@@ -156,23 +162,46 @@ msgstr "Ошибка:"
 msgid "Required parameters \"left\" and \"right\" not specified"
 msgstr "Не указаны обязательные параметры \"правый\" и \"левый\""
 
-msgid "Edit Group"
-msgstr "Редактировать группу"
-
 msgid "Create Group"
 msgstr "Создать группу"
 
 msgid "Group created successfully"
 msgstr "Группа успешно создана"
 
+msgid "Edit Group"
+msgstr "Редактировать группу"
+
 msgid "Group updated successfully"
 msgstr "Группа успешно обновлена"
+
+#, fuzzy
+msgid "Group deleted successfully"
+msgstr "Группа успешно создана"
+
+#, fuzzy
+msgid "Groups"
+msgstr "Группа"
+
+#, fuzzy
+msgid "The group does not exist"
+msgstr "Роль с ИД %{id} не существует"
+
+msgid "Create Location Constraint"
+msgstr "Создать ограничение на расположение"
 
 msgid "Edit Location Constraint"
 msgstr "Изменить ограничение на расположение"
 
-msgid "Create Location Constraint"
-msgstr "Создать ограничение на расположение"
+#, fuzzy
+msgid "Location deleted successfully"
+msgstr "Роль успешно создана"
+
+#, fuzzy
+msgid "Location Constraints"
+msgstr "Изменить ограничение на расположение"
+
+msgid "The location constraint does not exist"
+msgstr ""
 
 msgid "%{cmd} failed (status: %{status})"
 msgstr "Сбой %{cmd} (состояние: %{status})"
@@ -201,27 +230,48 @@ msgstr "Не указан обязательный параметр \"билет
 msgid "Error invoking %{cmd}: %{msg}"
 msgstr "Ошибка вызова команды %{cmd}: %{msg}"
 
-msgid "Edit Master/Slave"
-msgstr "Редактировать подчинение"
-
 msgid "Create Master/Slave"
 msgstr "Создать подчинение"
 
 msgid "Master/Slave created successfully"
 msgstr "Подчинение успешно создано"
 
+msgid "Edit Master/Slave"
+msgstr "Редактировать подчинение"
+
 msgid "Master/Slave updated successfully"
 msgstr "Подчинение успешно обновлено"
+
+#, fuzzy
+msgid "Master/Slave deleted successfully"
+msgstr "Подчинение успешно создано"
+
+msgid "Master/Slave"
+msgstr "Главный/подчиненный"
+
+msgid "The master/slave does not exist"
+msgstr ""
 
 #, fuzzy
 msgid "Nodes"
 msgstr "Узел"
 
+msgid "Create Order Constraint"
+msgstr "Создать ограничение на порядок"
+
 msgid "Edit Order Constraint"
 msgstr "Изменить ограничение на порядок"
 
-msgid "Create Order Constraint"
-msgstr "Создать ограничение на порядок"
+#, fuzzy
+msgid "Order deleted successfully"
+msgstr "Пользователь успешно создан"
+
+#, fuzzy
+msgid "Order Constraints"
+msgstr "Изменить ограничение на порядок"
+
+msgid "The order constraint does not exist"
+msgstr ""
 
 msgid "Welcome"
 msgstr ""
@@ -229,18 +279,40 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-msgid "Create Resource"
-msgstr "Создать ресурс"
+#, fuzzy
+msgid "Create Primitive"
+msgstr "Доступные примитивы"
 
-msgid "Resource created successfully"
-msgstr "Ресурс успешно создан"
+#, fuzzy
+msgid "Primitive created successfully"
+msgstr "Шаблон создан успешно"
 
-msgid "Resource updated successfully"
-msgstr "Ресурс успешно обновлен"
+#, fuzzy
+msgid "Edit Primitive"
+msgstr "Примитив"
+
+#, fuzzy
+msgid "Primitive updated successfully"
+msgstr "Шаблон изменен успешно"
+
+#, fuzzy
+msgid "Primitive deleted successfully"
+msgstr "Роль успешно создана"
 
 #, fuzzy
 msgid "Primitives"
 msgstr "Примитив"
+
+#, fuzzy
+msgid "The primitive does not exist"
+msgstr "Роль с ИД %{id} не существует"
+
+#, fuzzy
+msgid "Preferences updated successfully"
+msgstr "Ресурс успешно обновлен"
+
+msgid "Preferences"
+msgstr "Настройки"
 
 msgid "Resources"
 msgstr "Ресурсы"
@@ -260,10 +332,6 @@ msgstr "Роль успешно обновлена"
 #, fuzzy
 msgid "Role deleted successfully"
 msgstr "Роль успешно создана"
-
-#, fuzzy
-msgid "Error deleting %s"
-msgstr "Ошибка при удалении ресурса"
 
 msgid "Roles"
 msgstr "Роли"
@@ -285,30 +353,46 @@ msgstr "Вы вышли из системы"
 msgid "Log In"
 msgstr "Войти в систему"
 
-#, fuzzy
-msgid "Preferences updated successfully"
-msgstr "Ресурс успешно обновлен"
-
-msgid "Preferences"
-msgstr "Настройки"
-
-msgid "Edit Template"
-msgstr "Редактировать шаблон"
-
 msgid "Create Template"
 msgstr "Создать шаблон"
 
 msgid "Template created successfully"
 msgstr "Шаблон создан успешно"
 
+msgid "Edit Template"
+msgstr "Редактировать шаблон"
+
 msgid "Template updated successfully"
 msgstr "Шаблон изменен успешно"
+
+#, fuzzy
+msgid "Template deleted successfully"
+msgstr "Шаблон создан успешно"
+
+#, fuzzy
+msgid "Templates"
+msgstr "Шаблон"
+
+#, fuzzy
+msgid "The template does not exist"
+msgstr "Роль с ИД %{id} не существует"
+
+msgid "Create Ticket Constraint"
+msgstr "Создать ограничение билета"
 
 msgid "Edit Ticket Constraint"
 msgstr "Изменить ограничение билета"
 
-msgid "Create Ticket Constraint"
-msgstr "Создать ограничение билета"
+#, fuzzy
+msgid "Tciket deleted successfully"
+msgstr "Роль успешно создана"
+
+#, fuzzy
+msgid "Ticket Constraints"
+msgstr "Изменить ограничение билета"
+
+msgid "The ticket constraint does not exist"
+msgstr ""
 
 msgid "Create User"
 msgstr "Создать пользователя"
@@ -333,57 +417,8 @@ msgstr "Пользователь"
 msgid "The user does not exist"
 msgstr ""
 
-msgid "Cluster Setup Wizard"
-msgstr "Мастер установки кластера"
-
-msgid "Invalid password"
-msgstr "Неверный пароль"
-
-msgid "Root Password"
-msgstr "Пароль администратора"
-
-msgid ""
-"The root password is required in order for this wizard template to make config"
-"uration changes."
+msgid "Use a wizard"
 msgstr ""
-"Чтобы внести изменения в конфигурацию с помощью этого шаблона мастера, необход"
-"им пароль пользователя root."
-
-msgid "The root password for this system"
-msgstr "Пароль пользователя root для этой системы"
-
-msgid "\"Error: #{result}\""
-msgstr "\"Ошибка: #{result}\""
-
-msgid "Parameters"
-msgstr "Параметры"
-
-msgid "Confirm"
-msgstr "Подтвердить"
-
-msgid "Done"
-msgstr "Готово"
-
-msgid "Required parameter \"%{param}\" not specified"
-msgstr "Не указан обязательный параметр \"%{param}\""
-
-msgid "Permission denied - you do not have write access to the CIB."
-msgstr "Доступ отклонен: у вас нет прав на запись в CIB."
-
-msgid "Wizard templates and/or workflows are missing"
-msgstr "Отсутствуют шаблоны и(или) рабочие процессы мастера"
-
-msgid "Workflow \"%s\" not found"
-msgstr "Рабочий процесс \"%s\" не найден"
-
-msgid "Error parsing template \"%s\""
-msgstr "Ошибка при анализе шаблона \"%s\""
-
-msgid "Error parsing workflow \"%s\""
-msgstr "Ошибка при анализе рабочего процесса \"%s\""
-
-msgid "Data collection in progress (%{from_time} to %{to_time})..."
-msgstr "Выполняется сбор данных (с %{from_time} по %{to_time})..."
 
 #, fuzzy
 msgid "Revert"
@@ -391,6 +426,9 @@ msgstr "Сбросить"
 
 msgid "Apply"
 msgstr ""
+
+msgid "Data collection in progress (%{from_time} to %{to_time})..."
+msgstr "Выполняется сбор данных (с %{from_time} по %{to_time})..."
 
 #, fuzzy
 msgid "Create"
@@ -528,6 +566,9 @@ msgstr "Не удалось создать ресурс: %{msg}"
 msgid "Resource ID \"%{id}\" does not exist"
 msgstr "Ресурс с ИД \"%{id}\" не существует"
 
+msgid "is required"
+msgstr ""
+
 #, fuzzy
 msgid "Unable to create: %{msg}"
 msgstr "Не удалось создать роль: %{msg}"
@@ -566,9 +607,6 @@ msgstr "%s не установлен"
 msgid "Invalid username or password"
 msgstr "Недопустимое имя пользователя или пароль"
 
-msgid "Language is required"
-msgstr ""
-
 msgid "Invalid Ticket ID"
 msgstr "Неверный ИД билета"
 
@@ -582,14 +620,14 @@ msgstr ""
 msgid "Invalid User ID"
 msgstr "Неверный ИД билета"
 
+msgid "Back"
+msgstr "Назад"
+
 msgid "Meta Attributes"
 msgstr "Метаатрибуты"
 
 msgid "Add"
 msgstr "Добавить"
-
-msgid "Remove"
-msgstr "Удалить"
 
 msgid "You must enter a value"
 msgstr "Необходимо ввести значение"
@@ -600,14 +638,12 @@ msgstr "ИД клона"
 msgid "Child Resource"
 msgstr "Дочерний ресурс"
 
-msgid "Revert Changes"
-msgstr "Отменить изменения"
+msgid "Are you sure you wish to delete %s?"
+msgstr "Вы действительно хотите удалить %s?"
 
-msgid "Back"
-msgstr "Назад"
-
-msgid "Apply Changes"
-msgstr "Применить изменения"
+#, fuzzy
+msgid "Delete clone"
+msgstr "Удалить ресурс"
 
 msgid "Link set"
 msgstr "Связь установлена"
@@ -627,20 +663,13 @@ msgstr "ИД ограничения"
 msgid "Score"
 msgstr "Оценка"
 
-msgid "Create Constraint"
-msgstr "Создать ограничение"
-
-msgid "Edit Constraint"
-msgstr "Изменить ограничение"
-
-msgid "Delete Constraint"
+#, fuzzy
+msgid "Delete colocation"
 msgstr "Удалить ограничение"
 
-msgid "Are you sure you wish to delete %s?"
-msgstr "Вы действительно хотите удалить %s?"
-
-msgid "New Constraint"
-msgstr "Новое ограничение"
+#, fuzzy
+msgid "Add a constraint"
+msgstr "Изменить ограничение"
 
 msgid "Location"
 msgstr "Расположение"
@@ -654,35 +683,11 @@ msgstr "Порядок"
 msgid "Ticket"
 msgstr "Билет"
 
-msgid "(No location constraints defined)"
-msgstr "(Не определены ограничения на расположение)"
-
-msgid "[Constraint is too complex to display]"
-msgstr "[Слишком сложное ограничение для отображения]"
-
-msgid "(No colocation constraints defined)"
-msgstr "(Не определены ограничения на совместное расположение)"
-
-msgid "(No order constraints defined)"
-msgstr "(Не определены ограничения на порядок)"
-
-msgid "(No ticket constraints defined)"
-msgstr "(Ограничения билетов не определены)"
-
-msgid "CRM Configuration"
-msgstr "Конфигурация CRM"
-
 msgid "Resource Defaults"
 msgstr "Восстановить умолчания"
 
 msgid "Operation Defaults"
 msgstr "Умолчания операции"
-
-msgid "No cluster properties set in %{group}"
-msgstr "Не заданы свойства кластера в группе %{group}"
-
-msgid "Edit"
-msgstr "Правка"
 
 msgid "Username:"
 msgstr "Имя пользователя:"
@@ -768,6 +773,10 @@ msgstr "Присоединенность ресурса"
 msgid "Status"
 msgstr "Состояние"
 
+#, fuzzy
+msgid "Errors"
+msgstr "Ошибка:"
+
 msgid "No transitions found for the specified time period."
 msgstr "Переходы для указанного периода времени не найдены."
 
@@ -822,6 +831,10 @@ msgstr "Потомки группы"
 msgid "Available Primitives"
 msgstr "Доступные примитивы"
 
+#, fuzzy
+msgid "Delete group"
+msgstr "Удалить ресурс"
+
 msgid "Start Time not specified"
 msgstr "Не указано время запуска"
 
@@ -833,6 +846,9 @@ msgstr "Формируется отчет hb_report..."
 
 msgid "Download hb_report"
 msgstr "Загрузить отчет hb_report"
+
+msgid "Heartbeat"
+msgstr ""
 
 #, fuzzy
 msgid "Please ensure Javascript is enabled"
@@ -864,6 +880,13 @@ msgstr "Показывать редактор правил"
 
 msgid "Resource"
 msgstr "Ресурс"
+
+#, fuzzy
+msgid "Delete location"
+msgstr "Удалить ограничение"
+
+msgid "History"
+msgstr ""
 
 msgid "Fence Node"
 msgstr "Исключить узел"
@@ -904,6 +927,10 @@ msgstr "Отозвать"
 msgid "Master/Slave ID"
 msgstr "ИД подчинения"
 
+#, fuzzy
+msgid "Delete master/slave"
+msgstr "Создать подчинение"
+
 msgid "Getting recent events (last hour)..."
 msgstr "Получение недавних событий (последний час)..."
 
@@ -928,6 +955,10 @@ msgstr "Атрибуты не определены"
 msgid "Symmetrical"
 msgstr "Симметричный"
 
+#, fuzzy
+msgid "Delete order"
+msgstr "Удалить ресурс"
+
 msgid "Close"
 msgstr "Закрыть"
 
@@ -936,6 +967,12 @@ msgstr ""
 
 msgid "PDF"
 msgstr ""
+
+msgid "Parameters"
+msgstr "Параметры"
+
+msgid "Edit"
+msgstr "Правка"
 
 msgid "There is already a monitor op with this interval."
 msgstr "Уже есть операция мониторинга с этим интервалом."
@@ -958,62 +995,32 @@ msgstr "Тип"
 msgid "Use Template"
 msgstr "Использовать шаблон"
 
-msgid "Edit Resource"
-msgstr "Изменить ресурс"
-
-msgid "Delete Resource"
+#, fuzzy
+msgid "Delete primitive"
 msgstr "Удалить ресурс"
 
-msgid "New Resource"
-msgstr "Новый ресурс"
+#, fuzzy
+msgid "Add a resource"
+msgstr "Изменить ресурс"
 
-msgid "Primitive"
-msgstr "Примитив"
+#, fuzzy
+msgid "Add a primitive"
+msgstr "Доступные примитивы"
 
-msgid "New Template"
-msgstr "Новое примечание"
+#, fuzzy
+msgid "Add a group"
+msgstr "Редактировать группу"
 
-msgid "Template"
-msgstr "Шаблон"
+#, fuzzy
+msgid "Clone a resource"
+msgstr "Создать ресурс"
 
-msgid "New Group"
-msgstr "Новая группа"
-
-msgid "Group"
-msgstr "Группа"
-
-msgid "New Clone"
-msgstr "Новый клон"
-
-msgid "Clone"
-msgstr "Клонировать"
-
-msgid "New Master/Slave"
+#, fuzzy
+msgid "Set master/slave"
 msgstr "Новое подчинение"
 
-msgid "Master/Slave"
-msgstr "Главный/подчиненный"
-
-msgid "(No primitive resources defined)"
-msgstr "(Ресурсы-примитивы не определены)"
-
-msgid "(No templates defined)"
-msgstr "(Шаблоны не определены)"
-
-msgid "(No groups defined)"
-msgstr "(Группы не определены)"
-
-msgid "(No clones defined)"
-msgstr "(Клоны не определены)"
-
-msgid "(No master/slave resources defined)"
-msgstr "(Главные/подчиненные ресурсы не определены)"
-
-msgid "Fail Count"
-msgstr "Счетчик сбоев"
-
-msgid "Last Failure"
-msgstr "Последний сбой"
+msgid "Choose a wizard"
+msgstr ""
 
 #, fuzzy
 msgid "Rule"
@@ -1031,6 +1038,9 @@ msgid "Move rule up"
 msgstr "Переместить ресурс %s"
 
 msgid "Move rule down"
+msgstr ""
+
+msgid "Please select"
 msgstr ""
 
 msgid "Right"
@@ -1073,8 +1083,70 @@ msgstr "Пароль:"
 msgid "Login"
 msgstr "Войти в систему"
 
-msgid "Loss Policy"
-msgstr "Потерянная политика"
+msgid "Version:"
+msgstr ""
+
+msgid "Stack:"
+msgstr ""
+
+msgid "DC:"
+msgstr ""
+
+msgid "UI:"
+msgstr ""
+
+#, fuzzy
+msgid "Report"
+msgstr "Сбросить"
+
+#, fuzzy
+msgid "Add resource"
+msgstr "Изменить ресурс"
+
+#, fuzzy
+msgid "Add constraint"
+msgstr "Изменить ограничение"
+
+#, fuzzy
+msgid "Add template"
+msgstr "Редактировать шаблон"
+
+msgid "Manage"
+msgstr ""
+
+#, fuzzy
+msgid "Configuration"
+msgstr "Конфигурация CRM"
+
+msgid "Enable the simulation mode"
+msgstr ""
+
+msgid "Simulator"
+msgstr ""
+
+msgid "Disable the simulation mode"
+msgstr ""
+
+msgid "Production"
+msgstr ""
+
+#, fuzzy
+msgid "Profile"
+msgstr "Поставщик"
+
+msgid "Logout"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+#, fuzzy
+msgid "Delete template"
+msgstr "Создать шаблон"
+
+#, fuzzy
+msgid "Delete ticket"
+msgstr "Удалить ресурс"
 
 #, fuzzy
 msgid "Delete user"
@@ -1089,6 +1161,9 @@ msgstr "%{workflow}: %{step}"
 
 msgid "The configuration has been applied."
 msgstr "Конфигурация применена."
+
+msgid "Done"
+msgstr "Готово"
 
 msgid "The following configuration will be applied to the cluster:"
 msgstr "К кластеру будет применена следующая конфигурация:"

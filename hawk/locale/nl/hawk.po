@@ -14,6 +14,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "Remove"
+msgstr "Verwijderen"
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nee"
+
 msgid "Any changes will be lost - do you wish to proceed?"
 msgstr "Wijzigingen gaan verloren. Wilt u doorgaan?"
 
@@ -42,12 +51,6 @@ msgstr ""
 
 msgid "Maintenance"
 msgstr "Onderhoud"
-
-msgid "Yes"
-msgstr "Ja"
-
-msgid "No"
-msgstr "Nee"
 
 msgid "Standby"
 msgstr "Standby"
@@ -79,30 +82,33 @@ msgstr "Gebruikers-id"
 msgid "Unable to create shadow CIB"
 msgstr "Kan geen schaduw-CIB maken"
 
-msgid "1 node configured"
-msgid_plural "%{num} nodes configured"
-msgstr[0] "1 knooppunt geconfigureerd"
-msgstr[1] "%{num} knooppunten geconfigureerd"
-
-msgid "1 resource configured"
-msgid_plural "%{num} resources configured"
-msgstr[0] "1 resource geconfigureerd"
-msgstr[1] "%{num} resources geconfigureerd"
-
-msgid "Edit Clone"
-msgstr "Kloon bewerken"
-
 msgid "Create Clone"
 msgstr "Kloon maken"
 
 msgid "Clone created successfully"
 msgstr "De kloon is gemaakt"
 
+msgid "Edit Clone"
+msgstr "Kloon bewerken"
+
 msgid "Clone updated successfully"
 msgstr "De kloon is bijgewerkt"
 
-msgid "Edit Colocation Constraint"
-msgstr "Colocatiebeperking bewerken"
+#, fuzzy
+msgid "Clone deleted successfully"
+msgstr "De rol is gemaakt"
+
+#, fuzzy
+msgid "Error deleting %s"
+msgstr "Fout bij het verwijderen van bron"
+
+#, fuzzy
+msgid "Clones"
+msgstr "Klonen"
+
+#, fuzzy
+msgid "The clone does not exist"
+msgstr "Rol-id \"%{id}\" bestaat niet"
 
 msgid "Create Colocation Constraint"
 msgstr "Colocatiebeperking maken"
@@ -110,30 +116,32 @@ msgstr "Colocatiebeperking maken"
 msgid "Constraint created successfully"
 msgstr "De beperking is gemaakt"
 
+msgid "Edit Colocation Constraint"
+msgstr "Colocatiebeperking bewerken"
+
 msgid "Constraint updated successfully"
 msgstr "Beperking is bijgewerkt"
+
+#, fuzzy
+msgid "Colocation deleted successfully"
+msgstr "De rol is gemaakt"
+
+#, fuzzy
+msgid "Colocation Constraints"
+msgstr "Colocatiebeperking bewerken"
+
+msgid "The colocation constraint does not exist"
+msgstr ""
 
 msgid "Constraints"
 msgstr "Beperkingen"
 
+#, fuzzy
+msgid "Configuration updated successfully"
+msgstr "Beperking is bijgewerkt"
+
 msgid "Cluster Configuration"
 msgstr "Clusterconfiguratie"
-
-msgid "Your changes have been saved"
-msgstr "De wijzigingen zijn opgeslagen"
-
-msgid "Unable to apply changes: %{msg}"
-msgstr "Kan wijzigingen niet toepassen: %{msg}"
-
-msgid ""
-"Can't set property %{p}, because the value contains both single and double quo"
-"tes"
-msgstr ""
-"Kan eigenschap %{p} niet instellen, omdat de waarde enkele en dubbele aanhalin"
-"gstekens bevat"
-
-msgid "Cluster Dashboard"
-msgstr "Clusterdashboard"
 
 msgid "Dashboard"
 msgstr "Dashboard"
@@ -159,23 +167,46 @@ msgstr "Fout:"
 msgid "Required parameters \"left\" and \"right\" not specified"
 msgstr "Vereiste parameters \"links\" en \"rechts\" zijn niet opgegeven"
 
-msgid "Edit Group"
-msgstr "Groep bewerken"
-
 msgid "Create Group"
 msgstr "Groep maken"
 
 msgid "Group created successfully"
 msgstr "De groep is gemaakt"
 
+msgid "Edit Group"
+msgstr "Groep bewerken"
+
 msgid "Group updated successfully"
 msgstr "Groep is bijgewerkt"
+
+#, fuzzy
+msgid "Group deleted successfully"
+msgstr "De groep is gemaakt"
+
+#, fuzzy
+msgid "Groups"
+msgstr "Groep"
+
+#, fuzzy
+msgid "The group does not exist"
+msgstr "Rol-id \"%{id}\" bestaat niet"
+
+msgid "Create Location Constraint"
+msgstr "Locatiebeperking maken"
 
 msgid "Edit Location Constraint"
 msgstr "Locatiebeperking bewerken"
 
-msgid "Create Location Constraint"
-msgstr "Locatiebeperking maken"
+#, fuzzy
+msgid "Location deleted successfully"
+msgstr "De rol is gemaakt"
+
+#, fuzzy
+msgid "Location Constraints"
+msgstr "Locatiebeperking bewerken"
+
+msgid "The location constraint does not exist"
+msgstr ""
 
 msgid "%{cmd} failed (status: %{status})"
 msgstr "%{cmd} mislukt (status: %{status})"
@@ -204,27 +235,48 @@ msgstr "Vereiste parameter \"ticket\" is niet opgegeven"
 msgid "Error invoking %{cmd}: %{msg}"
 msgstr "Fout bij het aanroepen van %{cmd}: %{msg}"
 
-msgid "Edit Master/Slave"
-msgstr "Master/slave bewerken"
-
 msgid "Create Master/Slave"
 msgstr "Master/slave maken"
 
 msgid "Master/Slave created successfully"
 msgstr "Master/slave is gemaakt"
 
+msgid "Edit Master/Slave"
+msgstr "Master/slave bewerken"
+
 msgid "Master/Slave updated successfully"
 msgstr "Master/Slave is bijgewerkt"
+
+#, fuzzy
+msgid "Master/Slave deleted successfully"
+msgstr "Master/slave is gemaakt"
+
+msgid "Master/Slave"
+msgstr "Master/slave"
+
+msgid "The master/slave does not exist"
+msgstr ""
 
 #, fuzzy
 msgid "Nodes"
 msgstr "Knooppunt"
 
+msgid "Create Order Constraint"
+msgstr "Volgordebeperking maken"
+
 msgid "Edit Order Constraint"
 msgstr "Volgordebeperking bewerken"
 
-msgid "Create Order Constraint"
-msgstr "Volgordebeperking maken"
+#, fuzzy
+msgid "Order deleted successfully"
+msgstr "Gebruiker is gemaakt"
+
+#, fuzzy
+msgid "Order Constraints"
+msgstr "Volgordebeperking bewerken"
+
+msgid "The order constraint does not exist"
+msgstr ""
 
 msgid "Welcome"
 msgstr ""
@@ -232,18 +284,40 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-msgid "Create Resource"
-msgstr "Resource maken"
+#, fuzzy
+msgid "Create Primitive"
+msgstr "Beschikbare primitieven"
 
-msgid "Resource created successfully"
-msgstr "De resource is gemaakt"
+#, fuzzy
+msgid "Primitive created successfully"
+msgstr "De sjabloon is gemaakt"
 
-msgid "Resource updated successfully"
-msgstr "Bron is bijgewerkt"
+#, fuzzy
+msgid "Edit Primitive"
+msgstr "Primitieve"
+
+#, fuzzy
+msgid "Primitive updated successfully"
+msgstr "De sjabloon is bijgewerkt"
+
+#, fuzzy
+msgid "Primitive deleted successfully"
+msgstr "De rol is gemaakt"
 
 #, fuzzy
 msgid "Primitives"
 msgstr "Primitieve"
+
+#, fuzzy
+msgid "The primitive does not exist"
+msgstr "Rol-id \"%{id}\" bestaat niet"
+
+#, fuzzy
+msgid "Preferences updated successfully"
+msgstr "Bron is bijgewerkt"
+
+msgid "Preferences"
+msgstr "Voorkeuren"
 
 msgid "Resources"
 msgstr "Resources"
@@ -264,10 +338,6 @@ msgstr "De rol is bijgewerkt"
 msgid "Role deleted successfully"
 msgstr "De rol is gemaakt"
 
-#, fuzzy
-msgid "Error deleting %s"
-msgstr "Fout bij het verwijderen van bron"
-
 msgid "Roles"
 msgstr "Rollen"
 
@@ -286,30 +356,46 @@ msgstr "U bent afgemeld."
 msgid "Log In"
 msgstr "Aanmelden"
 
-#, fuzzy
-msgid "Preferences updated successfully"
-msgstr "Bron is bijgewerkt"
-
-msgid "Preferences"
-msgstr "Voorkeuren"
-
-msgid "Edit Template"
-msgstr "Sjabloon bewerken"
-
 msgid "Create Template"
 msgstr "Sjabloon maken"
 
 msgid "Template created successfully"
 msgstr "De sjabloon is gemaakt"
 
+msgid "Edit Template"
+msgstr "Sjabloon bewerken"
+
 msgid "Template updated successfully"
 msgstr "De sjabloon is bijgewerkt"
+
+#, fuzzy
+msgid "Template deleted successfully"
+msgstr "De sjabloon is gemaakt"
+
+#, fuzzy
+msgid "Templates"
+msgstr "Sjabloon"
+
+#, fuzzy
+msgid "The template does not exist"
+msgstr "Rol-id \"%{id}\" bestaat niet"
+
+msgid "Create Ticket Constraint"
+msgstr "Ticketbeperking maken"
 
 msgid "Edit Ticket Constraint"
 msgstr "Ticketbeperking bewerken"
 
-msgid "Create Ticket Constraint"
-msgstr "Ticketbeperking maken"
+#, fuzzy
+msgid "Tciket deleted successfully"
+msgstr "De rol is gemaakt"
+
+#, fuzzy
+msgid "Ticket Constraints"
+msgstr "Ticketbeperking bewerken"
+
+msgid "The ticket constraint does not exist"
+msgstr ""
 
 msgid "Create User"
 msgstr "Gebruiker maken"
@@ -334,57 +420,8 @@ msgstr "Gebruiker"
 msgid "The user does not exist"
 msgstr ""
 
-msgid "Cluster Setup Wizard"
-msgstr "Wizard Clusterinstallatie"
-
-msgid "Invalid password"
-msgstr "Ongeldig wachtwoord"
-
-msgid "Root Password"
-msgstr "Root-wachtwoord"
-
-msgid ""
-"The root password is required in order for this wizard template to make config"
-"uration changes."
+msgid "Use a wizard"
 msgstr ""
-"Het root-wachtwoord is vereist om via deze wizardsjabloon configuratiewijzigin"
-"gen door te voeren."
-
-msgid "The root password for this system"
-msgstr "Het root-wachtwoord voor dit systeem"
-
-msgid "\"Error: #{result}\""
-msgstr "\"Fout: #{result}\""
-
-msgid "Parameters"
-msgstr "Parameters"
-
-msgid "Confirm"
-msgstr "Bevestigen"
-
-msgid "Done"
-msgstr "Klaar"
-
-msgid "Required parameter \"%{param}\" not specified"
-msgstr "Vereiste parameter \"%{param}\" is niet opgegeven"
-
-msgid "Permission denied - you do not have write access to the CIB."
-msgstr "Toestemming geweigerd - u hebt geen schrijftoegang tot de CIB."
-
-msgid "Wizard templates and/or workflows are missing"
-msgstr "Wizardsjablonen en/of -werkstromen ontbreken"
-
-msgid "Workflow \"%s\" not found"
-msgstr "Werkstroom \"%s\" is niet gevonden"
-
-msgid "Error parsing template \"%s\""
-msgstr "Fout bij het parseren van sjabloon \"%s\""
-
-msgid "Error parsing workflow \"%s\""
-msgstr "Fout bij het parseren van werkstroom \"%s\""
-
-msgid "Data collection in progress (%{from_time} to %{to_time})..."
-msgstr "Gegevens worden verzameld (%{from_time} tot %{to_time})..."
 
 #, fuzzy
 msgid "Revert"
@@ -392,6 +429,9 @@ msgstr "Opnieuw"
 
 msgid "Apply"
 msgstr ""
+
+msgid "Data collection in progress (%{from_time} to %{to_time})..."
+msgstr "Gegevens worden verzameld (%{from_time} tot %{to_time})..."
 
 #, fuzzy
 msgid "Create"
@@ -529,6 +569,9 @@ msgstr "Kan resource niet maken: %{msg}"
 msgid "Resource ID \"%{id}\" does not exist"
 msgstr "Bron-id \"%{id}\" bestaat niet"
 
+msgid "is required"
+msgstr ""
+
 #, fuzzy
 msgid "Unable to create: %{msg}"
 msgstr "Rol kan niet worden gemaakt: %{msg}"
@@ -567,9 +610,6 @@ msgstr "%s is niet geïnstalleerd."
 msgid "Invalid username or password"
 msgstr "Ongeldige gebruikersnaam of ongeldig wachtwoord"
 
-msgid "Language is required"
-msgstr ""
-
 msgid "Invalid Ticket ID"
 msgstr "Ongeldige ticket-id"
 
@@ -583,14 +623,14 @@ msgstr ""
 msgid "Invalid User ID"
 msgstr "Ongeldige ticket-id"
 
+msgid "Back"
+msgstr "Terug"
+
 msgid "Meta Attributes"
 msgstr "Meta-attributen"
 
 msgid "Add"
 msgstr "Toevoegen"
-
-msgid "Remove"
-msgstr "Verwijderen"
 
 msgid "You must enter a value"
 msgstr "U moet een waarde invoeren"
@@ -601,14 +641,12 @@ msgstr "Kloon-id"
 msgid "Child Resource"
 msgstr "Onderliggende resource"
 
-msgid "Revert Changes"
-msgstr "Wijzigingen ongedaan maken"
+msgid "Are you sure you wish to delete %s?"
+msgstr "Weet u zeker dat u %s wilt verwijderen?"
 
-msgid "Back"
-msgstr "Terug"
-
-msgid "Apply Changes"
-msgstr "Wijzigingen toepassen"
+#, fuzzy
+msgid "Delete clone"
+msgstr "Resource verwijdweren"
 
 msgid "Link set"
 msgstr "Set koppelen"
@@ -628,20 +666,13 @@ msgstr "Beperkings-id"
 msgid "Score"
 msgstr "Score"
 
-msgid "Create Constraint"
-msgstr "Beperking maken"
-
-msgid "Edit Constraint"
-msgstr "Beperking bewerken"
-
-msgid "Delete Constraint"
+#, fuzzy
+msgid "Delete colocation"
 msgstr "Beperking verwijderen"
 
-msgid "Are you sure you wish to delete %s?"
-msgstr "Weet u zeker dat u %s wilt verwijderen?"
-
-msgid "New Constraint"
-msgstr "Nieuwe beperking"
+#, fuzzy
+msgid "Add a constraint"
+msgstr "Beperking bewerken"
 
 msgid "Location"
 msgstr "Locatie"
@@ -655,35 +686,11 @@ msgstr "Volgorde"
 msgid "Ticket"
 msgstr "Ticket"
 
-msgid "(No location constraints defined)"
-msgstr "(Geen locatiebeperkingen gedefinieerd)"
-
-msgid "[Constraint is too complex to display]"
-msgstr "[Beperking is te complex om weer te geven]"
-
-msgid "(No colocation constraints defined)"
-msgstr "(Geen colocatiebeperkingen gedefinieerd)"
-
-msgid "(No order constraints defined)"
-msgstr "(Geen volgordebeperkingen gedefinieerd)"
-
-msgid "(No ticket constraints defined)"
-msgstr "(Geen ticketbeperkingen gedefinieerd)"
-
-msgid "CRM Configuration"
-msgstr "CRM-configuratie"
-
 msgid "Resource Defaults"
 msgstr "Standaardwaarden herstellen"
 
 msgid "Operation Defaults"
 msgstr "Standaardwaarden voor bewerking"
-
-msgid "No cluster properties set in %{group}"
-msgstr "Geen clustereigenschappen ingesteld in %{group}"
-
-msgid "Edit"
-msgstr "Bewerken"
 
 msgid "Username:"
 msgstr "Gebruikersnaam:"
@@ -769,6 +776,10 @@ msgstr "Herhaald gebruik resource"
 msgid "Status"
 msgstr "Status"
 
+#, fuzzy
+msgid "Errors"
+msgstr "Fout:"
+
 msgid "No transitions found for the specified time period."
 msgstr "Geen overgangen gevonden voor de opgegeven periode."
 
@@ -823,6 +834,10 @@ msgstr "Onderliggende elementen groeperen"
 msgid "Available Primitives"
 msgstr "Beschikbare primitieven"
 
+#, fuzzy
+msgid "Delete group"
+msgstr "Resource verwijdweren"
+
 msgid "Start Time not specified"
 msgstr "De begintijd is niet opgegeven"
 
@@ -834,6 +849,9 @@ msgstr "hb_report wordt gegenereerd..."
 
 msgid "Download hb_report"
 msgstr "hb_report downloaden"
+
+msgid "Heartbeat"
+msgstr ""
 
 #, fuzzy
 msgid "Please ensure Javascript is enabled"
@@ -865,6 +883,13 @@ msgstr "Regeleditor weergeven"
 
 msgid "Resource"
 msgstr "Resource"
+
+#, fuzzy
+msgid "Delete location"
+msgstr "Beperking verwijderen"
+
+msgid "History"
+msgstr ""
 
 msgid "Fence Node"
 msgstr "Knooppunt fence:"
@@ -905,6 +930,10 @@ msgstr "Intrekken"
 msgid "Master/Slave ID"
 msgstr "Master/slave-id"
 
+#, fuzzy
+msgid "Delete master/slave"
+msgstr "Master/slave maken"
+
 msgid "Getting recent events (last hour)..."
 msgstr "Bezig met ophalen van recente gebeurtenissen (afgelopen uur)..."
 
@@ -929,6 +958,10 @@ msgstr "Geen attributen gedefinieerd"
 msgid "Symmetrical"
 msgstr "Symmetrisch"
 
+#, fuzzy
+msgid "Delete order"
+msgstr "Resource verwijdweren"
+
 msgid "Close"
 msgstr "Sluiten"
 
@@ -937,6 +970,12 @@ msgstr ""
 
 msgid "PDF"
 msgstr ""
+
+msgid "Parameters"
+msgstr "Parameters"
+
+msgid "Edit"
+msgstr "Bewerken"
 
 msgid "There is already a monitor op with this interval."
 msgstr "Er is al een monitor op met dit interval."
@@ -959,62 +998,32 @@ msgstr "Type"
 msgid "Use Template"
 msgstr "Sjabloon gebruiken"
 
-msgid "Edit Resource"
-msgstr "Resource bewerken"
-
-msgid "Delete Resource"
+#, fuzzy
+msgid "Delete primitive"
 msgstr "Resource verwijdweren"
 
-msgid "New Resource"
-msgstr "Nieuwe resource"
+#, fuzzy
+msgid "Add a resource"
+msgstr "Resource bewerken"
 
-msgid "Primitive"
-msgstr "Primitieve"
+#, fuzzy
+msgid "Add a primitive"
+msgstr "Beschikbare primitieven"
 
-msgid "New Template"
-msgstr "Nieuwe sjabloon"
+#, fuzzy
+msgid "Add a group"
+msgstr "Groep bewerken"
 
-msgid "Template"
-msgstr "Sjabloon"
+#, fuzzy
+msgid "Clone a resource"
+msgstr "Resource maken"
 
-msgid "New Group"
-msgstr "Nieuwe groep"
-
-msgid "Group"
-msgstr "Groep"
-
-msgid "New Clone"
-msgstr "Nieuwe kloon"
-
-msgid "Clone"
-msgstr "Klonen"
-
-msgid "New Master/Slave"
+#, fuzzy
+msgid "Set master/slave"
 msgstr "Nieuwe master/slave"
 
-msgid "Master/Slave"
-msgstr "Master/slave"
-
-msgid "(No primitive resources defined)"
-msgstr "(Geen primitieve resources opgegeven)"
-
-msgid "(No templates defined)"
-msgstr "(Geen sjablonen opgegeven)"
-
-msgid "(No groups defined)"
-msgstr "(Geen groepen opgegeven)"
-
-msgid "(No clones defined)"
-msgstr "(Geen klonen opgegeven)"
-
-msgid "(No master/slave resources defined)"
-msgstr "(Geen master/slave-resources opgegeven)"
-
-msgid "Fail Count"
-msgstr "Aantal mislukte pogingen"
-
-msgid "Last Failure"
-msgstr "Laatste mislukte poging"
+msgid "Choose a wizard"
+msgstr ""
 
 #, fuzzy
 msgid "Rule"
@@ -1032,6 +1041,9 @@ msgid "Move rule up"
 msgstr "Resource %s verplaatsen"
 
 msgid "Move rule down"
+msgstr ""
+
+msgid "Please select"
 msgstr ""
 
 msgid "Right"
@@ -1074,8 +1086,70 @@ msgstr "Wachtwoord:"
 msgid "Login"
 msgstr "Aanmelden"
 
-msgid "Loss Policy"
-msgstr "Verliesbeleid"
+msgid "Version:"
+msgstr ""
+
+msgid "Stack:"
+msgstr ""
+
+msgid "DC:"
+msgstr ""
+
+msgid "UI:"
+msgstr ""
+
+#, fuzzy
+msgid "Report"
+msgstr "Opnieuw"
+
+#, fuzzy
+msgid "Add resource"
+msgstr "Resource bewerken"
+
+#, fuzzy
+msgid "Add constraint"
+msgstr "Beperking bewerken"
+
+#, fuzzy
+msgid "Add template"
+msgstr "Sjabloon bewerken"
+
+msgid "Manage"
+msgstr ""
+
+#, fuzzy
+msgid "Configuration"
+msgstr "CRM-configuratie"
+
+msgid "Enable the simulation mode"
+msgstr ""
+
+msgid "Simulator"
+msgstr ""
+
+msgid "Disable the simulation mode"
+msgstr ""
+
+msgid "Production"
+msgstr ""
+
+#, fuzzy
+msgid "Profile"
+msgstr "Provider"
+
+msgid "Logout"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+#, fuzzy
+msgid "Delete template"
+msgstr "Sjabloon maken"
+
+#, fuzzy
+msgid "Delete ticket"
+msgstr "Resource verwijdweren"
 
 #, fuzzy
 msgid "Delete user"
@@ -1090,6 +1164,9 @@ msgstr "%{workflow}: %{step}"
 
 msgid "The configuration has been applied."
 msgstr "De configuratie is toegepast."
+
+msgid "Done"
+msgstr "Klaar"
 
 msgid "The following configuration will be applied to the cluster:"
 msgstr "De volgende configuratie wordt toegepast op de cluster:"

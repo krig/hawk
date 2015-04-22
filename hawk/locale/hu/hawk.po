@@ -14,6 +14,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "Remove"
+msgstr "Eltávolítás"
+
+msgid "Yes"
+msgstr "Igen"
+
+msgid "No"
+msgstr "Nem"
+
 msgid "Any changes will be lost - do you wish to proceed?"
 msgstr "Minden változás el fog veszni - szeretné folytatni?"
 
@@ -38,12 +47,6 @@ msgstr ""
 
 msgid "Maintenance"
 msgstr "Karbantartás"
-
-msgid "Yes"
-msgstr "Igen"
-
-msgid "No"
-msgstr "Nem"
 
 msgid "Standby"
 msgstr "Készenlét"
@@ -75,30 +78,33 @@ msgstr "Felhasználóazonosító"
 msgid "Unable to create shadow CIB"
 msgstr "Nem hozható létre shadow CIB"
 
-msgid "1 node configured"
-msgid_plural "%{num} nodes configured"
-msgstr[0] "1 csomópont beállítva"
-msgstr[1] "%{num} csomópont beállítva"
-
-msgid "1 resource configured"
-msgid_plural "%{num} resources configured"
-msgstr[0] "1 erőforrás beállítva"
-msgstr[1] "%{num} erőforrás beállítva"
-
-msgid "Edit Clone"
-msgstr "Klón szerkesztése"
-
 msgid "Create Clone"
 msgstr "Klón létrehozása"
 
 msgid "Clone created successfully"
 msgstr "Klón létrehozása sikeresen"
 
+msgid "Edit Clone"
+msgstr "Klón szerkesztése"
+
 msgid "Clone updated successfully"
 msgstr "Klón sikeresen frissítve"
 
-msgid "Edit Colocation Constraint"
-msgstr "Kapcsolódási szabály szerkesztése"
+#, fuzzy
+msgid "Clone deleted successfully"
+msgstr "Szerepkör sikeresen létrehozva"
+
+#, fuzzy
+msgid "Error deleting %s"
+msgstr "Hiba az erőforrás törlésekor"
+
+#, fuzzy
+msgid "Clones"
+msgstr "Klón"
+
+#, fuzzy
+msgid "The clone does not exist"
+msgstr "A(z) \"%{id}\" szerepkör-azonosító nem létezik"
 
 msgid "Create Colocation Constraint"
 msgstr "Kapcsolódási szabály létrehozása"
@@ -106,30 +112,32 @@ msgstr "Kapcsolódási szabály létrehozása"
 msgid "Constraint created successfully"
 msgstr "A szabály sikeresen létrejött"
 
+msgid "Edit Colocation Constraint"
+msgstr "Kapcsolódási szabály szerkesztése"
+
 msgid "Constraint updated successfully"
 msgstr "A szabály frissítése sikeres"
+
+#, fuzzy
+msgid "Colocation deleted successfully"
+msgstr "Szerepkör sikeresen létrehozva"
+
+#, fuzzy
+msgid "Colocation Constraints"
+msgstr "Kapcsolódási szabály szerkesztése"
+
+msgid "The colocation constraint does not exist"
+msgstr ""
 
 msgid "Constraints"
 msgstr "Megszorítások"
 
+#, fuzzy
+msgid "Configuration updated successfully"
+msgstr "A szabály frissítése sikeres"
+
 msgid "Cluster Configuration"
 msgstr "Fürt beállítása"
-
-msgid "Your changes have been saved"
-msgstr "A változások mentése megtörtént"
-
-msgid "Unable to apply changes: %{msg}"
-msgstr "Nem alkalmazhatók a módosítások: %{msg}"
-
-msgid ""
-"Can't set property %{p}, because the value contains both single and double quo"
-"tes"
-msgstr ""
-"Nem állítható be a(z) %{p} tulajdonság, mert az eszköz szimpla és dupla idézőj"
-"elet is tartalmaz"
-
-msgid "Cluster Dashboard"
-msgstr "Fürt vezérlőpult"
 
 msgid "Dashboard"
 msgstr "Vezérlőpult"
@@ -155,23 +163,46 @@ msgstr "HIba:"
 msgid "Required parameters \"left\" and \"right\" not specified"
 msgstr "Nincs megadva a \"left\" és a \"right\" paraméter"
 
-msgid "Edit Group"
-msgstr "Csoport szerkesztése"
-
 msgid "Create Group"
 msgstr "Csoport létrehozása"
 
 msgid "Group created successfully"
 msgstr "Csoport sikeresen létrehozva"
 
+msgid "Edit Group"
+msgstr "Csoport szerkesztése"
+
 msgid "Group updated successfully"
 msgstr "Csoport sikeresen frissítve"
+
+#, fuzzy
+msgid "Group deleted successfully"
+msgstr "Csoport sikeresen létrehozva"
+
+#, fuzzy
+msgid "Groups"
+msgstr "Csoport"
+
+#, fuzzy
+msgid "The group does not exist"
+msgstr "A(z) \"%{id}\" szerepkör-azonosító nem létezik"
+
+msgid "Create Location Constraint"
+msgstr "Elhelyezési szabály létrehozása"
 
 msgid "Edit Location Constraint"
 msgstr "Elhelyezési szabály szerkesztése"
 
-msgid "Create Location Constraint"
-msgstr "Elhelyezési szabály létrehozása"
+#, fuzzy
+msgid "Location deleted successfully"
+msgstr "Szerepkör sikeresen létrehozva"
+
+#, fuzzy
+msgid "Location Constraints"
+msgstr "Elhelyezési szabály szerkesztése"
+
+msgid "The location constraint does not exist"
+msgstr ""
 
 msgid "%{cmd} failed (status: %{status})"
 msgstr "%{cmd} sikertelen (állapot: %{status})"
@@ -200,27 +231,48 @@ msgstr "Nincs megadva a kötelező \"ticket\" paraméter"
 msgid "Error invoking %{cmd}: %{msg}"
 msgstr "Hiba a(z) %{cmd} parancs meghívásakor: %{msg}"
 
-msgid "Edit Master/Slave"
-msgstr "Elsődleges/Másodlagos szerkesztése"
-
 msgid "Create Master/Slave"
 msgstr "Elsődleges/Másodlagos létrehozása"
 
 msgid "Master/Slave created successfully"
 msgstr "Elsődleges/Másodlagos sikeresen létrehozva"
 
+msgid "Edit Master/Slave"
+msgstr "Elsődleges/Másodlagos szerkesztése"
+
 msgid "Master/Slave updated successfully"
 msgstr "Elsődleges/Másodlagos sikeresen frissítve"
+
+#, fuzzy
+msgid "Master/Slave deleted successfully"
+msgstr "Elsődleges/Másodlagos sikeresen létrehozva"
+
+msgid "Master/Slave"
+msgstr "Elsődleges/Másodlagos"
+
+msgid "The master/slave does not exist"
+msgstr ""
 
 #, fuzzy
 msgid "Nodes"
 msgstr "Csomópont"
 
+msgid "Create Order Constraint"
+msgstr "Szabály sorrendjének létrehozása"
+
 msgid "Edit Order Constraint"
 msgstr "Szabály sorrendjének szerkesztése"
 
-msgid "Create Order Constraint"
-msgstr "Szabály sorrendjének létrehozása"
+#, fuzzy
+msgid "Order deleted successfully"
+msgstr "Felhasználó sikeresen létrehozva"
+
+#, fuzzy
+msgid "Order Constraints"
+msgstr "Szabály sorrendjének szerkesztése"
+
+msgid "The order constraint does not exist"
+msgstr ""
 
 msgid "Welcome"
 msgstr ""
@@ -228,18 +280,40 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-msgid "Create Resource"
-msgstr "Erőforrások létrehozása"
+#, fuzzy
+msgid "Create Primitive"
+msgstr "Elérhető primitívek"
 
-msgid "Resource created successfully"
-msgstr "Erőforrás sikeresen létrehozva"
+#, fuzzy
+msgid "Primitive created successfully"
+msgstr "A sablon létrehozása sikeres"
 
-msgid "Resource updated successfully"
-msgstr "Erőforrás sikeresen frissítve"
+#, fuzzy
+msgid "Edit Primitive"
+msgstr "Primitív"
+
+#, fuzzy
+msgid "Primitive updated successfully"
+msgstr "A sablon módosítása sikeres"
+
+#, fuzzy
+msgid "Primitive deleted successfully"
+msgstr "Szerepkör sikeresen létrehozva"
 
 #, fuzzy
 msgid "Primitives"
 msgstr "Primitív"
+
+#, fuzzy
+msgid "The primitive does not exist"
+msgstr "A(z) \"%{id}\" szerepkör-azonosító nem létezik"
+
+#, fuzzy
+msgid "Preferences updated successfully"
+msgstr "Erőforrás sikeresen frissítve"
+
+msgid "Preferences"
+msgstr "Tulajdonságok"
 
 msgid "Resources"
 msgstr "Erőforrások"
@@ -259,10 +333,6 @@ msgstr "Szerepkör sikeresen frissítve"
 #, fuzzy
 msgid "Role deleted successfully"
 msgstr "Szerepkör sikeresen létrehozva"
-
-#, fuzzy
-msgid "Error deleting %s"
-msgstr "Hiba az erőforrás törlésekor"
 
 msgid "Roles"
 msgstr "Szerepkörök"
@@ -284,30 +354,46 @@ msgstr "Kijelentkezett"
 msgid "Log In"
 msgstr "Belépés"
 
-#, fuzzy
-msgid "Preferences updated successfully"
-msgstr "Erőforrás sikeresen frissítve"
-
-msgid "Preferences"
-msgstr "Tulajdonságok"
-
-msgid "Edit Template"
-msgstr "Sablon szerkesztése"
-
 msgid "Create Template"
 msgstr "Sablon létrehozása"
 
 msgid "Template created successfully"
 msgstr "A sablon létrehozása sikeres"
 
+msgid "Edit Template"
+msgstr "Sablon szerkesztése"
+
 msgid "Template updated successfully"
 msgstr "A sablon módosítása sikeres"
+
+#, fuzzy
+msgid "Template deleted successfully"
+msgstr "A sablon létrehozása sikeres"
+
+#, fuzzy
+msgid "Templates"
+msgstr "Sablon"
+
+#, fuzzy
+msgid "The template does not exist"
+msgstr "A(z) \"%{id}\" szerepkör-azonosító nem létezik"
+
+msgid "Create Ticket Constraint"
+msgstr "Jegyek megkötéseinek létrehozása"
 
 msgid "Edit Ticket Constraint"
 msgstr "Jegy megkötésének létrehozása"
 
-msgid "Create Ticket Constraint"
-msgstr "Jegyek megkötéseinek létrehozása"
+#, fuzzy
+msgid "Tciket deleted successfully"
+msgstr "Szerepkör sikeresen létrehozva"
+
+#, fuzzy
+msgid "Ticket Constraints"
+msgstr "Jegy megkötésének létrehozása"
+
+msgid "The ticket constraint does not exist"
+msgstr ""
 
 msgid "Create User"
 msgstr "Felhasználó létrehozása"
@@ -332,57 +418,8 @@ msgstr "Felhasználó"
 msgid "The user does not exist"
 msgstr ""
 
-msgid "Cluster Setup Wizard"
-msgstr "Fürtbeállítás-varázsló"
-
-msgid "Invalid password"
-msgstr "Érvénytelen jelszó"
-
-msgid "Root Password"
-msgstr "Root-jelszó"
-
-msgid ""
-"The root password is required in order for this wizard template to make config"
-"uration changes."
+msgid "Use a wizard"
 msgstr ""
-"A gyökér szintű jelszó megadása szükséges ahhoz, hogy a varázsló sablonja módo"
-"sítani tudja a beállításokat."
-
-msgid "The root password for this system"
-msgstr "A rendszer gyökér szintű jelszava"
-
-msgid "\"Error: #{result}\""
-msgstr "\"Hiba: #{result}\""
-
-msgid "Parameters"
-msgstr "Paraméterek"
-
-msgid "Confirm"
-msgstr "Megerősítés"
-
-msgid "Done"
-msgstr "Kész"
-
-msgid "Required parameter \"%{param}\" not specified"
-msgstr "Nincs megadva a(z) \"%{param}\" paraméter"
-
-msgid "Permission denied - you do not have write access to the CIB."
-msgstr "Engedély elutasítva - nincs írási hozzáférése a CIB fájlhoz."
-
-msgid "Wizard templates and/or workflows are missing"
-msgstr "A varázsló sablonjai és/vagy munkafolyamatai hiányoznak"
-
-msgid "Workflow \"%s\" not found"
-msgstr "A(z) \"%s\" munkafolyamat nem található"
-
-msgid "Error parsing template \"%s\""
-msgstr "Hiba történt a(z) \"%s\" sablon feldolgozása közben"
-
-msgid "Error parsing workflow \"%s\""
-msgstr "Hiba történt a(z) \"%s\" munkafolyamat feldolgozása közben"
-
-msgid "Data collection in progress (%{from_time} to %{to_time})..."
-msgstr "Az adatgyűjtés folyamatban (%{from_time} - %{to_time})..."
 
 #, fuzzy
 msgid "Revert"
@@ -390,6 +427,9 @@ msgstr "Visszaállítás"
 
 msgid "Apply"
 msgstr ""
+
+msgid "Data collection in progress (%{from_time} to %{to_time})..."
+msgstr "Az adatgyűjtés folyamatban (%{from_time} - %{to_time})..."
 
 #, fuzzy
 msgid "Create"
@@ -527,6 +567,9 @@ msgstr "Nem hozható létre erőforrás: %{msg}"
 msgid "Resource ID \"%{id}\" does not exist"
 msgstr "A(z) \"%{id}\" erőforrás-azonosító nem létezik"
 
+msgid "is required"
+msgstr ""
+
 #, fuzzy
 msgid "Unable to create: %{msg}"
 msgstr "Nem hozható létre a szerepkör: %{msg}"
@@ -565,9 +608,6 @@ msgstr "%s nincs telepítve"
 msgid "Invalid username or password"
 msgstr "Érvénytelen felhasználónév vagy jelszó"
 
-msgid "Language is required"
-msgstr ""
-
 msgid "Invalid Ticket ID"
 msgstr "Érvénytelen jegy ID"
 
@@ -581,14 +621,14 @@ msgstr ""
 msgid "Invalid User ID"
 msgstr "Érvénytelen jegy ID"
 
+msgid "Back"
+msgstr "Vissza"
+
 msgid "Meta Attributes"
 msgstr "Metaattribútumok"
 
 msgid "Add"
 msgstr "Hozzáadás"
-
-msgid "Remove"
-msgstr "Eltávolítás"
 
 msgid "You must enter a value"
 msgstr "Érték megadása kötelező"
@@ -599,14 +639,12 @@ msgstr "Klón ID"
 msgid "Child Resource"
 msgstr "Gyermek erőforrás"
 
-msgid "Revert Changes"
-msgstr "Változtatások visszavonása"
+msgid "Are you sure you wish to delete %s?"
+msgstr "Biztos, hogy törölni akarja: %s?"
 
-msgid "Back"
-msgstr "Vissza"
-
-msgid "Apply Changes"
-msgstr "Változások alkalmazása"
+#, fuzzy
+msgid "Delete clone"
+msgstr "Erőforrás törlése"
 
 msgid "Link set"
 msgstr "Hivatkozás beállítás"
@@ -626,20 +664,13 @@ msgstr "Szabály ID"
 msgid "Score"
 msgstr "Pontszám"
 
-msgid "Create Constraint"
-msgstr "Szabály létrehozása"
-
-msgid "Edit Constraint"
-msgstr "Szabály szerkesztése"
-
-msgid "Delete Constraint"
+#, fuzzy
+msgid "Delete colocation"
 msgstr "Szabály törlése"
 
-msgid "Are you sure you wish to delete %s?"
-msgstr "Biztos, hogy törölni akarja: %s?"
-
-msgid "New Constraint"
-msgstr "Új szabály"
+#, fuzzy
+msgid "Add a constraint"
+msgstr "Szabály szerkesztése"
 
 msgid "Location"
 msgstr "Hely"
@@ -653,35 +684,11 @@ msgstr "Sorrend"
 msgid "Ticket"
 msgstr "Jegy"
 
-msgid "(No location constraints defined)"
-msgstr "(Nincsenek megadva helyre vonatkozó szabályok)"
-
-msgid "[Constraint is too complex to display]"
-msgstr "[A szabályok túl komplexek a megjelenítéshez]"
-
-msgid "(No colocation constraints defined)"
-msgstr "(Nincsenek megadva kapcsolódási szabályok)"
-
-msgid "(No order constraints defined)"
-msgstr "(Nincsenek szabálysorrendek megadva)"
-
-msgid "(No ticket constraints defined)"
-msgstr "(Nincsenek szabálysorrendek megadva)"
-
-msgid "CRM Configuration"
-msgstr "CRM beállítás"
-
 msgid "Resource Defaults"
 msgstr "Erőforrás alapértelmezései"
 
 msgid "Operation Defaults"
 msgstr "Alapértelmezett műveletek"
-
-msgid "No cluster properties set in %{group}"
-msgstr "Nincsenek beállítva fürttulajdonságok a(z) %{group} csoportban"
-
-msgid "Edit"
-msgstr "Szerkesztés"
 
 msgid "Username:"
 msgstr "Felhasználónév:"
@@ -767,6 +774,10 @@ msgstr "Erőforrás mozgathatósága"
 msgid "Status"
 msgstr "Állapot"
 
+#, fuzzy
+msgid "Errors"
+msgstr "HIba:"
+
 msgid "No transitions found for the specified time period."
 msgstr "A megadott időszakban nem található átmenet."
 
@@ -821,6 +832,10 @@ msgstr "Csoporttag"
 msgid "Available Primitives"
 msgstr "Elérhető primitívek"
 
+#, fuzzy
+msgid "Delete group"
+msgstr "Erőforrás törlése"
+
 msgid "Start Time not specified"
 msgstr "Indítási idő nincs beállítva"
 
@@ -832,6 +847,9 @@ msgstr "A hb_report elkészítése folyamatban..."
 
 msgid "Download hb_report"
 msgstr "hb_report letöltése"
+
+msgid "Heartbeat"
+msgstr ""
 
 #, fuzzy
 msgid "Please ensure Javascript is enabled"
@@ -863,6 +881,13 @@ msgstr "Szabályszerkesztő megjelenítése"
 
 msgid "Resource"
 msgstr "Erőforrás"
+
+#, fuzzy
+msgid "Delete location"
+msgstr "Szabály törlése"
+
+msgid "History"
+msgstr ""
 
 msgid "Fence Node"
 msgstr "Csomópont leválasztása"
@@ -903,6 +928,10 @@ msgstr "Visszavonás"
 msgid "Master/Slave ID"
 msgstr "Elsődleges/Másodlagos azonosító"
 
+#, fuzzy
+msgid "Delete master/slave"
+msgstr "Elsődleges/Másodlagos létrehozása"
+
 msgid "Getting recent events (last hour)..."
 msgstr "Az elmúlt óra eseményei…"
 
@@ -927,6 +956,10 @@ msgstr "Nincsenek megadva attribútumok"
 msgid "Symmetrical"
 msgstr "Szimetrikus"
 
+#, fuzzy
+msgid "Delete order"
+msgstr "Erőforrás törlése"
+
 msgid "Close"
 msgstr "Bezárás"
 
@@ -935,6 +968,12 @@ msgstr ""
 
 msgid "PDF"
 msgstr ""
+
+msgid "Parameters"
+msgstr "Paraméterek"
+
+msgid "Edit"
+msgstr "Szerkesztés"
 
 msgid "There is already a monitor op with this interval."
 msgstr "Már van egy monitor művelet ebben az intervallumban."
@@ -957,62 +996,32 @@ msgstr "Típus"
 msgid "Use Template"
 msgstr "Sablon használata"
 
-msgid "Edit Resource"
-msgstr "Erőforrások szerkesztése"
-
-msgid "Delete Resource"
+#, fuzzy
+msgid "Delete primitive"
 msgstr "Erőforrás törlése"
 
-msgid "New Resource"
-msgstr "Új erőforrás"
+#, fuzzy
+msgid "Add a resource"
+msgstr "Erőforrások szerkesztése"
 
-msgid "Primitive"
-msgstr "Primitív"
+#, fuzzy
+msgid "Add a primitive"
+msgstr "Elérhető primitívek"
 
-msgid "New Template"
-msgstr "Új sablon"
+#, fuzzy
+msgid "Add a group"
+msgstr "Csoport szerkesztése"
 
-msgid "Template"
-msgstr "Sablon"
+#, fuzzy
+msgid "Clone a resource"
+msgstr "Erőforrások létrehozása"
 
-msgid "New Group"
-msgstr "Új csoport"
-
-msgid "Group"
-msgstr "Csoport"
-
-msgid "New Clone"
-msgstr "Új klón"
-
-msgid "Clone"
-msgstr "Klón"
-
-msgid "New Master/Slave"
+#, fuzzy
+msgid "Set master/slave"
 msgstr "Új Elsődleges/Másodlagos"
 
-msgid "Master/Slave"
-msgstr "Elsődleges/Másodlagos"
-
-msgid "(No primitive resources defined)"
-msgstr "(Nincsenek megadva primitív erőforrások)"
-
-msgid "(No templates defined)"
-msgstr "(Nincsenek megadva sablonok)"
-
-msgid "(No groups defined)"
-msgstr "(Nincsenek megadva csoportok)"
-
-msgid "(No clones defined)"
-msgstr "(Nincsenek megadva klónok)"
-
-msgid "(No master/slave resources defined)"
-msgstr "(Nincsenek megadva elsődleges/másodlagos erőforrások)"
-
-msgid "Fail Count"
-msgstr "Hibaszám"
-
-msgid "Last Failure"
-msgstr "Legutóbbi hiba"
+msgid "Choose a wizard"
+msgstr ""
 
 #, fuzzy
 msgid "Rule"
@@ -1030,6 +1039,9 @@ msgid "Move rule up"
 msgstr "%s erőforrás mozgatása"
 
 msgid "Move rule down"
+msgstr ""
+
+msgid "Please select"
 msgstr ""
 
 msgid "Right"
@@ -1072,8 +1084,70 @@ msgstr "Jelszó:"
 msgid "Login"
 msgstr "Belépés"
 
-msgid "Loss Policy"
-msgstr "Adatvesztési házirend"
+msgid "Version:"
+msgstr ""
+
+msgid "Stack:"
+msgstr ""
+
+msgid "DC:"
+msgstr ""
+
+msgid "UI:"
+msgstr ""
+
+#, fuzzy
+msgid "Report"
+msgstr "Visszaállítás"
+
+#, fuzzy
+msgid "Add resource"
+msgstr "Erőforrások szerkesztése"
+
+#, fuzzy
+msgid "Add constraint"
+msgstr "Szabály szerkesztése"
+
+#, fuzzy
+msgid "Add template"
+msgstr "Sablon szerkesztése"
+
+msgid "Manage"
+msgstr ""
+
+#, fuzzy
+msgid "Configuration"
+msgstr "CRM beállítás"
+
+msgid "Enable the simulation mode"
+msgstr ""
+
+msgid "Simulator"
+msgstr ""
+
+msgid "Disable the simulation mode"
+msgstr ""
+
+msgid "Production"
+msgstr ""
+
+#, fuzzy
+msgid "Profile"
+msgstr "Szolgáltató"
+
+msgid "Logout"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+#, fuzzy
+msgid "Delete template"
+msgstr "Sablon létrehozása"
+
+#, fuzzy
+msgid "Delete ticket"
+msgstr "Erőforrás törlése"
 
 #, fuzzy
 msgid "Delete user"
@@ -1088,6 +1162,9 @@ msgstr "%{workflow}: %{step}"
 
 msgid "The configuration has been applied."
 msgstr "A beállítások alkalmazása megtörtént."
+
+msgid "Done"
+msgstr "Kész"
 
 msgid "The following configuration will be applied to the cluster:"
 msgstr "A következő beállítások jutnak érvényre a fürtön:"
