@@ -135,9 +135,7 @@ class CibController < ApplicationController
     end
 
     respond_to do |format|
-      format.json do
-        render json: result
-      end
+      format.json { render json: result }
     end
   rescue ArgumentError => e
     respond_to do |format|
