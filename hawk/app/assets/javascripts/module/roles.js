@@ -47,11 +47,14 @@ $(function() {
       searchAlign: 'left',
       showColumns: true,
       showRefresh: true,
-      minimumCountColumns: 1,
+      minimumCountColumns: 0,
+      sortName: 'id',
+      sortOrder: 'asc',
       columns: [{
         field: 'id',
         title: __('Role ID'),
         sortable: true,
+        switchable: false,
         clickToSelect: true
       }, {
         field: 'operate',

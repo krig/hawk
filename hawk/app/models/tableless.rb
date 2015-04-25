@@ -30,13 +30,16 @@
 #======================================================================
 
 class Tableless
+  class ValidationError < RuntimeError
+  end
+
   extend ActiveModel::Naming
+
+  include Virtus.model
 
   include ActiveModel::Conversion
   include ActiveModel::Validations
   include FastGettext::Translation
-
-  include Virtus.model
 
   attr_accessor :new_record
 
@@ -73,6 +76,10 @@ class Tableless
   def update_attributes(attrs = nil)
     self.attributes = attrs unless attrs.nil?
     self.save
+  end
+
+  def validate!
+    raise ValidationError, errors unless valid?
   end
 
   protected

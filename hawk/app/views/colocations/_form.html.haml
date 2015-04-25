@@ -1,14 +1,22 @@
 .panel.panel-default
   .panel-body
     = form_for [cib, colocation], horizontal: true do |main_form|
-      /= errors_for location
+      = errors_for colocation
 
-      /- if colocation.new_record?
-      /  = main_form.text_field :id, label: _('Colocation ID')
-      /- else
-      /  = main_form.text_field :id, label: _('Colocation ID'), readonly: true
+      - if colocation.new_record?
+        = main_form.text_field :id, label: _("Constraint ID")
+      - else
+        = main_form.text_field :id, label: _("Constraint ID"), readonly: true
 
-      /= main_form.select :roles, :role_options, { include_hidden: false }, { multiple: true, size: 5 }
+      = main_form.text_field :score, label: _("Score")
+
+      %fieldset{ data: { constraints: colocation.resources.to_json, constraints_available: available_colocation_resources.to_json, constraints_selects: available_colocation_roles.to_json, constraints_prefix: "colocation[resources]", constraints_target: ".content" } }
+        %legend
+          = _("Resources")
+          %span.pull-right.toggleable
+            = icon_tag("chevron-up")
+
+        .content.constraints
 
       = main_form.button_group do
         - if colocation.new_record?

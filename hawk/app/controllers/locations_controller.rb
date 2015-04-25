@@ -37,6 +37,7 @@ class LocationsController < ApplicationController
 
   def index
     respond_to do |format|
+      format.html
       format.json do
         render json: Location.ordered.to_json
       end

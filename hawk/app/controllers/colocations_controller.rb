@@ -37,6 +37,7 @@ class ColocationsController < ApplicationController
 
   def index
     respond_to do |format|
+      format.html
       format.json do
         render json: Colocation.ordered.to_json
       end
@@ -175,47 +176,11 @@ class ColocationsController < ApplicationController
   def post_process_for!(record)
   end
 
-  # Pass params[:colocation], to map from form-style:
-  #
-  #  [
-  #    {"action"=>"", "id"=>"foo"},
-  #    "rel",
-  #    {"action"=>"", "id"=>"bar"},
-  #    {"action"=>"", "id"=>"baz"}
-  #  ]
-  #
-  # to model-style:
-  #  [
-  #    {:resources => [ { :id => 'foo' } ]
-  #    {:sequential => false,
-  #     :resources => [ { :id => 'foo' }, { :id => 'bar' } ]
-  #  ]
-  #
-  # Note that nonsequential sets will never be collapsed (this is intentional,
-  # it's up to the model to collapse these if it wants to). Note also that
-  # incoming roles in sequential sets must already all be the same within a
-  # set.
   def normalize_params!(current)
-    m = []
-    set = {}
-
-    current[:resources].each do |r|
-      if r == 'rel'
-        set[:sequential] = set[:resources].length == 1
-        m << set
-        set = {}
-      else
-        # r[:action] here is deliberate - ui.constraint always
-        # uses the term action, even when referring to roles.
-        set[:role] = r[:action] != "" ? r[:action] : nil
-        set[:resources] ||= []
-        set[:resources] << { :id => r[:id] }
-      end
+    if params[:colocation][:resources].nil?
+      params[:colocation][:resources] = []
+    else
+      params[:colocation][:resources] = params[:colocation][:resources].values
     end
-
-    set[:sequential] = set[:resources].length == 1
-    m << set
-
-    current[:resources] = m
   end
 end

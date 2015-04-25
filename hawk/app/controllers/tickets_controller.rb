@@ -33,10 +33,24 @@ class TicketsController < ApplicationController
   before_filter :login_required
   before_filter :set_title
   before_filter :set_cib
-  before_filter :set_record, only: [:edit, :update, :destroy, :show]
+  before_filter :set_record, only: [:edit, :update, :destroy, :show, :grant, :revoke]
+
+  rescue_from Constraint::CommandError do |e|
+    Rails.logger.error e
+
+    respond_to do |format|
+      format.json do
+        render json: { error: e.message }
+      end
+      format.html do
+        redirect_to cib_tickets_url(cib_id: @cib.id), alert: e.message
+      end
+    end
+  end
 
   def index
     respond_to do |format|
+      format.html
       format.json do
         render json: Ticket.ordered.to_json
       end
@@ -122,8 +136,8 @@ class TicketsController < ApplicationController
     respond_to do |format|
       if Invoker.instance.crm('--force', 'configure', 'delete', @ticket.id)
         format.html do
-          flash[:success] = _('Tciket deleted successfully')
-          redirect_to types_cib_constraints_url(cib_id: @cib.id)
+          flash[:success] = _('Ticket deleted successfully')
+          redirect_to cib_tickets_url(cib_id: @cib.id)
         end
         format.json do
           head :no_content
@@ -146,6 +160,40 @@ class TicketsController < ApplicationController
         render json: @ticket.to_json
       end
       format.any { not_found  }
+    end
+  end
+
+  def grant
+    @ticket.grant! @cib.booth.me
+
+    respond_to do |format|
+      format.html do
+        flash[:success] = _('Successfully granted the ticket')
+        redirect_to cib_tickets_url(cib_id: @cib.id)
+      end
+      format.json do
+        render json: {
+          success: true,
+          message: _('Successfully granted the ticket')
+        }
+      end
+    end
+  end
+
+  def revoke
+    @ticket.revoke! @cib.booth.me
+
+    respond_to do |format|
+      format.html do
+        flash[:success] = _('Successfully revoked the ticket')
+        redirect_to cib_tickets_url(cib_id: @cib.id)
+      end
+      format.json do
+        render json: {
+          success: true,
+          message: _('Successfully revoked the ticket')
+        }
+      end
     end
   end
 
@@ -176,5 +224,10 @@ class TicketsController < ApplicationController
   end
 
   def normalize_params!(current)
+    if params[:ticket][:resources].nil?
+      params[:ticket][:resources] = []
+    else
+      params[:ticket][:resources] = params[:ticket][:resources].values
+    end
   end
 end
