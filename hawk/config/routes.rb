@@ -125,11 +125,11 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :logs do
-      member do
-        get :diff
-      end
-    end
+    #resources :explorer do
+    #  member do
+    #    get :diff
+    #  end
+    #end
 
     resources :graphs do
       member do
@@ -139,7 +139,7 @@ Rails.application.routes.draw do
   end
 
 
-
+  get 'explorer' => 'explorer#index', :as => :explorer
 
 
   match 'main/status' => 'main#status', :as => :status, via: [:get, :post]

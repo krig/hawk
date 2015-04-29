@@ -1,0 +1,45 @@
+.container-fluid
+  .row
+    %h1
+      = icon_text "explorer", _("History Explorer"), class: "page"
+  - if @hb_report.running?
+    .row
+      .col-lg-8
+        .container
+          .progress
+            .progress-bar.progress-bar-striped.active{role: "progressbar", aria: { valuenow: 100, valuemin: 0, valuemax: 100 } }
+              %span.sr-only
+                = in_progress_msg
+  - else
+    .row
+      .col-lg-8
+        .container
+          .col-md-5
+            .form-group
+              #datetimepicker6.input-group.date
+                %input{ type:"text", class:"form-control" }
+                %span{ class:"input-group-addon" }
+                  %span{ class:"glyphicon glyphicon-calendar" }
+          .col-md-5
+            .form-group
+              #datetimepicker7.input-group.date
+                %input{ type:"text", class:"form-control" }
+                %span{ class:"input-group-addon" }
+                  %span{ class:"glyphicon glyphicon-calendar" }
+    :javascript
+      $(function () {
+          var locale = document.cookie.match(/locale=([^\;]*)/i);
+          if (locale == null) {
+              locale = navigator.language;
+          } else {
+              locale = locale[1];
+          }
+          $('#datetimepicker6').datetimepicker({locale: locale});
+          $('#datetimepicker7').datetimepicker({locale: locale});
+          $("#datetimepicker6").on("dp.change", function (e) {
+              $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+          });
+          $("#datetimepicker7").on("dp.change", function (e) {
+              $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+          });
+      });
