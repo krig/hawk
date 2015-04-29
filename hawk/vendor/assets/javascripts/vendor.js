@@ -42,5 +42,7 @@
 //= require font-awesome/font-awesome
 //= require rivets/rivets
 //= require misc/jed
+//= require moment-with-locales
+//= require bootstrap-datetimepicker
 
 //= require js-routes
