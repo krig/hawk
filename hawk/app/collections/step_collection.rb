@@ -29,49 +29,40 @@
 #
 #======================================================================
 
-#
-# Note: When using Bundler (i.e. on SLES), the Gemfile is used.
-# Anywhere else, we don't package the Gemfile, so need to require
-# rails, fast_gettext, etc. in config/boot.rb, i.e. if we add more
-# gems here, they need to go in config/boot.rb as well. Yes, this
-# sucks, but it's the least-worst solution I can find right now for
-# making Bundler go away when we neither need nor want it.
-#
-# Have I mentioned lately that while Bundler may be "the best way to
-# manage a Ruby application's gems", it's an absolute menace if you're
-# trying to build packaged software?
-#
+class StepCollection < Array
+  def <<(record)
+    if record.kind_of? Hash
+      super(Step.new(record))
+    else
+      super
+    end
+  end
 
-gem "rails", "~> 4.2.0"
-gem "puma", "~> 2.11.1"
-gem "haml-rails", ">= 0.8.2"
-gem "sass-rails", "~> 5.0.1"
-gem "hashie", "~> 3.4.0"
-gem "virtus", "~> 1.0.4"
-gem "js-routes", "~> 1.0.0"
-gem "sprockets", ">= 3.0.0"
-gem "tilt", "~> 1.4.1"
+  def build(attrs = {})
+    self.push Step.new(attrs)
+  end
 
-gem "fast_gettext", "~> 0.9.2"
-gem "gettext_i18n_rails_js", "~> 1.0.2"
-gem "gettext_i18n_rails", "~> 1.2.3"
+  def valid?
+    # remove_empty!
 
-group :development do
-  gem "web-console", "~> 2.1.2"
-  gem "spring", "~> 1.3.5"
-  gem "quiet_assets", "~> 1.1.0"
-  gem "ruby_parser", "~> 3.6.6"
+    if map(&:valid?).include? false
+      false
+    else
+      true
+    end
+  end
 
-  gem "gettext", "~> 3.1.6", require: false
-end
+  protected
 
-group :test do
-  if ENV["RAILS_ENV"] == "test"
-    source "https://rubygems.org"
+  def remove_empty!
+    default_record = Step.new.attributes
 
-    gem "rake"
-    gem "brakeman"
+    map! do |record|
+      if record.attributes == default_record
+        nil
+      else
+        record
+      end
+    end.compact!
   end
 end
-
-instance_eval(File.read("Gemfile.local")) if File.exist? "Gemfile.local"
