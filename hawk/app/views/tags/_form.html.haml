@@ -21,7 +21,7 @@
             - else
               - tag_refs_list.each do |ref|
                 %li.list-group-item
-                  = check_box_tag "group[children][]", ref, tag.refs.include?(ref)
+                  = check_box_tag "tag[refs][]", ref, tag.refs.include?(ref)
                   = ref
                   .pull-right
                     = icon_tag("bars")
