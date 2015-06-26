@@ -61,9 +61,6 @@ class Tag < Record
       refs.each do |ref|
         cmd.push ref
       end
-
-      raise cmd.join(" ").inspect
     end.join(" ")
   end
-
 end
