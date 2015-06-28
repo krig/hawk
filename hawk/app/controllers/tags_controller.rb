@@ -39,7 +39,7 @@ class TagsController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-        render json: Group.ordered.to_json
+        render json: Tag.ordered.to_json
       end
     end
   end
