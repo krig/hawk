@@ -12,6 +12,7 @@ class Step < Tableless
 
   def initialize(attrs)
     super(attrs)
+    Rails.logger.debug "Step: #{attrs}"
   end
 
   def flattened_steps

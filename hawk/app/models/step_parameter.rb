@@ -12,6 +12,11 @@ class StepParameter < Tableless
   attribute :value, String
   attribute :example, String
 
+  def initialize(attrs)
+    super(attrs)
+    Rails.logger.debug "Parameter: #{attrs}"
+  end
+
   def title
     @name.gsub(/_-/, " ").titleize
   end
