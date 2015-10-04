@@ -64,6 +64,8 @@ $(function() {
       })
       .on('filebatchuploadsuccess', function(e, data) {
         if (data.response.success) {
+          build_running(moment(), moment());
+
           $.growl({
             message: data.response.message
           },{

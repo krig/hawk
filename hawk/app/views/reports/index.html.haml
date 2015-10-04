@@ -13,11 +13,11 @@
           .form-group
             %label.col-sm-5.control-label{for: "running-from_time"}= _("From")
             .col-sm-7
-              %input#running-from-time.form-control{type: :text, value: ""}
+              %input#running-from-time.form-control{type: :text, value: "", readonly: :readonly}
           .form-group
             %label.col-sm-5.control-label{for: "running-to_time"}= _("To")
             .col-sm-7
-              %input#running-to-time.form-control{type: :text, value: ""}
+              %input#running-to-time.form-control{type: :text, value: "", readonly: :readonly}
 
     #report-tabs.panel.panel-default.with-nav-tabs.hidden
       .panel-heading

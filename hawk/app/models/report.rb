@@ -6,259 +6,84 @@ require 'fileutils'
 class Report
   attr_accessor :id
   attr_accessor :name
-  attr_accessor :archive
+  attr_accessor :path
+  attr_accessor :meta
   attr_accessor :from_time
   attr_accessor :to_time
+  attr_accessor :gen_output
+  attr_accessor :gen_error
+  attr_accessor :transitions
+  attr_accessor :node_events
+  attr_accessor :resource_events
+  attr_accessor :hb_report
 
   def initialize(attributes)
     attributes.each { |key, value| send("#{key}=".to_sym, value) }
+    @hb_report = HbReport.new @name
   end
 
-  def delete(hb_report)
-    self.archive.delete
-    FileUtils.remove_entry_secure(hb_report.path) if File.exists?(hb_report.path)
-    FileUtils.remove_entry_secure(hb_report.outfile) if File.exists?(hb_report.outfile)
-    FileUtils.remove_entry_secure(hb_report.errfile) if File.exists?(hb_report.errfile)
-  end
-
-  def load!
+  def delete
+    hb_report.delete
   end
 
   def report_path
     self.class.report_path
   end
 
-  def mimetype
-    if archive.extname == ".bz2"
-      "application/x-bzip"
-    elsif archive.extname == ".xz"
-      "application/x-xz"
-    elsif archive.extname == ".gz"
-      "application/x-gz"
-    else
-      "application/x-compressed"
-    end
+  # Returns [filename, mimetype]
+  def archive
+    hb_report.archive
   end
 
-  def transitions(hb_report)
-    # TODO(fix this)
-    # Have to blow this away if it exists (i.e. is a cached report), else
-    # prior cibadmin calls on individual PE inputs will have wrecked their mtimes.
-    # FileUtils.remove_entry_secure(hb_report.path) if File.exists?(hb_report.path)
-
-    source = archive
-    source = hb_report.path if File.directory?(hb_report.path)
-
-    pcmk_version = nil
-    m = `/usr/sbin/cibadmin -!`.match(/^Pacemaker ([^ ]+) \(Build: ([^)]+)\)/)
-    pcmk_version = "#{m[1]}-#{m[2]}" if m
-
-    [].tap do |peinputs|
-      peinputs_raw, err, status = Util.capture3("/usr/sbin/crm", "history", stdin_data: "source #{source}\npeinputs\n")
-      if status.exitstatus == 0
-        peinputs_raw.split(/\n/).each do |path|
-          next unless File.exists?(path)
-          v = peinput_version path
-          if v && v != pcmk_version
-            version = _("PE Input created by different Pacemaker version (%{version})" % { :version => v })
-          elsif v != pcmk_version
-            version = _("Pacemaker version not present in PE Input")
-          else
-            version = nil
-          end
-          peinputs.push(timestamp: File.mtime(path).iso8601,
-                        basename: File.basename(path, ".bz2"),
-                        filename: File.basename(path),
-                        path: path.sub("#{hb_report.path}/", ''),
-                        node: path.split(File::SEPARATOR)[-3],
-                        version: version)
-        end
-        # sort is going to be off for identical mtimes (stripped back to the second),
-        # so need secondary sort by filename
-      end
-
-      # add errors to output
-      errors = hb_report.err_filtered
-      errors.each do |err|
-        peinputs.push error: err
-      end
-    end
-  end
-
-  def peinput_version(path)
-    nvpair = `CIB_file=#{path} cibadmin -Q --xpath "/cib/configuration//crm_config//nvpair[@name='dc-version']" 2>/dev/null`
-    m = nvpair.match(/value="([^"]+)"/)
-    return nil unless m
-    m[1]
-  end
-
-  def transition_cmd(hb_report, cmd)
-    source = archive
-    source = hb_report.path if File.directory?(hb_report.path)
-    Util.capture3("/usr/sbin/crm", "history", stdin_data: "source #{source}\n#{cmd}\n")
-  end
-
-  def info(hb_report, path)
-    out, err, status = transition_cmd hb_report, "transition #{path} nograph"
-    out.strip!
-    out = _("No details available") if out.empty?
-    err.insert(0, _("Error:") + "\n") unless status.exitstatus == 0
-    [out, err]
-  end
-
-  def cib(hb_report, path)
-    out, err, status = transition_cmd hb_report, "show #{path}"
+  def info(transition)
+    out, _err = hb_report.info transition
     out
   end
 
-  def node_events(hb_report)
-    out, err, status = transition_cmd hb_report, "node"
-    out
+  def cib(transition)
+    hb_report.cib transition
   end
 
-  def resource_events(hb_report)
-    out, err, status = transition_cmd hb_report, "resource"
-    out
+  def tags(transition)
+    hb_report.tags transition
   end
 
-  def tags(hb_report, path)
-    out, err, status = transition_cmd hb_report, "transition tags #{path}"
-    out.split
+  def logs(transition)
+    hb_report.logs transition
   end
 
-  def logs(hb_report, path)
-    out, err, status = transition_cmd hb_report, "transition log #{path}"
-    out.strip!
-    out = _("No details available") if out.empty?
-    err.insert(0, _("Error:") + "\n") unless status.exitstatus == 0
-    [out, err]
+  def graph(transition, format = :svg)
+    hb_report.graph transition, format
   end
 
-  # Apparently we can't rely on the dot file existing in the hb_report, so we
-  # just use ptest to generate it.  Note that this will fail if hacluster doesn't
-  # have read access to the pengine files (although, this should be OK, because
-  # they're created by hacluster by default).
-  # Returns [success, data|error]
-  def graph(hb_report, path, format = :svg)
-    tpath = Pathname.new(hb_report.path).join(path)
-    require "tempfile"
-    tmpfile = Tempfile.new("hawk_dot")
-    tmpfile.close
-    File.chmod(0666, tmpfile.path)
-    out, err, status = Util.run_as('hacluster', 'crm_simulate', '-x', tpath.to_s, format == :xml ? "-G" : "-D", tmpfile.path.to_s)
-    rc = status.exitstatus
-
-    ret = [false, err]
-    if rc != 0
-      ret = [false, err]
-    elsif format == :xml || format == :json
-      ret = [true, File.new(tmpfile.path).read]
-    else
-      svg, err, status = Util.capture3("/usr/bin/dot", "-Tsvg", tmpfile.path)
-      if status.exitstatus == 0
-        ret = [true, svg]
-      else
-        ret = [false, err]
-      end
-    end
-    tmpfile.unlink
-    ret
-  end
-
-  # Returns the diff as a text or html string
-  def diff(hb_report, path, left, right, format = :html)
-    format = "" unless format == :html
-    out, err, status = transition_cmd hb_report, "diff #{left} #{right} status #{format}"
-    info = out + err
-
-    info.strip!
-    # TODO(should): option to increase verbosity level
-    info = _("No details available") if info.empty?
-
-    if status.exitstatus == 0
-      if format == :html
-        info += <<-eos
-          <div class="row"><div class="col-sm-2">
-          <table class="table">
-            <tr><th>#{_('Legend')}:</th></tr>
-            <tr><td class="diff_add">#{_('Added')}</th></tr>
-            <tr><td class="diff_chg">#{_('Changed')}</th></tr>
-            <tr><td class="diff_sub">#{_('Deleted')}</th></tr>
-          </table>
-          </div></div>
-        eos
-      end
-    else
-      info.insert(0, _("Error:") + "\n")
-    end
-    info
+  def diff(left, right, format = :html)
+    hb_report.diff left, right, format
   end
 
   class << self
-    def parse(file)
-      name = report_name file
-
-      dates = name.scan(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:(?:\+\d{2}:\d{2})|Z)/)
-      if dates.length == 2
-        from_time_ = DateTime.parse dates[0]
-        to_time_ = DateTime.parse dates[1]
-      else
-        dates = name.scan(/\d{4}-\d{2}-\d{2}_\d{2}:\d{2}/)
-        if dates.length == 2
-          from_time_ = DateTime.parse dates[0]
-          to_time_ = DateTime.parse dates[1]
-        else
-          from_time_ = file.ctime.to_datetime
-          to_time_ = from_time_
-        end
-      end
-
-      Report.new id: report_id(name), archive: file, name: name, from_time: from_time_, to_time: to_time_
-    end
-
     def find(id)
-      file = report_file(id)
-
-      if file
-        record = parse(file)
-        record.load!
-        record
-      else
-        nil
-      end
+      rl = report_list
+      meta = rl[id]
+      Report.new meta if meta
     end
 
     def all
-      report_files.values.map do |file|
-        parse(file)
+      report_list.values.map do |meta|
+        Report.new meta
       end.sort_by(&:name)
     end
 
-    def report_name(file)
-      n = file
-      n = n.basename(n.extname)
-      n = n.basename(n.extname) if n.extname == ".tar"
-      n.to_s
-    end
-
-
-    def report_id(name)
-      Digest::SHA1.hexdigest(name)[0..8]
-    end
-
-    def report_files
-      basenames = [".bz2", ".gz", ".xz"]
-      files = report_path.children.select { |file| file if basenames.include? file.extname }
+    def report_list
       {}.tap do |ret|
-        files.each do |file|
-          id = report_id(report_name(file))
-          ret[id] = file
+        Pathname.glob(report_path.join('*.meta.json')).map do |meta|
+          begin
+            data = JSON.parse(IO.read(meta))
+            ret[data["id"]] = data
+          rescue JSON::ParserError => e
+            Rails.logger.debug "#{e}"
+          end
         end
       end
-    end
-
-    def report_file(name)
-      report_files[name]
     end
 
     def report_path
@@ -298,6 +123,7 @@ class Report
       FileUtils.rm path if path.file?
       FileUtils.cp @upload.tempfile.to_path, path
       Rails.logger.debug "Uploaded to #{path}"
+      # TODO
       true
     end
   end

@@ -1,7 +1,7 @@
-- unless @transition[:tags].empty?
+- unless @transition["tags"].empty?
   .row.margin-bottom
     .col-sm-12
-      - @transition[:tags].each do |tag|
+      - @transition["tags"].each do |tag|
         - if tag == "error" || tag == "unclean"
           %span.label.label-danger= tag
         - else
@@ -9,9 +9,9 @@
 .row
   .col-sm-12
     %pre
-      = history_text_markup @transition[:info]
-- unless @transition[:info_err].blank?
+      = history_text_markup @transition["info"]
+- unless @transition["info_err"].blank?
   .row
     .col-sm-12
       %pre
-        = history_text_markup @transition[:info_err]
+        = history_text_markup @transition["info_err"]

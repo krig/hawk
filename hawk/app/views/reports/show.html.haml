@@ -22,12 +22,12 @@
             %dd= format_date @report.to_time
           - elsif @transitions.length > 1
             %dt= _("From")
-            %dd= format_date @transitions[0][:timestamp]
+            %dd= format_date @transitions[0]["timestamp"]
             %dt= _("To")
-            %dd= format_date @transitions[-1][:timestamp]
+            %dd= format_date @transitions[-1]["timestamp"]
           - elsif @transitions.length == 1
             %dt= _("From")
-            %dd= format_date @transitions[0][:timestamp]
+            %dd= format_date @transitions[0]["timestamp"]
             %dt= _("To")
             %dd= "-"
           - else
@@ -86,14 +86,14 @@
           .panel-body
             %dl.dl-horizontal
               %dt= _("PE Name")
-              %dd= link_to @transition[:basename], pefile_report_path(id: params[:id], transition: current_transition)
+              %dd= link_to @transition["basename"], pefile_report_path(id: params[:id], transition: current_transition)
               %dt= _("Node")
-              %dd= @transition[:node]
+              %dd= @transition["node"]
               %dt= _("Time")
-              %dd= format_date @transition[:timestamp]
-              - if @transition[:version]
+              %dd= format_date @transition["timestamp"]
+              - if @transition["version"]
                 %dt= _("Version")
-                %dd= @transition[:version]
+                %dd= @transition["version"]
 
       - unless @transition.nil?
         .panel.panel-default.with-nav-tabs
@@ -138,16 +138,15 @@
                   = icon_tag("spinner", class: "fa-spinner fa-spin fa-2x")
   - if @transition.nil?
     .row
-      .panel.panel-default
-        .panel-heading
-          %h4.panel-title
-            = _("Node Events")
-        .panel-body
-          %pre= history_log_markup @node_events
-
-      .panel.panel-default
-        .panel-heading
-          %h4.panel-title
-            = _("Resource Events")
-        .panel-body
-          %pre= history_log_markup @resource_events
+      #reportinfo.panel-group{role: :tablist, aria: {multiselectable: true}}
+        - show_report_info.each do |tag, title, text|
+          .panel.panel-default
+            .panel-heading{role: :tab}
+              %h4.panel-title
+                %a{role: :button, data: {toggle: :collapse, parent: "#reportinfo"}, href: "#" + tag, aria: {expanded: true, controls: tag}}
+                  = title
+                  .pull-right
+                    %span.caret
+            .panel-collapse.collapse.in{role: :tabpanel, id: tag}
+              .panel-body
+                %pre= text

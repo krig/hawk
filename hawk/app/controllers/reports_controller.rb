@@ -88,7 +88,12 @@ class ReportsController < ApplicationController
 
   def download
     if @report
-      send_file @report.archive.realdirpath, type: @report.mimetype, filename: @report.archive.basename, x_sendfile: true
+      filename, mimetype = @report.archive
+      unless filename.nil?
+        send_file filename, type: mimetype, filename: filename.basename, x_sendfile: true
+      else
+        raise ActionController::RoutingError, 'Not Found'
+      end
     else
       raise ActionController::RoutingError, 'Not Found'
     end
@@ -107,27 +112,27 @@ class ReportsController < ApplicationController
 
   def show
     if @transition.nil?
-      @node_events = @report.node_events(HbReport.new(@report.name))
-      @resource_events = @report.resource_events(HbReport.new(@report.name))
+      @node_events = @report.node_events
+      @resource_events = @report.resource_events
     end
     respond_to do |format|
       format.html
       format.json do
-        render json: @transitions
+        render json: @report.to_json
       end
     end
   end
 
   def pefile
-    fn = Pathname.new(@hb_report.path).join(@transition[:path])
-    send_file fn.to_s, type: "application/x-bzip", filename: @transition[:filename], x_sendfile: true
+    fn = Pathname.new(@hb_report.path).join(@transition["filename"])
+    send_file fn.to_s, type: "application/x-bzip", filename: @transition["filename"], x_sendfile: true
   end
 
   def detail
-    info, err = @report.info(@hb_report, @transition[:path])
-    @transition[:info] = info
-    @transition[:info_err] = err
-    @transition[:tags] = @report.tags(@hb_report, @transition[:path])
+    @transition["tags"] = @report.tags @transition["filename"]
+    out, err = @report.info @transition["filename"]
+    @transition["info"] = out
+    @transition["info_err"] = err
     respond_to do |format|
       format.html do
         render layout: false
@@ -139,22 +144,23 @@ class ReportsController < ApplicationController
   end
 
   def graph
+    Rails.logger.debug "#{@transition.inspect}"
     respond_to do |format|
       format.html do
         render layout: false
       end
       format.svg do
-        ok, data = @report.graph(@hb_report, @transition[:path], :svg)
+        ok, data = @report.graph(@transition["path"], :svg)
         send_data data, :type => "image/svg+xml", :disposition => "inline" if ok
         render text: { error: data }, status: 500 unless ok
       end
       format.xml do
-        ok, data = @report.graph(@hb_report, @transition[:path], :xml)
+        ok, data = @report.graph(@transition["path"], :xml)
         render xml: data if ok
         render text: { error: data }, status: 500 unless ok
       end
       format.json do
-        ok, data = @report.graph(@hb_report, @transition[:path], :json)
+        ok, data = @report.graph(@transition["path"], :json)
         render json: data if ok
         render json: { error: data }, status: 500 unless ok
       end
@@ -162,7 +168,7 @@ class ReportsController < ApplicationController
   end
 
   def cib
-    cib = @report.cib(@hb_report, @transition[:path])
+    cib = @report.cib(@transition["filename"])
     respond_to do |format|
       format.html do
         render text: ['<pre><code class="hljs crmsh">', cib, '</code></pre>'].join("")
@@ -174,7 +180,7 @@ class ReportsController < ApplicationController
   end
 
   def logs
-    logs, logs_err = @report.logs(@hb_report, @transition[:path])
+    logs, logs_err = @report.logs(@transition["filename"])
     respond_to do |format|
       format.html do
         txt = ['<pre>', history_log_markup(logs), '</pre>']
@@ -184,26 +190,26 @@ class ReportsController < ApplicationController
         render text: txt.join("")
       end
       format.json do
-        @transition[:logs] = logs
-        @transition[:logs_err] = logs_err
+        @transition["logs"] = logs
+        @transition["logs_err"] = logs_err
         render json: @transition
       end
     end
   end
 
   def diff
-    tidx = @transition[:index]
+    tidx = @transition["index"]
     if tidx >= 0 && tidx < @transitions.length-1 && @transitions.length > 1
-      l = @transitions[tidx][:path]
-      r = @transitions[tidx+1][:path]
-      @transition[:diff] = @report.diff(@hb_report, @transition[:path], l, r, :html)
+      l = @transitions[tidx]["filename"]
+      r = @transitions[tidx+1]["filename"]
+      @transition["diff"] = @report.diff(l, r, :html)
     else
-      @transition[:diff] = _("No diff: Last transition")
+      @transition["diff"] = _("No diff: Last transition")
     end
 
     respond_to do |format|
       format.html do
-        render text: @transition[:diff]
+        render text: @transition["diff"]
       end
       format.json do
         render json: @transition
@@ -212,11 +218,9 @@ class ReportsController < ApplicationController
   end
 
   def destroy
-    @hb_report = HbReport.new @report.name
-
     respond_to do |format|
       begin
-        @report.delete(@hb_report)
+        @report.delete
         format.html do
           flash[:success] = _("Report deleted successfully")
           redirect_to reports_url
@@ -248,7 +252,7 @@ class ReportsController < ApplicationController
   def set_record
     @report = Report.find params[:id]
 
-    unless @report
+    if @report.nil?
       respond_to do |format|
         format.html do
           flash[:alert] = _("The report does not exist")
@@ -261,17 +265,15 @@ class ReportsController < ApplicationController
   def set_transitions
     session[:history_session_poke] = "poke"
     set_record
-    @hb_report = HbReport.new @report.name
-    @transitions = Rails.cache.fetch("#{params[:id]}/#{session.id}", expires_in: 2.hours) do
-      @report.transitions(@hb_report).select do |t|
-        # TODO(must): handle this better
-        !t.has_key?(:error)
-      end
+    unless @report.nil?
+      @hb_report = @report.hb_report
+      @transitions = @report.transitions
     end
   end
 
   def set_transition
     set_transitions
+    return if @report.nil?
     if params.has_key? :transition
       tidx = params[:transition].to_i
       tidx -= 1 if tidx > 0
@@ -281,7 +283,7 @@ class ReportsController < ApplicationController
         @transition = {}
       else
         @transition = @transitions[tidx]
-        @transition[:index] = tidx
+        @transition["index"] = tidx
       end
     else
       @transition = nil
