@@ -1,0 +1,64 @@
+#!/usr/bin/env python
+import sys
+import os.path
+import crmsh.report
+import datetime
+try:
+    import json
+except ImportError:
+    import simplejson as json
+
+
+def usage():
+    print("hawk_analyse_report <FILE|DIR>\n")
+    sys.exit(1)
+
+
+def strtime(t):
+    if isinstance(t, basestring):
+        return t
+    if isinstance(t, datetime.datetime):
+        return t.isoformat()
+    if t is not None:
+        return datetime.datetime.fromtimestamp(t).isoformat()
+    return "-"
+
+
+def main(args):
+    if len(args) < 2:
+        usage()
+    src = args[1]
+    if not os.path.isfile(src) and not os.path.isdir(src):
+        usage()
+
+    report = crmsh.report.Report()
+    report.set_source(src)
+    report.set_period('', '')
+    if not report.prepare_source():
+        sys.stderr.write("Failed to prepare source\n")
+        sys.exit(1)
+
+    info = {
+        "created": report.get_desc_line("Date") or report._creation_time,
+        "by": report.get_desc_line("By") or report._creator,
+        "source": src,
+        "from": strtime(report.get_rpt_dt(report.from_dt, "top")),
+        "to": strtime(report.get_rpt_dt(report.to_dt, "bottom")),
+        "nodes": report.node_l,
+        "groups": report.cibgrp_d.keys(),
+        "clones": report.cibcln_d.keys(),
+        "resources": report.cibrsc_l,
+        "peinputs": [{
+            "file": t.pe_file,
+            "num": t.pe_num,
+            "dc": t.dc,
+            "tags": list(t.tags),
+            "start": strtime(t.start_ts),
+            "end": strtime(t.end_ts),
+        } for t in report._transitions]
+    }
+    json.dump(info, sys.stdout)
+    sys.stdout.write("\n")
+
+if __name__ == "__main__":
+    main(sys.argv)

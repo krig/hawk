@@ -127,6 +127,8 @@ tools/install:
 
 	install -D -m 0755 tools/hawk_monitor $(DESTDIR)/usr/sbin/hawk_monitor
 
+	install -D -m 0755 tools/hawk_analyse_report $(DESTDIR)/usr/sbin/hawk_analyse_report
+
 # TODO(should): Verify this is really clean (it won't get rid of .mo files,
 # for example
 clean:
