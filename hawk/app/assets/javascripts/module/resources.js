@@ -545,6 +545,53 @@ $(function() {
         });
     }
   };
+  var customResourceSearch = function (text) {
+    var cib = $('body').data('content');
+    var resources_and_tags = cib.resources.concat(filterTags(cib.resources_by_id, cib.tags));
+    if (text === undefined) {
+      this.data = resources_and_tags;
+      return;
+    }
+    var match = text.toLowerCase();
+
+    //var submatches = [];
+
+    function matchItem(item) {
+      if (item.id.toLowerCase().indexOf(match) > -1) {
+        return true;
+      } else if (item.object_type.toLowerCase().indexOf(match) > -1) {
+        return true;
+      } else if (item["class"] && item["class"].toLowerCase().indexOf(match) > -1) {
+        return true;
+      } else if (item.type && item.type.toLowerCase().indexOf(match) > -1) {
+        return true;
+      } else if (item.template && item.template.toLowerCase().indexOf(match) > -1) {
+        return true;
+      } else if (item.state && item.state.toLowerCase().indexOf(match) > -1) {
+        return true;
+      } else if ("refs" in item) {
+        for (var i = 0; i < item.refs.length; i++) {
+          if (item.refs[i].toLowerCase().indexOf(match) > -1) {
+            return true;
+          }
+        }
+      }
+      if ("child" in item && matchItem(item.child)) {
+        // submatches.push(item.child);
+        return true;
+      } else if ("children" in item) {
+        for (var i = 0; i < item.children.length; i++) {
+          if (matchItem(item.children[i])) {
+            return true;
+            // submatches.push(item.children[i]);
+          }
+        }
+      }
+      return false;
+    }
+
+    this.data = $.grep(resources_and_tags, matchItem);// + submatches;
+  };
 
   $('#cib #middle table.resources')
     .bootstrapTable({
@@ -552,7 +599,6 @@ $(function() {
         var cib = $('body').data('content');
         var resources_and_tags = cib.resources.concat(filterTags(cib.resources_by_id, cib.tags));
         params.success(resources_and_tags, "success", {});
-        params.complete({}, "success");
       },
       pagination: true,
       pageSize: 25,
@@ -570,7 +616,8 @@ $(function() {
       detailView: true,
       rowStyle: rowStyleFn,
       onExpandRow: expandResourcesHandler,
-      columns: statesResourcesColumns
+      columns: statesResourcesColumns,
+      customSearch: customResourceSearch
     });
 
   $('#resources #middle table.resources, #configs #middle table.resources')

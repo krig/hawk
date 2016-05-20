@@ -14,12 +14,42 @@ $(function() {
     }
   };
 
+  var customNodeSearch = function (text) {
+    var cib = $('body').data('content');
+    var nodes = cib.nodes;
+    if (text === undefined) {
+      this.data = nodes;
+      return;
+    }
+    var match = text.toLowerCase();
+
+    nodes = $.extend(true, [], nodes);
+
+    function matchItem(item) {
+      if (item.uname.toLowerCase().indexOf(match) > -1) {
+        return true;
+      } else if (item.id.toLowerCase().indexOf(match) > -1) {
+        return true;
+      } else if (item.state && item.state.toLowerCase().indexOf(match) > -1) {
+        return true;
+      } else if (item.maintenance && "maintenance".indexOf(match) > -1) {
+        return true;
+      } else if (item.standby && "standby".indexOf(match) > -1) {
+        return true;
+      } else if (item.remote && "remote".indexOf(match) > -1) {
+        return true;
+      }
+      return false;
+    }
+
+    this.data = $.grep(nodes, matchItem);
+  };
+
   $('#cib #middle table.nodes')
     .bootstrapTable({
       ajax: function(params) {
         var cib = $('body').data('content');
         params.success(cib.nodes, "success", {});
-        params.complete({}, "success");
       },
       pagination: true,
       pageSize: 10,
@@ -34,6 +64,7 @@ $(function() {
       sortName: 'name',
       sortOrder: 'asc',
       rowStyle: rowStyleFn,
+      customSearch: customNodeSearch,
       columns: [
         {
           field: 'state',

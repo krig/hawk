@@ -97,7 +97,6 @@ $(function() {
         params.success($.map(cib.tickets, function(t) {
           return t;
         }, "success", {}));
-        params.complete({}, "success");
       },
       pagination: false,
       pageSize: 50,
