@@ -15,7 +15,7 @@
           <%= user_apply_button(main_form, user) %>
           <%= user_revert_button(main_form, user) %>
         <% end %>
-        <%= link_to _("Back"), cib_users_path(cib_id: cib.id), class: "btn btn-default back" %>
+        <%= link_to _("Back"), edit_cib_config_path(cib_id: cib.id, anchor: "users"), class: "btn btn-default back" %>
       <% end %>
     <% end %>
   </div>

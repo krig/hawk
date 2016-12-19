@@ -2,7 +2,7 @@
 // See COPYING for license.
 
 $(function() {
-  $('#roles #middle table.roles')
+  $('#roles #middle table.roles, #configs #middle table.roles')
     .bootstrapTable({
       method: 'get',
       url: Routes.cib_roles_path(

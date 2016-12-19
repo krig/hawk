@@ -113,10 +113,13 @@ $(function() {
     return false;
   }
 
-  var agentLinkForResource = function(resource) {
+  var agentLinkForResource = function(resource, icon) {
+    if (icon === undefined) {
+      icon = "square-o";
+    }
     var cib = $('body').data('cib');
     if (resource.template && resource.template.length > 0) {
-      return '<a href="' + Routes.cib_agent_path(cib, encodeURIComponent("@" + resource.template)) + '" data-toggle="modal" data-target="#modal-lg">' + "@" + resource.template + '</a>';
+      return '<a href="' + Routes.cib_agent_path(cib, encodeURIComponent("@" + resource.template)) + '" data-toggle="modal" data-target="#modal-lg" title="' + resource.template + '"><i class="fa fa-' + icon + ' fa-fw"></i></a>';
     }
 
     var agent = "";
@@ -127,7 +130,8 @@ $(function() {
       agent += resource.provider + ":";
     }
     agent += resource.type;
-    return '<a href="' + Routes.cib_agent_path(cib, encodeURIComponent(agent)) + '" data-toggle="modal" data-target="#modal-lg">' + agent + '</a>';
+    var agenticon = '<i class="fa fa-' + icon + ' fa-fw"></i>';
+    return '<a href="' + Routes.cib_agent_path(cib, encodeURIComponent(agent)) + '" data-toggle="modal" data-target="#modal-lg" title="' + agent + '">' + agenticon + '</a>';
   };
 
   function resourceRoutes(row) {
@@ -236,17 +240,32 @@ $(function() {
       title: __('Location'),
       sortable: false,
       clickToSelect: false,
+      align: 'left',
       class: 'col-sm-6',
       formatter: function(value, row, index) {
+        function bold(text) {
+          return "<b>" + text + "</b>";
+        }
+        function label(text, title, style) {
+          if (style === undefined) {
+            style = "label-info";
+          }
+          return "<span class=\"label " + style + "\" title=\"" + title + "\">" + text + "</span>";
+        }
         if ("running_on" in row) {
-          var all_nodes = Object.keys(row.running_on);
+          var hasmore = false;
+          var all_nodes = Object.keys(row.running_on).sort();
           var masters = $.grep(all_nodes, function(n) { return row.running_on[n] == "master"; });
           var others = $.grep(all_nodes, function(n) { return row.running_on[n] != "master"; });
           if (others.length > 8) {
             others = others.slice(0, 8);
-            others.push("...");
+            hasmore = true;
           }
-          return $.map(masters, function(n) { return "<b>" + n + "</b>"; }).concat(others).join(", ");
+          var ret = $.map(masters, function(n) { return label(n, row.running_on[n], "label-primary"); }).concat($.map(others, function(n) { return label(n, row.running_on[n]); })).join(" ");
+          if (hasmore) {
+            ret + ' <i class="fa fa-ellipsis-h fa-fw"></i>';
+          }
+          return ret;
         } else {
           return "";
         }
@@ -257,20 +276,20 @@ $(function() {
       title: __('Type'),
       sortable: false,
       clickToSelect: false,
-      class: 'col-sm-2',
+      class: 'col-sm-1',
       formatter: function(value, row, index) {
         if (row.object_type == "group") {
-          return __("Group") + " (" + row.children.length + ")";
-        } else if (row.object_type == "master") {
-          return __("Multi-state");
-        } else if (row.object_type == "clone") {
+          return '<span class="label label-default" title="' + __("Group") + '">' + row.children.length + '</span>';
+        } else if (row.object_type == "clone" || row.object_type == "master") {
           if (row.children.length > 0) {
-            return agentLinkForResource(row.children[0]) + " (" + __("Clone") + ")";
+            return agentLinkForResource(row.children[0], "clone");
+          } else if (row.object_type == "master") {
+            return '<i class="fa fa-clone fa-fw" title="' + __("Multi-state") + '"></i>';
           } else {
-            return __("Clone");
+            return '<i class="fa fa-clone fa-fw" title="' + __("Clone") + '"></i>';
           }
         } else if (row.object_type == "tag") {
-          return __("Tag");
+          return '<i class="fa fa-tag fa-fw" title="' + __("Tag") + '"></i>';
         } else if ("template" in row || ("class" in row && "provider" in row && "type" in row)) {
           return agentLinkForResource(row);
         } else {
@@ -283,7 +302,7 @@ $(function() {
       title: __('Operations'),
       sortable: false,
       clickToSelect: false,
-      class: 'col-sm-2',
+      class: 'col-sm-3',
       events: {
         'click .start': function (e, value, row, index) {
           e.preventDefault();

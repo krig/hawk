@@ -2,7 +2,7 @@
 // See COPYING for license.
 
 $(function() {
-  $('#users #middle table.users')
+  $('#users #middle table.users, #configs #middle table.users')
     .bootstrapTable({
       method: 'get',
       url: Routes.cib_users_path(

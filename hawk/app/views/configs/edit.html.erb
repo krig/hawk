@@ -2,14 +2,6 @@
   <div class="row">
     <h1>
       <%= icon_text "database", _("Edit Configuration"), class: "page" %>
-      <div class="pull-right">
-        <div class="btn-group" role="group">
-          <%= link_to icon_text("database", _("Edit")), edit_cib_config_path(cib_id: current_cib.id), class: "btn btn-default", role: :button, disabled: true %>
-          <%= link_to icon_text("list", _("Show")), cib_config_path(cib_id: current_cib.id), class: "btn btn-default", role: :button %>
-          <%= link_to icon_text("file-code-o", _("XML")), cib_config_path(cib_id: current_cib.id, xml: true), class: "btn btn-default", role: :button %>
-          <%= link_to icon_text("file-image-o", _("Graph")), cib_graph_path(cib_id: current_cib.id), class: "btn btn-default", role: :button %>
-        </div>
-      </div>
     </h1>
   </div>
   <div class="row">
@@ -46,39 +38,111 @@
               <%= _("Fencing") %>
             </a>
           </li>
+          <% if Util.has_feature? :acl_support %>
+            <li role="presentation">
+              <a data-toggle="tab" href="#roles" role="tab" aria-controls="roles">
+                <%= _("Roles") %>
+              </a>
+            </li>
+            <li role="presentation">
+              <a data-toggle="tab" href="#targets" role="tab" aria-controls="targets">
+                <%= _("Targets") %>
+              </a>
+            </li>
+          <% end %>
         </ul>
       </div>
       <div class="panel-body">
         <div class="tab-content">
           <div class="tab-pane active" id="resources" role="tabpanel">
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <div class="btn-group dropdown">
+                  <button class="btn btn-default navbar-btn dropdown-toggle" type="button" id="ddAddResource" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <%= icon_text "plus-circle", _("Create Resource") %>
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="ddAddResource">
+                    <li><%= link_to _("Primitive"), new_cib_primitive_path(cib_id: current_cib.id), data: { help_filter: ".primitive" } %></li>
+                    <li><%= link_to _("Group"), new_cib_group_path(cib_id: current_cib.id), data: { help_filter: ".group" } %></li>
+                    <li><%= link_to _("Clone"), new_cib_clone_path(cib_id: current_cib.id), data: { help_filter: ".clone" } %></li>
+                    <li><%= link_to _("Multi-state"), new_cib_master_path(cib_id: current_cib.id), data: { help_filter: ".multistate" } %></li>
+                    <li><%= link_to _("Template"), new_cib_template_path(cib_id: current_cib.id), data: { help_filter: ".template" } %></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
             <table class="table table-striped resources"></table>
           </div>
           <div class="tab-pane" id="constraints" role="tabpanel">
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <div class="btn-group dropdown">
+                  <button class="btn btn-default navbar-btn dropdown-toggle" type="button" id="ddAddConstraint" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <%= icon_text "plus-circle", _("Create Constraint") %>
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="ddAddConstraint">
+                    <li><%= link_to _("Colocation"), new_cib_colocation_path(cib_id: current_cib.id), data: { help_filter: ".colocation" } %></li>
+                    <li><%= link_to _("Location"), new_cib_location_path(cib_id: current_cib.id), data: { help_filter: ".location" } %></li>
+                    <li><%= link_to _("Order"), new_cib_order_path(cib_id: current_cib.id), data: { help_filter: ".order" } %></li>
+                    <li><%= link_to _("Ticket"), new_cib_ticket_path(cib_id: current_cib.id), data: { help_filter: ".ticket" } %></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
             <table class="table table-striped constraints"></table>
           </div>
           <div class="tab-pane" id="nodes" role="tabpanel">
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+              </div>
+            </nav>
             <table class="table table-striped nodes"></table>
           </div>
           <div class="tab-pane" id="tags" role="tabpanel">
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <%= link_to icon_text("plus-circle", _("Create Tag")), new_cib_tag_path(cib_id: current_cib.id), class: "btn btn-default navbar-btn", data: { help_filter: ".tags" } %>
+              </div>
+            </nav>
             <table class="table table-striped tags"></table>
           </div>
           <div class="tab-pane" id="alerts" role="tabpanel">
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <%= link_to icon_text("plus-circle", _("Create Alert")), new_cib_alert_path(cib_id: current_cib.id), class: "btn btn-default navbar-btn", data: { help_filter: ".alerts" } %>
+              </div>
+            </nav>
             <table class="table table-striped alerts"></table>
           </div>
           <div class="tab-pane" id="fencing" role="tabpanel">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="pull-right">
-                  <div class="btn-group" role="group">
-                    <%= link_to icon_text("pencil", _("Edit")),
-                        cib_fencing_edit_path, class: "btn btn-default btn-sm" %>
-                  </div>
-                </div>
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                    <%= link_to icon_text("pencil", _("Edit Fencing Topology")),
+                        cib_fencing_edit_path, class: "btn btn-default navbar-btn" %>
               </div>
-            </div>
-            <br>
+            </nav>
             <%= render partial: "fencing/table", locals: { fencing_topology: current_cib.fencing_topology } %>
           </div>
+          <% if Util.has_feature? :acl_support %>
+            <div class="tab-pane" id="roles" role="tabpanel">
+              <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <%= link_to icon_text("plus-circle", _("Create Role")), new_cib_role_path(cib_id: current_cib.id), class: "btn btn-default navbar-btn", data: { help_filter: ".roles" } %>
+                </div>
+              </nav>
+              <%= render partial: "roles/index" %>
+            </div>
+            <div class="tab-pane" id="targets" role="tabpanel">
+              <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <%= link_to icon_text("plus-circle", _("Create Target")), new_cib_user_path(cib_id: current_cib.id), class: "btn btn-default navbar-btn", data: { help_filter: ".targets" } %>
+                </div>
+              </nav>
+              <%= render partial: "users/index" %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

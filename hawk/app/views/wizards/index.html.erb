@@ -4,32 +4,35 @@
       <%= icon_text "magic", _("Wizards"), class: "page" %>
     </h1>
   </div>
-  <div class="row">
-    <ul class="nav nav-pills nav-stacked nav-bighelp nav-topspace" data-help-target="#rightbar > .rightbar_help > *">
-      <% wizard_categories(@wizards).each do |category| %>
-        <li class="toggable btn btn-default btn-lg">
-          <span data-toggle="collapse" data-parent=".nav-bighelp" href="#<%= category.dehumanize %>">
-            <div class="pull-right">
-              <%= icon_tag "chevron-down" %>
-            </div>
-            <%= icon_text wizard_icon(category), wizard_category_title(category) %>
-          </span>
-          <ul class="nav nav-pills nav-stacked collapse" id="<%= category.dehumanize %>">
+  <div class="row" data-help-target="#rightbar > .rightbar_help > *">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <% wizard_categories(@wizards).each do |category| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="pull-right">
+            <%= icon_tag "chevron-down" %>
+          </div>
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#<%= category.dehumanize %>" aria-expanded="false" aria-controls="collapseThree">            
+              <%= icon_text wizard_icon(category) + " fa-fw", wizard_category_title(category) %>
+            </a>
+          </h4>
+        </div>
+        <div id="<%= category.dehumanize %>" class="panel-collapse collapse">
+          <ul class="list-group" id="<%= category.dehumanize %>">
             <% @wizards.sort_by(&:name).each do |wizard| %>
               <% next unless wizard.category.eql?(category) %>
-              <li>
+              <li class="list-group-item">
                 <%= link_to cib_wizard_path(cib_id: current_cib.id, id: wizard.name), data: { help_filter: ".#{wizard.name}" } do %>
-                  <div class="pull-right p-t-10">
-                    <%= icon_tag "plus-circle" %>
-                  </div>
                   <%= wizard.shortdesc %>
                 <% end %>
               </li>
             <% end %>
           </ul>
-        </li>
-      <% end %>
-    </ul>
+        </div>
+      </div>
+    <% end %>
+    </div>
   </div>
 </div>
 <% content_for :rightbar do %>
